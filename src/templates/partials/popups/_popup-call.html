@@ -1,0 +1,47 @@
+{% set 
+form = [
+  { name: 'input', mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', type: 'text', placeholder: 'ІМ’Я' },
+  { name: 'input', mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', type: 'tel', placeholder: 'телефон' },
+  { name: 'textarea', mod: 'textarea--lg textarea--lg', fieldClass: 'js-textarea js-input-placeholder', type: '', placeholder: 'повідомлення' }
+]
+%}
+
+{% extends "layouts/_popup.html" %}
+
+{% set popupName = 'call' %}
+
+{% block content %}
+  <div class="popup__title">
+    <h2 class="title title--bold">замовити дзвінок</h2>
+  </div>
+
+  <div class="popup__title-line">
+    <div class="line-sm line-sm--text"></div>
+  </div>
+
+  <div class="popup__subttl text text--thin is-center">Заповніть форму нижче та ми зв’яжемося з вами в найближчий час</div>
+
+  <div class="popup__form form form--contacts">
+    <form>
+      {% for i in form %}
+      <div class="form__field">
+        {{ mixins.input(
+          name = i.name,
+          mod = i.mod,
+          type = i.type,
+          label = { last: i.placeholder },
+          fieldClass = i.fieldClass
+        ) }}
+      </div>
+      {% endfor %}
+
+      <div class="form__btn">
+        {{ mixins.btn(
+          title = 'відправити',
+          mod = 'btn--sec btn--md btn--full',
+          href = false
+        ) }}
+      </div>
+    </form>
+  </div>
+{% endblock %}

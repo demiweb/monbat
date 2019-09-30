@@ -1,0 +1,24 @@
+<!-- begin catalog-item -->
+<a href="#" class="catalog-item js-color js-anim-el{% if i.mod %} {{ i.mod }}{% endif %}" data-main-color="{{ i.color }}" data-anim-duration="1s" data-anim-name="fadeInBottom">
+  <span class="catalog-item__img">
+    <img data-src="img/accum/MONBAT AGM Start-Stop L3.png" alt="" class="js-lazy">
+  </span>
+
+  <span class="catalog-item__content">
+    <span class="catalog-item__title">
+      <h3 class="h3 h3--blue">{{ i.title }}</h3>
+      {% if not catalogText %}
+      <span class="h3-subttl">ГЕРМЕТИЧНІ, НЕ ПОТРЕБУЮТЬ ДОГЛЯДУ</span>
+      {% endif %}
+    </span>
+    
+    {% if not catalogText %}
+    <span class="catalog-item__icons">      
+      {% include "partials/_characteristics.html" %}       
+    </span>
+    {% else %}
+    <span class="catalog-item__text text">Всесезонна моторна олива Prista® Ultra Energy 5W-30 – повністю синтетичний продукт, виготовлений з використанням технології LOW SAPS (знижений вміст сульфатної золи, фосфору та сірки), призначений для змащування сучасних двигунів легкових, легковантажних автомобілів та фургонів.</span>
+    {% endif %} 
+  </span>
+</a>
+<!-- end catalog-item -->

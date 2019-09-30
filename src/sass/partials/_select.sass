@@ -1,0 +1,125 @@
+.select
+  &--md
+    .custom-select
+      color: $gray
+      font-size: $fz
+      &__opener
+        border: 0
+        border-bottom: 1px solid  $gray
+        padding: 5px 0
+        +before
+          border-color: currentColor
+      &__panel
+        box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.08)
+        border: 0
+      &__option
+        padding-top: 12px
+        padding-bottom: 12px
+        +flex(flex-start, center)
+        &.is-selected
+          background-color: transparent
+          color: $red
+        +hover
+          background-color: transparent
+          color: $red
+        &:nth-child(2)
+          padding-top: 24px
+      &__option-icon
+        font-size: 0
+        width: 40px
+        .icon
+          fill: currentColor
+
+          font-size: 21px
+        .icon-dhl
+          font-size: 5px
+      &__options
+      
+        
+
+
+  
+
+.custom-select
+  $this: &
+  --select-padding: 10px
+  min-width: 90px
+  position: relative
+  font-size: $fz-md
+  +light
+  select
+    position: absolute
+    visibility: hidden
+    opacity: 0
+  &[data-has-panel-item]
+    &.is-open
+      #{$this}__panel
+        max-height: none
+  &.is-open
+    #{$this}__panel      
+      max-height: 300px
+      overflow: auto
+      opacity: 1
+    #{$this}__options
+      max-height: 300px
+      overflow: auto
+  &__opener
+    border: 1px solid  $c-border
+    position: relative
+    padding: calc(var(--select-padding, 10px) / 3) var(--select-padding, 10px)
+    cursor: pointer
+    user-select: none
+    +before
+      +icon-arrow(8, 8, 1, $red, 45)
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%) rotate(-45deg)
+      right: .5em
+      pointer-events: none
+  &__panel
+    position: absolute
+    width: 100%
+    top: 100%
+    left: 0
+    // visibility: hidden
+    // opacity: 0
+    max-height: 0
+    overflow: hidden
+    opacity: 0
+    // visibility: hidden
+    z-index: 1
+    background-color: $white
+    border: 1px solid  $c-border
+    +tr(opacity .3s, visibility .3s)
+    &.is-above
+      bottom: 100%
+      top: auto
+  &__panel-item
+    padding-left: var(--select-padding, 10px)
+    padding-right: var(--select-padding, 10px)
+    position: relative
+    input
+      border-bottom: 1px solid  $gray
+      width: 100%
+      height: 35px
+      padding: 2px 5px
+      padding-right: 20px
+      &:focus
+        border-bottom-color: $red
+    .icon
+      fill: currentColor
+      position: absolute
+      right: var(--select-padding, 10px)
+      top: 50%
+      transform: translate(0, -50%)
+  &__option
+    cursor: pointer
+    padding: calc(var(--select-padding, 10px) / 3) var(--select-padding, 10px)
+    +tr(background-color .3s, color .3s)
+    +hover
+      background-color: $gray
+    &[data-value="placeholder"]
+      display: none
+  &__options
+    max-height: 0
+    overflow: hidden 

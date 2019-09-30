@@ -1,0 +1,117 @@
+{%set
+pdfList = [
+  {
+    title: 'Ураїнська якість',
+    blocks: [
+      {
+        title: 'сертифікат відповідності',
+        text: 'Монбат постійно прагне до вдосконалення свого функціонування у всіх можливих сферах: розробці інноваційних продуктів і технологій; збільшення частки ринку; ефективніше управління ризиками; підвищення задоволеності клієнтів. ',
+        items: [
+          { link: 'Сертифікат відповідності' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Якість',
+    blocks: [
+      {
+        title: 'ISO 9001 ',
+        text: 'Встановлена система управління якістю забезпечує надійну структуру, здатну контролювати та підвищувати продуктивність у сфері діяльності.',
+        items: [
+          { link: 'ISO 9001 Monbat AD' },
+          { link: 'ISO 9001 Start AD' }
+        ]
+      },
+      {
+        title: 'AQAP 2110',
+        text: 'У сертифікаті Allied Quality Assurance Publications зазначається, що Monbat  діє відповідно нормативним вимогам щодо розробки, будівництва та виробництва, а також для перевірки якості та остаточного випробування товарів військового призначення.',
+        items: [
+          { link: 'AQAP 2110 Monbat AD' }
+        ]
+      },
+      {
+        title: 'IATF 16949:2016 ',
+        text: "Цей технічний сертифікат специфікації включає існуючі американські, німецькі, французькі та італійські стандарти якості автомобільної системи в рамках світової автомобільної промисловості. Він визначає вимоги до системи якості для проектування / розробки, виробництва, монтажу та обслуговування продуктів, пов'язаних з автомобілем.",
+        items: [
+          { link: 'IATF 16949:2016 Monbat AD' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Навколишнє середовище',
+    blocks: [
+      {
+        title: 'ISO 14001',
+        text: "Міжнародно визнаний стандарт встановлює, що Monbat запроваджує ефективну систему екологічного менеджменту. Стандарт був створений для вирішення делікатного балансу між збереженням ефективності та зменшенням впливу на навколишнє середовище, зобов'язавши всю організацію досягти обох цілей.",
+        items: [
+          { link: 'SO 14001 Monbat AD' },
+          { link: 'ISO 14001 Start AD' }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Здоров'я і безпека",
+    blocks: [
+      {
+        title: 'OHSAS 18001 ',
+        text: "Цей сертифікат, розроблений обраними провідними торговельними та сертифікаційними органами на основі міжнародних правил, підтверджує, що Monbat відповідає міжнародно визнаній специфікації оцінки систем охорони праці та безпеки праці.",
+        items: [
+          { link: 'OHSAS 18001 Monbat AD' },
+          { link: 'OHSAS 18001 Start AD' },
+          { link: 'OHSAS 18001 Monbat Recycling EAD' }
+        ]
+      }
+    ]
+  }
+]
+%}
+
+<!-- begin pdf-list -->
+<div class="pdf-list">
+  {% for i in pdfList %}
+  <!-- begin pdf-link-block -->
+  <div class="pdf-link-block">
+    <div class="container">      
+    
+      <div class="pdf-link-block__title title-under title-under--md js-anim-el" data-anim-name="fadeInBottom">
+        <h2 class="title title--ttn title--bold title--red">{{ i.title }}</h2>
+      </div>
+
+      {% for j in i.blocks %}
+      <div class="pdf-link-block__block">
+        <div class="pdf-link-block__block-top js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.3s">
+          <div class="pdf-link-block__block-title">
+            <h4 class="h4 h4--xl h4--text">{{ j.title }}</h4>
+          </div>
+
+          <div class="pdf-link-block__text text text--left text--gray">{{ j.text }}</div>
+        </div>
+
+        <div class="pdf-link-block__items">
+          {% for k in j.items %}
+          <a href="#" class="pdf-link-block__item js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.5s">
+            <span class="pdf-link-block__item-title">{{ k.link }}</span>
+
+            <span class="pdf-link-block__meta">
+              <span class="pdf-link-block__meta-item">10/09/2019</span>
+
+              <span class="pdf-link-block__meta-item">pdf</span>
+
+              <span class="pdf-link-block__meta-item">{{ mixins.icon('download') }}</span>
+            </span>
+          </a>
+          {% endfor %}
+        </div>
+        
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+  <!-- end pdf-link-block -->
+  {% endfor %}
+</div>
+<!-- end pdf-list -->

@@ -1,0 +1,19 @@
+<!-- begin main -->
+<main
+  class="main has-aside-open{% if main.mod %} {{ main.mod }}{% endif %}{% if main.mainColor or main.secondaryColor %} js-color{% endif %}"
+  {% if main.mainColor %}data-main-color="{{ main.mainColor }}"{% endif %}
+  {% if main.secondaryColor %}data-secondary-color="{{ main.secondaryColor }}"{% endif %}>
+  {% if main.hero %}
+  <div class="main__hero js-lazy" data-background-image="img/hero/bg-hero-item-page.jpg"></div>
+  {% endif %}
+  <div class="main__aside js-aside">
+    {% include "partials/_aside.html" %}
+  </div>
+
+  <div class="main__content">
+    <div class="content{% if main.modContent %} {{ main.modContent }}{% endif %}">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</main>
+<!-- end main -->

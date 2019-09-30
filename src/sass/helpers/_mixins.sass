@@ -7,6 +7,10 @@
   @media only screen and (min-width: $width+ "px")
     @content
 
+=rmix($min-width, $max-width)
+  @media only screen and (min-width: $min-width+ "px") and (max-width: $max-width + "px")
+    @content
+
 // height
 =rh($height)
   @media only screen and (max-height: $height + "px")
@@ -24,6 +28,14 @@
   @media (min-width: #{$max-width}#{$unit})
     #{$property}: #{$max-size}#{$unit}
 
+@mixin css-lock-upd($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px)
+  
+  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width})))
+  @media (max-width: #{$min-width}#{$unit})
+    #{$property}: #{$min-size}#{$unit}
+  @media (min-width: #{$max-width}#{$unit})
+    #{$property}: #{$max-size}#{$unit}
+
 =text-overflow
   overflow: hidden
   text-overflow: ellipsis
@@ -31,10 +43,6 @@
 
 =hover
   .no-touch &:hover
-    @content
-
-=ready
-  .is-ready &
     @content
 
 =coverdiv
@@ -57,12 +65,12 @@
   transform: translate(-50%,-50%)
 
 // font-family 
-=font($alias, $name, $font-weight: 400, $font-style: normal)
+=font($alias, $name)
   @font-face
     font-family: $alias
     src: url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff")
-    font-weight: $font-weight
-    font-style: $font-style
+    font-weight: normal
+    font-style: normal
     font-display: swap
 // to use:
 //+font(black, cytiapro-black-webfont)
@@ -75,6 +83,20 @@
 =hidetext
   +hide-text
 
+// IMPORTANT!!!! REQUIRES SPACES BETWEEN ELEMENTS, NO SUCH STUFF: </li><li>
+=justify
+  text-align: justify
+  line-height: 0
+  font-size: 0
+  text-justify: newspaper
+  text-align-last: justify
+  &:after
+    content: ""
+    display: inline-block
+    width: 100%
+    height: 0px
+    visibility: hidden
+    overflow: hidden
 =vertical
   text-align: center
   font-size: 0
@@ -136,9 +158,18 @@
 =scale($var)
   transform: scale($var)
 
+=trsl($x, $y)
+  transform: translate($x, $y)
+
 =tr($what...)
   transition: $what
 
+=counter($var, $sep)
+  counter-reset: list + $var
+  > li
+    &:before
+      content: counter(list + $var) $sep
+      counter-increment: list + $var
 
 //icon close
 =icon-close($size, $line-width, $color)
@@ -163,11 +194,11 @@
 // +icon-close(15, 2, #000)
 
 // icon arrow
-=icon-arrow($width, $height, $bd-width, $color, $angle, $units: px)
-  width: $width + $units
-  height: $height + $units
-  border-left: $bd-width + $units solid $color
-  border-bottom: $bd-width + $units solid $color
+=icon-arrow($width, $height, $bd-width, $color, $angle)
+  width: $width + px
+  height: $height + px
+  border-left: $bd-width + px solid $color
+  border-bottom: $bd-width + px solid $color
   transform: rotate($angle + deg)
 // example
 // +icon-arrow(20, 20, 2, #000, 45)
@@ -176,7 +207,7 @@
   &.no-scroll
     overflow: hidden
   .no-touch &.no-scroll
-    margin-right: 17px
+    // margin-right: 17px
 
 // BG-IMAGE
 @function img-url($image)
@@ -201,7 +232,6 @@
 =notfirst
   &:not(:first-child)
     @content
-
 
 =flex($justify-content: flex-start, $align-items: normal, $flex-direction: row, $flex-wrap: nowrap)
   display: flex

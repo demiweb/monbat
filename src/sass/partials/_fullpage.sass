@@ -1,0 +1,187 @@
+.fullpage
+  overflow: hidden
+  &__nav
+    position: fixed
+    text-transform: uppercase
+    z-index: 10
+    right: 0
+    display: inline-block
+    top: 50%
+    transform: translate(0, -50%)
+    +xs
+      display: none
+    +rh(400)
+      display: none
+    a
+      color: rgba($white, .5)
+      padding-top: 10px
+      padding-bottom: 10px
+      +light
+      font-size: 0
+      line-height: 14px
+      position: relative
+      display: block
+      text-align: right
+      +tr(color .3s)
+      &.is-active
+        color: $white
+        font-size: 11px
+        +after
+          width: 53px
+      +hover
+        color: $white
+        font-size: 11px
+        +after
+          width: 53px
+      +after
+        height: 1px
+        background-color: currentColor
+        width: 30px
+        display: inline-block
+        vertical-align: super
+        margin-left: 10px
+        +tr(width .3s)
+  &__copy
+    position: fixed
+    z-index: 10
+    bottom: 30px
+    right: 30px
+    +md
+      right: 0
+      width: 100%
+      text-align: center
+    +xs
+      bottom: 15px
+    +rh(550)
+      display: none
+
+  
+.fullpage-section
+  $this: &
+  height: 100vh
+  width: 100%
+  padding-left: 15px
+  padding-right: 15px
+  // visibility: hidden
+  // opacity: 0
+  position: absolute
+  top: 0
+  left: 0
+  padding-top: $header-height
+  +cover
+  +flex(center, center, column)
+  +xl
+    padding-top: $header-height-md
+  +lg
+    padding-top: $header-height-mob
+  +md
+    padding-bottom: 50px
+  +xs
+    // justify-content: space-between
+    padding-bottom: 155px
+    
+  +rh(550)
+    padding-bottom: 15px !important
+  &.is-active
+    visibility: visible
+    opacity: 1
+  &__descr
+    position: relative
+    width: 100%
+    +xs
+      margin-bottom: 15px
+    div
+      color: $white
+      text-transform: uppercase
+      +css-lock(16, 30, 576, 1199, font-size)
+      position: absolute
+      transform: translate(0, -100%)
+      +bold
+      +xs
+        position: static
+        text-align: center
+        font-size: 24px
+        transform: translate(0, 0)
+      &:nth-child(1)
+        left: $left-1
+      &:nth-child(2)
+        left: $left-2
+      &:nth-child(3)
+        left: $left-3
+  &__title
+    +rh(550)
+      margin-bottom: 5px
+    .h2, .title--xl
+      opacity: 0
+    .title-subttl
+      transform: translate(0, -100%)
+  &__subttl
+    overflow: hidden
+    margin-bottom: 30px
+    .h2-subttl
+      transform: translate(0, -100%)
+    +md
+      margin-bottom: 15px
+  &__block
+    position: relative
+    z-index: 1
+    text-align: center
+    +flex(flex-start, center, column)
+    overflow: hidden    
+    .line-sm
+      margin-bottom: 25px
+      transform: translate(0, -100%)
+      +rh(550)
+        display: none
+    .btn
+      transform: translate(0, -105%)
+  &__block-bottom
+    position: absolute
+    bottom: 185px
+    +xs
+      position: static
+  &__scroll
+    position: absolute
+    bottom: 30px
+    left: 50%
+    transform: translate(-50%, 0)
+    .scroll-down
+      opacity: 0
+    +md
+      bottom: 70px
+    +xs
+      // position: static
+    +rh(550)
+      display: none
+  &__copy
+    opacity: 0
+  &__news
+    +flex(flex-start, normal, row, wrap)
+    margin-left: -15px
+    margin-right: -15px
+    color: $white
+    margin-bottom: 50px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+      display: none
+  &__news-item
+    width: 33.33333%
+    padding-left: 15px
+    padding-right: 15px
+    overflow: hidden
+    .news-article-sm
+      transform: translateY(-100%)
+
+  &--hero
+    position: relative
+    opacity: 0
+    #{$this}__descr
+      div
+        &:nth-child(1)
+          left: $left-1-fucked-up
+        &:nth-child(2)
+          left: $left-2-fucked-up
+        &:nth-child(3)
+          left: $left-3-fucked-up

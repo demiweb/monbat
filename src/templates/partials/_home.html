@@ -1,0 +1,155 @@
+{%set
+screens = [
+  {
+    dataTitle: 'monbat ukraine',
+    img: 'home-1.jpg',
+    title: 'MONBAT',
+    subttl: 'UKRAINE',
+    subttlSm: 'Офіційне представництво MONBAT GROUP в Україні',
+    scroll: 'дізнатися більше',
+    nextIndex: 1
+  },
+  {
+    dataTitle: 'monbat group',
+    img: 'home-2.jpg',
+    title: 'MONBAT',
+    subttl: 'group',
+    subttlSm: 'Продукція компанії постачається в понад 60 країн світу',
+    scroll: 'дізнатися більше',
+    nextIndex: 2
+  },
+  {
+    dataTitle: 'monbat power',
+    img: 'home-3.jpg',
+    title: 'MONBAT',
+    subttl: 'power',
+    subttlSm: 'Ми пропонуємо широкий спектр джерел живлення',
+    scroll: 'дізнатися більше',
+    nextIndex: 3,
+    btn: { title: 'Батареї' }
+  },
+  {
+    dataTitle: 'monbat news',
+    img: 'home-4.jpg',
+    title: 'НОВИНИ',
+    subttl: 'monbat',
+    btn: { title: 'усі новини' },
+    news: [
+      {
+        title: 'AUTOMECHANIKA DUBAI',
+        text: 'У травні 2017 року продукція MONBAT була представлена ​​на міжнародній автомобільній виставці АВТОМЕХАНІКА, Дубаї.'
+      },
+      {
+        title: 'МОНБАТСЬКІ ДОСЛІДЖЕННЯ ІНВЕСТИЦІЙНИХ МОЖЛИВОСТЕЙ ...',
+        text: 'У травні 2017 року продукція MONBAT була представлена ​​на міжнародній автомобільній виставці АВТОМЕХАНІКА, Дубаї.'
+      },
+      {
+        title: 'У грудні 2018 року компанії в економічній групІ «Монбат»...',
+        text: 'У травні 2017 року продукція MONBAT була представлена ​​на міжнародній автомобільній виставці АВТОМЕХАНІКА, Дубаї.'
+      }
+    ]
+  }
+]
+%}
+
+<!-- begin fullpage -->
+<div class="fullpage js-fullpage">
+  {% for i in screens %}
+  <!-- begin fullpage-section -->
+  <div class="fullpage-section js-lazy js-mobile-height" data-background-image="img/home/{{ i.img }}" data-title="{{ i.dataTitle }}">
+
+    {# <div class="letter letter--1"><span>a</span></div>
+    <div class="letter letter--2"><span>b</span></div>
+    <div class="letter letter--3"><span>s</span></div> #}
+
+    {# {{ mixins.lines() }} #}
+
+    <div class="container">
+
+
+      {% if i.descr %}
+      <div class="fullpage-section__descr">
+        <div>accumulatory</div>
+        <div>battery</div>
+        <div>systems</div>
+      </div>
+      {% endif %}
+
+      <div class="fullpage-section__block{% if i.blockBottom %} fullpage-section__block-bottom{% endif %}">
+        {% if i.title %}
+        <div class="fullpage-section__title">
+          <h2 class="title--xl">{{ i.title }}</h2>
+          <div class="overflow-hidden">
+            <div class="title-subttl">{{ i.subttl }}</div>
+          </div>
+          
+        </div>
+        {% endif %}
+
+        
+
+        <div class="overflow-hidden">
+          <div class="line-sm"></div>
+        </div>
+
+        {% if i.subttlSm %}
+        <div class="fullpage-section__subttl">
+          <div class="h2-subttl">{{ i.subttlSm | safe }}</div>        
+        </div>
+        {% endif %}
+
+        {% if i.news %}
+        <div class="fullpage-section__news">
+          {% for j in i.news %}
+          <div class="fullpage-section__news-item">
+            <!-- begin news-article-sm -->
+            <a href="#" class="news-article-sm">
+              <span class="news-article-sm__date">28.09.2017</span>
+
+              <span class="news-article-sm__title">
+                <span class="h4 h4--md h4--semi">{{ j.title | safe }}</span>
+              </span>
+
+              <span class="news-article-sm__text">{{ j.text | safe }}</span>
+            </a>
+            <!-- end news-article-sm -->
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="overflow-hidden">
+          {{ mixins.btn(
+            title = i.btn.title or 'Детальніше'
+          ) }}
+        </div>
+        
+      </div>
+
+      {% if i.scroll %}
+
+      <div class="fullpage-section__scroll">
+        <!-- begin scroll-down -->
+        <div class="scroll-down">
+          <a href="#" class="scroll-down__btn js-fullpage-next" data-index="{{ i.nextIndex }}">
+            <span class="scroll-down__mouse"></span>
+            <span class="scroll-down__arr"></span>
+          </a>
+          <div class="scroll-down__title">{{ i.scroll }}</div>
+        </div>
+        <!-- end scroll-down -->
+      </div>
+
+      {% endif %}
+
+    
+   </div>
+  </div>
+  <!-- end fullpage-section -->
+  {% endfor %}  
+</div>
+<!-- end fullpage -->
+
+<div class="fullpage__copy copy">&copy; 2019 ООО «МОНБАТ ЮКРЕЙН»</div>
+
+<div class="fullpage__nav js-fullpage-nav"></div>

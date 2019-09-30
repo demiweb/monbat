@@ -1,0 +1,76 @@
+.checkbox
+  position: relative
+  color: $black
+  text-transform: uppercase
+  width: 100%
+  padding: 10px 15px
+  display: block
+  padding-left: 40px
+  user-select: none
+  cursor: pointer
+  input
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    top: 0
+    left: 0
+    &:checked + span
+      color: $red
+      &::after
+        display: block
+       
+  > span
+    &::before
+      border: 1px solid $c-border
+      width: 12px
+      height: 12px
+      top: .9em
+      left: 15px
+      background-color: $white
+      position: absolute
+      display: block
+      line-height: 1
+      content: ""
+    &::after
+        display: none
+        content: ''
+        height: 12px
+        width: 12px
+        position: absolute
+        top: .9em
+        left: 15px
+        background-color: $red
+
+  &--plain
+    > span
+      // position: relative
+      // z-index: 1
+      span
+        position: relative
+        z-index: 1
+      +before
+        content: '-'
+        margin-right: 10px
+        border: 0
+        background-color: transparent
+        top: .7em
+        z-index: 1
+      +after
+        +coverdiv
+        z-index: 0
+        background-color: $gray
+
+  &--form
+    color: $gray-dark
+    text-transform: none
+    text-align: left
+    font-size: $fz-md
+    padding-left: 20px
+    span
+      +before
+        background-color: transparent
+        border-color: currentColor
+        left: 0
+      +after
+        left: 0
+

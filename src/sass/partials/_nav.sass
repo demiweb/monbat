@@ -1,0 +1,176 @@
+.nav
+  font-size: 0
+  +xs
+    width: 100%
+  li
+    display: inline-block
+    // position: relative
+    &:first-child
+      position: static
+    +lg
+      display: block
+      margin-left: 0
+      margin-right: 0
+      margin-top: 15px
+      margin-bottom: 15px
+      &:first-child
+        a
+          border-bottom: 4px solid  $red
+    &.has-dropdown
+      > a
+          +after
+            +icon-arrow(8, 8, 1, currentColor, -45)
+            display: inline-block
+            position: relative
+            margin-left: .5em
+            top: -.2em
+
+  a
+    text-transform: uppercase
+    display: block
+    +semi
+    font-size: 16px
+    padding: 10px 30px 39px
+    padding: 0px 30px
+    // margin-top: 10px
+    // margin-bottom: 39px
+    +tr(background-color .3s, color .3s)
+    +hover
+      // background-color: $red
+      color: $red
+    +xl
+      padding: 21px 30px
+    +lg
+      font-size: 21px
+      background-color: transparent
+      padding: 0
+      &.is-active
+        background-color: transparent
+
+    &.is-active
+      // background-color: $red
+      color: $red
+    &.is-hovered
+      // background-color: $red
+      color: $red
+
+  &--sub
+    color: $white
+    li
+      width: 25%
+      +lg
+        width: 100% !important
+        a
+          background-color: transparent
+
+      &:nth-child(1)
+        width: $width-1
+      &:nth-child(2)
+        width: $width-2
+      &:nth-child(3)
+        width: $width-3
+      &:nth-child(4)
+        width: $width-4
+        +lg
+          margin-bottom: 0
+          a
+            // background-color: transparent
+        a
+          // background-color: rgba(108, 83, 69, 0.502)
+      &.has-dropdown
+        position: relative
+        +hover
+          > ul
+              visibility: visible
+              opacity: 1
+        > ul
+            position: absolute
+            z-index: 1
+            visibility: hidden
+            opacity: 0
+            width: 100%
+            top: 100%
+            left: 0
+            font-size: $fz
+            color: $black
+            +tr(opacity .3s, visibility .3s)
+            li
+              width: 100%
+            a
+              background-color: $white
+              text-transform: none
+              &.is-active
+                color: $blue-accent
+              +hover
+                color: $blue-accent
+                background-color: #edf0ff
+        li
+          display: block
+          
+    a
+      padding: 15px
+      border: 1px solid $white-transp
+      text-align: center
+      background-color: rgba(0, 0, 0, 0.502)
+      +reg
+      +tr(background-color .3s, color .3s)
+      &.is-active
+        color: $white
+        // background-color: $white
+        background-color: rgba(31, 47, 134, 0.502)
+        border-bottom: 1px solid rgba($black, .15)
+        +lg
+          color: $red-light
+      +hover
+        color: $white
+        background-color: rgba(31, 47, 134, 0.502)
+        // background-color: $white
+      +xl
+        padding: 10px
+      +lg
+        padding: 5px
+        border: 0
+        border-bottom: 1px solid $white-transp !important
+
+  &--sub-equal
+    li
+      &:nth-child(1)
+        width: 25%
+      &:nth-child(2)
+        width: 25%
+      &:nth-child(3)
+        width: 25%
+      &:nth-child(4)
+        width: 25%
+
+  &--footer    
+    li
+      display: block
+      font-size: 12px
+      +lg
+        font-size: 12px
+        margin-top: 0
+      +notlast
+        margin-bottom: 10px
+      &.has-dropdown
+        &:hover
+          ul
+            max-height: none
+            overflow: visible
+        ul
+          max-height: 0
+          overflow: hidden
+          a
+            color: #99c2f5
+            text-transform: none
+    a
+      padding: 0 !important
+      border-bottom: 0 !important
+      display: inline
+      +light
+      font-size: inherit !important
+      +hover
+        color: $white
+        text-decoration: underline
+
+  

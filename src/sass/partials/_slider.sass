@@ -1,0 +1,403 @@
+.slider
+  $this: &
+  &__wrap
+    --content-padding: 50px
+    --arrows-gap: 15px
+    position: relative
+    +md
+      --arrows-gap: 10px
+      --content-padding: 15px
+    
+  &__prev,
+  &__next
+    position: absolute
+    top: 50%
+    background-color: transparent
+    z-index: 1
+  &__prev
+    +icon-arrow(15, 15, 1, $c-text, 45)
+    display: inline-block
+    transform: translate(0, -50%) rotate (45deg)
+    left: var(--arrows-gap, 10px)
+  &__next
+    +icon-arrow(15, 15, 1, $c-text, -135)
+    display: inline-block
+    transform: translate(0, -50%) rotate (45deg)
+    right: var(--arrows-gap, 10px)
+
+  &--similar
+    .swiper-slide
+      height: auto
+      box-sizing: border-box
+    &__wrap
+      +sm
+        margin-left: calc(0px - var(--content-padding, 50px))
+        margin-right: calc(0px - var(--content-padding, 50px))
+        padding-left: var(--content-padding, 50px)
+        padding-right: var(--content-padding, 50px)
+
+  &--assort
+    &__wrap
+      padding-top: 45px
+      position: relative
+      +md
+        padding-top: 25px        
+      +sm
+        padding-top: 15px
+      .swiper-slide        
+        z-index:  0
+      .swiper-container
+        +sm
+          // overflow: visible
+          margin-left: calc(0px - var(--content-padding, 50px))
+          margin-right: calc(0px - var(--content-padding, 50px))
+          padding-left: var(--content-padding, 50px)
+          padding-right: var(--content-padding, 50px)
+
+    &__btns
+      position: absolute
+      // bottom: 50px
+      bottom: 10%
+      display: inline-block
+      left: calc(30% - 50px)
+      z-index: 1
+      +xll
+        bottom: 20px
+      +md
+        bottom: auto
+        top: 60%
+        left: var(--section-padding, 40px)
+      +sm
+        left: 0
+        top: 260px
+      +xs
+        top: 200px
+    &__counter
+      position: absolute
+      top: 0
+      left: -.5em
+      +md
+        display: none  
+    &__counter-sm
+      position: absolute
+      left: 0 
+      bottom: 100px
+      +xll
+        bottom: 0
+  &--standart
+    &__wrap
+      @extend .slider--assort__wrap
+      padding-top: 0
+      +sm
+        .swiper-container
+          margin-left: 0
+          margin-right: 0
+          padding-left: 0
+          padding-right: 0
+      
+      .swiper-slide
+        // opacity: 0
+        z-index: 0
+    &__btns
+      bottom: 170px
+      position: absolute
+      z-index: 2
+      left: 57%
+      +md
+        bottom: 100px
+      +sm
+        bottom: auto
+        top: 200px
+        left: var(--section-padding, 40px)
+    &__counter-sm
+      position: absolute
+      bottom: 20px
+      left: 60%
+      z-index: 2
+      +lg
+        left: 58%
+      +md
+        left: 55%
+      +sm
+        left: auto
+        right: var(--section-padding, 40px)
+      +xs
+        right: auto
+        left: var(--section-padding-lg, 100px)
+  &--thumbs
+    // box-sizing: border-box
+    .slide
+  &--contacts
+    box-sizing: border-box
+    &__wrap
+      #{$this}__prev,
+      #{$this}__next
+        // height: 100%        
+        width: 30%
+        background-color: transparent
+        width: 400px
+        top: 30px
+        bottom: 85px
+        transform: translate(0, 0)
+        border: 0
+        height: auto
+        width: calc(#{percentage(510/1920) / 2} - 40px)
+        +md
+          width: calc(#{percentage(510/1920) / 2} - 20px)
+          top: 20px
+          bottom: 100px
+        +sm
+          width: calc(#{percentage(510/1920) / 2} - 10px)
+          bottom: 125px
+      #{$this}__prev
+        left: 0
+      #{$this}__next
+        right: 0
+    .slide
+      width: percentage(1410/1920)
+      // +vertical
+      height: auto
+      &.swiper-slide-active
+        &:before
+          display: none
+        .slide__title
+          display: block
+        .slide__bottom
+          visibility: visible
+          opacity: 1
+        .slide__img
+          transform: scaleY(1)
+          display: block
+          filter: grayscale(0)
+
+      &__img
+        +cover
+        padding-top: 55%
+        transform: scaleY(.9)
+        position: relative
+        width: 100%
+        filter: grayscale(100%)
+        +tr(transform .3s, filter .3s)
+        +sm
+          padding-top: 65%
+        +xs
+          padding-top: 75%
+      &__title
+        position: absolute
+        bottom: 5%
+        left: 5%
+        display: none
+      &__btn
+        text-align: center
+        +lg
+          .btn
+            min-width: 0
+            width: 100%
+      &__bottom
+        padding-top: 20px
+        +flex(space-between, center, row, wrap)
+        visibility: hidden
+        opacity: 0
+        +tr(visibility .3s, opacity .3s, transform .3s)
+        +md
+          // display: block
+        .text, .slide__btn
+          width: 33.33333%
+        .slide__btn
+          +md
+            order: 2
+            width: 100%
+        .text
+          padding-right: 10px
+          +md
+            margin-bottom: 10px
+          &:first-child
+            +md
+              order: 0
+              width: 50%
+            +sm
+              width: 100%
+              
+          &:last-child
+            text-align: right
+            padding-right: 0
+            +md
+              order: 1
+              width: 50%
+            +sm
+              width: 100%
+              text-align: left
+          
+
+.assort-slide
+  // display: flex !important
+  +flex(flex-start, center)
+  // background-color: $white
+  height: 100%
+  position: relative
+  box-sizing: border-box
+  +xll
+    padding-bottom: 30px
+  +md
+   flex-direction: column
+  +sm
+    margin-left: calc(0px - var(--section-padding-md, 65px))
+    margin-right: calc(0px - var(--section-padding-md, 65px))
+  &__title
+    margin-bottom: 25px
+    opacity: 0
+    // transform: translateY(100px)
+    +md
+      margin-bottom: 15px
+  &__content
+    width: 30%
+    padding-right: 5%
+    +md
+      width: 100%
+      order: 1
+    +sm
+      padding-left: var(--section-padding-md, 65px)
+      padding-right: var(--section-padding-md, 65px)
+  &__img
+    width: 70%
+    +cover
+    padding-top: 40%
+    // height: 100%
+    transform: translateX(100%)
+    +xll
+      // height: calc(100% + 30px)
+      margin-bottom: -30px
+    +md
+      width: 100%
+      order: 0
+      margin-bottom: 20px
+      // height: auto
+      // height: 60%
+      // padding-top: 35%
+    +sm
+      padding-top: 0
+      height: 270px
+    +xs
+      // padding-top: 0
+      height: 200px
+      margin-bottom: 30px
+  &__text
+    text-align: left
+    opacity: 0
+    // transform: translateY(100px)
+
+.arrow
+  --arrow-size: 100px
+  --arrow-font-size: 40px
+  width: var(--arrow-size, 100px)
+  height: calc(var(--arrow-size, 100px) / 2)
+  background-color: $red
+  color: $white
+  +inline-flex(center, center)
+  font-size: var(--arrow-font-size, 40px)
+  +md
+    --arrow-size: 75px
+    --arrow-font-size: 35px
+  .icon
+    fill: currentColor
+  &.swiper-button-disabled
+    opacity: .5
+  &--next
+    .icon
+      +rotate(180)
+  &--white
+    background-color: $white
+    color: $red
+
+.slider-counter-sm
+  $this: &
+  position: relative
+  +thin
+  color: $gray
+  .swiper-pagination-progressbar-fill
+    background-color: $red
+  &__current
+    display: inline-block
+    vertical-align: middle
+  &__all
+    display: inline-block
+    vertical-align: middle
+  &__line
+    display: inline-block
+    vertical-align: middle
+    width: 60px
+    background-color: currentColor
+    height: 1px
+    position: relative
+    overflow: hidden
+
+  &--white
+    .swiper-pagination-progressbar-fill
+      background-color: $white
+    #{$this}__current
+      color: $white
+    #{$this}__line
+      background-color: $red-light
+    #{$this}__all
+      color: $red-light
+
+.standart-slide
+  box-sizing: border-box
+  position: relative
+  padding-top: 15%
+  +flex(flex-end, normal, column)
+  +sm
+    padding-top: 0
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__block
+    background-color: $red-accent
+    padding-top: 75px
+    padding-bottom: 60px
+    padding-left: $left-1
+    padding-right: 12%
+    position: relative
+    z-index: 1
+    max-width: percentage(1310/1920)
+    // transform: translateY(100%)
+    opacity: 0
+    +lg
+      padding-left: 15%
+    +md
+      padding-left: var(--section-padding-lg, 100px)
+      padding-top: 40px
+      padding-bottom: 30px
+    +sm
+      max-width: none
+      height: 60%
+      padding-top: 50px
+      padding-left: var(--section-padding, 40px)
+      padding-right: var(--section-padding, 40px)
+    +xs
+      padding-bottom: 50px
+  &__date
+    color: $red-light
+    font-size: $fz-md
+    margin-bottom: 20px
+    +md
+      margin-bottom: 15px
+  &__text
+    margin-bottom: 25px
+    +md
+      margin-bottom: 20px
+  &__img
+    +cover
+    height: calc(100% - 60px)
+    width: calc(100% - #{$width-1-fucked-up})
+    position: absolute
+    z-index: 0
+    top: 0
+    right: 0
+    transform: translateX(100%)
+    +sm
+      position: relative
+      width: 100%
+      height: 200px
+    

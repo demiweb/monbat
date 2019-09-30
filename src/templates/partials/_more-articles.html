@@ -1,0 +1,23 @@
+<!-- begin more-articles -->
+<div class="more-articles">
+  {% for i in range(0, 4) %}
+  <!-- begin article-sm -->
+  <a href="#" class="article-sm">
+    <span class="article-sm__img js-lazy" data-background-image="img/article/article-img-{{ i + 1 }}.jpg"></span>
+
+    <span class="article-sm__content">
+      <span class="article-sm__date">20 вересня, 2019</span>
+
+      <span class="article-sm__title title-under title-under--xs">
+        <h5 class="h5 h5--ttn">Далеко-далеко за словесными горами и лесами?</h5>
+      </span>
+
+      <span class="article-sm__text text text--gray js-truncate-text">Даже всемогущая пунктуация не имеет 
+        власти над рыбными текстами, ведущими
+      по всей огромной стране и обеспечивае</span>
+    </span>
+  </a>
+  <!-- end article-sm -->
+  {% endfor %}
+</div>
+<!-- end more-articles -->

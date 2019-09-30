@@ -1,0 +1,29 @@
+---
+title: about
+page: about
+outClass: 'about-page'
+header: {
+  mod: ''
+}
+hero: {
+  fullpage: true
+}
+footer: {
+  mod: 'footer--gray'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/about/_block-1.html" %}
+  {% include "partials/about/_block-2.html" %}
+  {% include "partials/about/_block-3.html" %}
+  {% include "partials/about/_block-4.html" %}
+  {% include "partials/about/_block-5.html" %}
+  {% include "partials/about/_block-6.html" %}
+  {% include "partials/about/_block-7.html" %}
+
+  {% include "partials/_footer.html" %}
+{% endblock %}

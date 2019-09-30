@@ -1,0 +1,25 @@
+.words
+  position: absolute
+  top: 56%
+  width: 100%
+  transform: translate(0, -50%)
+  &--fu
+    .word
+      &--1
+        left: $left-1-fucked-up
+      &--2
+        left: $left-2-fucked-up
+      &--3
+        left: $left-3-fucked-up
+
+.word
+  position: absolute
+  overflow: hidden
+  span
+    display: inline-block
+  &--1
+    left: $left-1
+  &--2
+    left: $left-2
+  &--3
+    left: $left-3

@@ -1,5 +1,137 @@
 <!-- begin footer -->
-<footer class="footer">
-  hello from footer
+<footer class="footer{% if footer.mod %} {{ footer.mod }}{% endif %}">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <div class="footer__logo">
+        <img class="js-lazy" alt="" src="" data-src="./img/logo-white.png"/>
+      </div>
+
+      <div class="footer__text">
+        <h6 class="h6">Місія компанії:  </h6>
+        <p>Розвиток в Україні дистрибуції продуктів вироблених
+групою компаній МОНБАТ, задоволення усіх потреб наших
+клієнтів, високий сервіс і впровадження іноваційних рішень в Україні </p>
+      </div>
+
+      <div class="footer__copy">copyright 2019 monbat ad all rights reserved</div>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">
+        <h5 class="h5 h5--white">про нас</h5>
+      </div>
+
+      <div class="footer__block">
+        {{ mixins.list(
+          name = 'nav',
+          modifications = { wrap: 'nav--footer', item: '', link: '' },
+          list = [
+            { link: 'МОНБАТ УКРАїНА' },
+            { link: 'МОНБАТ ГРУПП' },
+            { link: 'виробництво' },
+            { link: 'переробка' },
+            { link: 'соціальна відповідальність <br> (МОНБАТ БАСКЕТ)' } 
+          ]
+        ) }}
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">
+        <h5 class="h5 h5--white">клієнтам</h5>
+      </div>
+
+      <div class="footer__block">
+        {{ mixins.list(
+          name = 'nav',
+          modifications = { wrap: 'nav--footer', item: '', link: '' },
+          list = [
+            { link: "Офіційні дистриб'ютори" },
+            { link: 'сертифікати' },
+            { link: 'лабораторія якості' },
+            { link: 'новини' }
+          ]
+        ) }}
+      </div>
+    </div>
+
+    <div class="footer__col footer__col-lg">
+      <div class="footer__title">
+        <h5 class="h5 h5--white">продукція</h5>
+      </div>
+
+      <div class="footer__block">
+        {{ mixins.list(
+          name = 'nav',
+          modifications = { wrap: 'nav--footer', item: '', link: '' },
+          list = [
+            { link: 'monbat batteries', modItem: 'has-dropdown', item: '
+              <ul>
+                <li><a href="#">Для легкових авто</a></li>
+                <li><a href="#">Для вантажних авто</a></li>
+                <li><a href="#">Для спец.техніки та ИБП</a></li>
+                <li><a href="#">Стаціонарні АКБ</a></li>
+              </ul>
+            ' },
+            { link: 'start batteries', modItem: 'has-dropdown', item: '
+              <ul>
+                <li><a href="#">Для легкових авто</a></li>
+                <li><a href="#">Для вантажних авто</a></li>
+                <li><a href="#">Для спец.техніки та ИБП</a></li>
+                <li><a href="#">Стаціонарні АКБ</a></li>
+              </ul>
+            ' },
+            { link: 'winmaxx batteries', modItem: 'has-dropdown', item: '
+              <ul>
+                <li><a href="#">Для легкових авто</a></li>
+                <li><a href="#">Для вантажних авто</a></li>
+                <li><a href="#">Для спец.техніки та ИБП</a></li>
+                <li><a href="#">Стаціонарні АКБ</a></li>
+              </ul>
+            ' },
+            { link: 'PRISTA OIL', modItem: 'has-dropdown', item: '
+              <ul>
+                <li><a href="#">Для легкових авто</a></li>
+                <li><a href="#">Для вантажних авто</a></li>
+                <li><a href="#">Для спец.техніки та ИБП</a></li>
+                <li><a href="#">Стаціонарні АКБ</a></li>
+              </ul>
+            ' }
+          ]
+        ) }}
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__title">
+        <h5 class="h5 h5--white">Контакти</h5>
+      </div>
+
+      <div class="footer__block">
+        {{ mixins.list(
+          name = 'nav',
+          modifications = { wrap: 'nav--footer', item: '', link: '' },
+          list = [
+            { item: "вул. Залізничне Шосе, 6, <br>
+Київ, 01103" },
+            { link: '+38 050 494 76 06', href: 'tel:+380504947606' },
+            { link: 'info@abss.com.ua', href: 'mailto:info@abss.com.ua' }
+          ]
+        ) }}
+      </div>
+
+      <div class="footer__social">
+        {{ mixins.list(
+          name = 'social',
+          modifications = { wrap: '', item: '', link: '' },
+          list = [
+            { link: mixins.icon('facebook') },
+            { link: mixins.icon('instagram') },
+            { link: mixins.icon('youtube') }
+          ]
+        ) }}
+      </div>
+    </div>
+  </div>
 </footer>
 <!-- end footer -->

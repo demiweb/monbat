@@ -1,0 +1,30 @@
+{%set
+  cols = [
+    { nmb: '01', text: 'Организация сбора лома как дополнительный сервис для наших клиентов.', img: 'bg-section-1.jpg' },
+    { nmb: '02', text: 'Продажа масел, выведение в рынок новой тм Monoil.', img: 'bg-section-2.jpg' },
+    { nmb: '03', text: 'Расширение продуктовой линейки компании (автохимия и т.д.)', img: 'bg-section-3.jpg' }
+  ]
+%}
+<!-- begin section -->
+<section class="section three-cols-section">
+
+  <div class="section__title">
+    <h2 class="title title--white title--bold"><strong>НАПРАВЛЕНИЯ</strong> РАЗВИТИЯ</h2>
+  </div>
+
+  <div class="three-cols-section__cols">
+    {% for i in cols %}
+    <div class="three-cols-section-col">
+      <div class="three-cols-section-col__bg js-lazy" data-background-image="img/about/{{ i.img }}"></div>
+      
+      <div class="three-cols-section-col__nmb">
+        {# <div class="text-stroke text-stroke--white">{{ i.nmb }}</div> #}
+      </div>
+
+      <div class="three-cols-section-col__text text--left text text--thin text--white">{{ i.text }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+</section>
+<!-- end section -->

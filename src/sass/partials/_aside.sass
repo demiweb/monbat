@@ -1,0 +1,92 @@
+.aside
+  $this: &
+  background-color: $white
+  width: $aside-width
+  // position: relative
+  +tr(transform .3s)
+  +lg
+    height: 100%
+    background-color: $white
+    #{$this}__inner
+      overflow: auto
+  +xss
+    width: $aside-width-mobile
+
+  &__block
+    &:last-child
+      border-bottom: 1px solid  $c-border
+  &__toggle
+    position: absolute
+    z-index: 1
+    left: 100%
+    top: 0
+    height: 37px
+    width: 37px
+    background-color: $blue-accent
+    +flex(center, center)
+    +before
+      +icon-arrow(8, 8, 1, $white, 45)
+    &.is-active
+      +before
+        +icon-arrow(8, 8, 1, $white, 225)
+  &__title
+    padding: 8px 15px
+    background-color: $blue-accent
+    display: block
+    width: 100%
+    position: relative
+    +after
+      top: 1em
+      right: 15px
+      +icon-arrow(8, 8, 1, currentColor, -225)
+      position: absolute
+      +tr(transform .3s)
+    &.is-active
+      +after
+        +icon-arrow(8, 8, 1, currentColor, -45)
+        top: .8em
+  &__title-main
+    background-color: $red
+    +after
+      display: none
+  &__list-title
+    border-bottom: 1px solid  $c-border
+    display: block
+    padding: 8px 15px
+    padding-right: 30px
+    text-transform: uppercase
+    position: relative
+    &.is-active
+      +before
+        display: block
+      +after
+        +icon-arrow(8, 8, 1, $red, -225)
+        top: 1em
+    +before
+      width: 39px
+      height: 100%
+      background-color: #edf0ff
+      top: 0
+      right: 0
+      position: absolute
+      display: none
+    +after
+      top: .8em
+      right: 15px
+      +icon-arrow(8, 8, 1, $red, -45)
+      position: absolute
+      +tr(transform .3s)
+  &__list-items-accordion
+    display: none
+    
+  &__list-title-item
+    background-color: #edf0ff
+    +notlast
+      border-bottom: 1px solid  $c-border
+    .checkbox
+      // span
+      //   +coverdiv
+  &__list-title-checkbox
+    background-color: $white
+    +notlast
+      border-bottom: 1px solid  $c-border

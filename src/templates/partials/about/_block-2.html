@@ -1,0 +1,94 @@
+{%set
+slider = [
+  {
+    img: 'slider-1.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы для легковых и грузовых автомобилей'
+  },
+  {
+    img: 'slider-2.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп. Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы'
+  },
+  {
+    img: 'slider-1.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы для легковых и грузовых автомобилей'
+  },
+  {
+    img: 'slider-2.jpg',
+    text: 'Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп. Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.',
+    title: 'Стартерные аккумуляторы'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section section--gray">
+
+  {{ mixins.lines('lines--fu lines--section') }}
+
+
+ <div class="section__block section-block">
+   <div class="section__title is-col-6-5 js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
+     <h2 class="title"><strong>Широкий ассортимент</strong> аккумуляторных батарей включает:</h2>
+   </div>
+
+   <div class="section-block__slider js-anim-el" data-anim-name="fadeIn" data-anim-delay="0.5s">
+     <!-- begin slider -->
+     <div class="slider__wrap slider--assort__wrap">
+      <div class="swiper-container js-animated-slider" data-slider="assort">
+
+
+        <div class="slider slider--assort swiper-wrapper">
+          {% for i in slider %}
+          <!-- begin slide -->
+          <div class="swiper-slide">
+            <div class="slide assort-slide">
+              <div class="assort-slide__content">
+                <div class="assort-slide__title">
+                  <h4 class="h4 h4--md h4--black">{{ i.title }}</h4>
+                </div>
+
+                <div class="assort-slide__text text text--gray text--thin">
+                  {{ i.text }}
+                
+                </div>
+              </div>
+
+              <div class="assort-slide__img js-lazy" data-background-image="img/about/{{ i.img }}"></div>
+            </div>
+          </div>        
+          <!-- end slide -->
+          {% endfor %}        
+        </div>
+
+      </div>
+      
+      
+      <div class="slider--assort__counter-sm js-counter-sm">
+        <div class="slider-counter-sm">
+          <div class="slider-counter-sm__current">01</div>
+
+          <div class="slider-counter-sm__line js-progress"></div>
+
+          <div class="slider-counter-sm__all">04</div>
+        </div>
+      </div>
+      {# <div class="slider--assort__counter text-stroke js-parallax js-counter">
+        01
+      </div> #}
+
+      <div class="slider--assort__btns">
+        <button class="slider--assort__prev arrow arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>
+        <button class="slider--assort__next arrow arrow--next js-next">{{ mixins.icon('arrow') }}</button>
+      </div>      
+     </div>
+     <!-- end slider -->
+   </div>
+
+
+
+ </div>
+</section>
+<!-- end section -->

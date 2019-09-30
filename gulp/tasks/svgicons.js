@@ -1,82 +1,80 @@
-import gulp from 'gulp';
-import cheerio from 'gulp-cheerio';
-import clean from 'gulp-cheerio-clean-svg';
-import rename from 'gulp-rename';
-import svgmin from 'gulp-svgmin';
-import path from 'path';
-import del from 'del';
-import util from 'gulp-util';
-import config from '../config.js';
+var gulp    = require('gulp');
+var config  = require('../config.js');
+var cheerio = require('gulp-cheerio');
+var clean   = require('gulp-cheerio-clean-svg');
+var rename  = require('gulp-rename');
+var svgmin  = require('gulp-svgmin');
+var path    = require('path');
+var del     = require('del');
+var util    = require('gulp-util');
 
-gulp.task('svgicons:clean', () => del([
-  `${config.src.iconsHTML}/*.html`,
-]).then((paths) => {
-  util.log('Deleted:', util.colors.magenta(paths.join('\n')));
-}));
+gulp.task('clean-htmlicons', function(cb) {
+    return del([
+        config.src.iconsHTML+'/*.html'
+    ]).then(function(paths) {
+        util.log('Deleted:', util.colors.magenta(paths.join('\n')));
+    });
+});
 
-gulp.task('svgicons:create', () => gulp
-  .src(`${config.src.icons}/*.svg`)
-  .pipe(svgmin({
-    js2svg: {
-      pretty: true,
-    },
-    plugins: [{
-      removeXMLProcInst: true,
-    }, {
-      removeComments: true,
-    }, {
-      removeDoctype: true,
-    }, {
-      removeXMLNS: true,
-    }, {
-      convertStyleToAttrs: false,
-    }],
-  }))
-  .pipe(cheerio(clean({
-    attributes: [
-      'id',
-      'fill*',
-      'clip*',
-      'stroke*',
-    ],
-  })))
-  .pipe(cheerio({
-    run: ($, file) => {
-      const iconName = path.basename(file.relative, path.extname(file.relative));
-      const svg = $('svg');
-      const svgStyle = svg.attr('style');
+gulp.task('create-htmlicons', function () {
+    return gulp.src(config.src.icons + '/*.svg')
+        .pipe(svgmin({
+          js2svg: {
+                pretty: true
+            },
+          plugins: [{
+                removeXMLProcInst: true
+            }, {
+                removeComments: true
+            }, {
+                removeDoctype: true
+            }, {
+                removeXMLNS: true
+            }, {
+              convertStyleToAttrs: false
+            }]          
+        }))        
+        .pipe(cheerio(clean({
+          attributes: [
+            'id',
+            'fill*',
+            'clip*',
+            'stroke*'
+          ]
+        })))
+        .pipe(cheerio({
+            run: function($, file) {
+                var iconName = path.basename(file.relative, path.extname(file.relative));
+                var svg = $('svg');
+                var svgStyle = svg.attr('style');
+                
+                if (svgStyle && svgStyle.indexOf('enable-background') !== -1) {
+                    svg.removeAttr('style');
+                };
 
-      if (svgStyle && svgStyle.indexOf('enable-background') !== -1) {
-        svg.removeAttr('style');
-      }
+                var h = +svg.attr('height') || +svg.attr('viewBox').split(' ')[3];
+                var w = +svg.attr('width') || +svg.attr('viewBox').split(' ')[2];
+                var height = '1em';
+                var width = (w/h).toFixed(3)  + 'em';
 
-      const h = +svg.attr('height') || +svg.attr('viewBox').split(' ')[3];
-      const w = +svg.attr('width') || +svg.attr('viewBox').split(' ')[2];
-      if (!svg.attr('viewBox')) {
-        svg.attr('viewBox', `0 0 ${w} ${h}`);
-      };
-      const height = '1em';
-      const width = `${(w / h).toFixed(3)}em`;
+                svg.attr('class', 'icon icon-' + iconName);
+                svg.attr('width', width);
+                svg.attr('height', height);
+            },
+            parserOptions: { xmlMode: false }
+        }))
+        .pipe(rename({
+            prefix: '_',
+            extname: '.html'
+        }))
+        .pipe(gulp.dest(config.src.iconsHTML));
+});
 
-      svg.attr('class', `icon icon-${iconName}`);
-      svg.attr('width', width);
-      svg.attr('height', height);
-    },
-    parserOptions: { xmlMode: false },
-  }))
-  .pipe(rename({
-    prefix: '_',
-    extname: '.html',
-  }))
-  .pipe(gulp.dest(config.src.iconsHTML)));
+gulp.task('svgicons', [
+    'clean-htmlicons',
+    'create-htmlicons'
+]);
 
-
-const build = (gulp) => gulp.series(
-  'svgicons:clean',
-  'svgicons:create',
-);
-const watch = (gulp) => () => gulp.watch(`${config.src.icons}/*`, gulp.parallel('svgicons:clean', 'svgicons:create'));
-
-
-module.exports.build = build;
-module.exports.watch = watch;
+gulp.task('svgicons:watch', function () {
+    gulp.watch(config.src.icons + '/*', ['svgicons']);
+});

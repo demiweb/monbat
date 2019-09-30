@@ -1,0 +1,120 @@
+.catalog-item
+  --main-color: #{$black}
+  +flex()
+  position: relative
+  padding: 30px
+  +tr(background-color .3s, box-shadow .3s)
+  +xl
+    padding-left: 15px
+    padding-right: 15px
+  +hover
+    background-color: rgba(#ecebf0, .5)
+    box-shadow: 0 0 15px rgba($black, .3)
+    
+  +md
+    display: block
+  &__text
+    display: block
+    +md
+      padding-top: 30px
+    +xs
+      padding-top: 0
+  &__icons
+    display: block
+    +sm
+      // background: rgba($white, .8)
+      // border-top: 1px solid $c-border
+      padding-top: 15px
+      // border-bottom: 1px solid $c-border
+      margin-left: calc(0px - var(--content-padding, 15px) - 15px)
+      margin-right: calc(0px - var(--content-padding, 15px) - 15px)
+  &__img
+    width: 40%
+    display: block
+    +xl
+      // width: 25%
+    +lg
+      // width: 30%
+    +md
+      width: 250px
+      height: 175px
+      position: absolute
+      top: 30px
+      left: 0
+    +xs
+      // width: 100px
+      width: 100%
+      height: auto
+      position: static
+      margin-bottom: 15px
+  &__content
+    // flex-grow: 1
+    display: block
+    width: 60%
+    +md
+      width: 100%
+    
+  &__title
+    margin-bottom: 35px
+    display: block
+    +md
+      // margin-bottom: 25px
+      padding-left: 250px
+      margin-bottom: 120px
+    +xs
+      padding-left: 100px
+      margin-bottom: 25px
+      padding-left: 0
+
+
+.characteristics
+  +flex(space-between, normal, row, wrap)
+  +xllopen
+    justify-content: flex-start
+  &__item
+    text-align: center
+    margin-left: 7px
+    margin-right: 7px
+    margin-bottom: 15px
+    +xllopen
+      width: auto
+      flex-grow: 1
+      margin-left: 0
+      margin-right: 0
+    +xll
+      margin-left: 0
+      margin-right: 0
+    +xl
+      width: auto
+      flex-grow: 1
+    +sm
+      width: calc(33.33333% - 14px)
+      margin-bottom: 15px
+    +xss
+      width: calc(50% - 14px)
+  &__icon
+    margin-bottom: 10px
+    .icon
+      font-size: 34px
+      fill: var(--main-color, #{$black})
+  &__item-title
+    text-transform: uppercase
+    +light
+    font-size: $fz-sm
+    max-width: 82px
+    margin-left: auto
+    margin-right: auto
+    color: $black
+    margin-bottom: 10px
+  &__rating
+    text-align: center
+    color: $white
+    background-color: var(--main-color, #{$black})
+    padding: 4px 4px 3px
+    +light
+    font-size: $fz-sm
+    .icon
+      fill: $white
+      font-size: $fz-sm
+      position: relative
+      top: .2em

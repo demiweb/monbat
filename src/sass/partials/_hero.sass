@@ -1,0 +1,53 @@
+.hero
+  +cover
+  min-height: 50vh
+  padding-top: $header-height
+  +flex(center, center)
+  position: relative
+  padding-left: 15px
+  padding-right: 15px
+  opacity: 0
+  +before
+    // +coverdiv
+    // background-color: rgba($black, .4)
+    // z-index: 0
+  +xl
+    padding-top: $header-height-md
+  +lg
+    padding-top: $header-height-mob
+  &__block
+    text-align: center
+    position: relative
+    z-index: 1
+    margin-top: 90px
+    margin-bottom: 90px
+  &__title
+    margin-bottom: 10px
+    opacity: 0
+  &__subttl
+    max-width: 930px
+    margin-left: auto
+    margin-right: auto
+    padding-top: 10px
+    overflow: hidden
+    .h2-subttl
+      transform: translateY(-130%)
+  &__breadcrumbs
+    opacity: 0
+  &__breadcrumbs-top
+    position: absolute
+    top: calc(#{$header-height} + #{$subnav-height} 10px)
+    left: var(--section-padding, 40px)
+    z-index: 1
+    +xl
+      top: calc(#{$header-height-md} + #{$subnav-height} + 10px)
+    +lg
+      top: calc(#{$header-height-mob} + 10px)
+
+  &--lg
+    min-height: 75vh
+    +sm
+      min-height: 50vh
+  &--light
+    +before
+      display: none

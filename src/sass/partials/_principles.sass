@@ -1,0 +1,130 @@
+.principles
+  --principles-right-width: 480px
+  position: relative
+  z-index: 1
+  padding-bottom: var(--section-padding-lg, 100px)
+  +r(1700)
+    --principles-right-width: 400px
+  +lg
+    --principles-right-width: 350px
+  +sm
+    --principles-right-width: 250px
+    padding-bottom: 0
+  &__principles
+    position: relative
+    +lg
+      max-width: calc(100% - (var(--principles-right-width, 480px) + var(--section-padding, 40px) + 30px))
+      padding-left: var(--section-padding-md, 65px)
+    +xs
+      max-width: none
+      margin-bottom: 15px
+      padding-right: var(--section-padding-md, 65px)
+  &__title
+    max-width: calc(100% - (var(--principles-right-width, 480px) + var(--section-padding, 40px) - var(--section-padding-md, 65px) + 30px))
+    +xs
+      max-width: none
+  &__right
+    position: absolute
+    +cover
+    top: calc(0px - var(--section-padding-lg, 100px))
+    right: var(--section-padding, 40px)
+    bottom: 0
+    width: var(--principles-right-width, 480px)
+    +flex(flex-end, normal, column)
+    +xs
+      position: relative
+      top: auto
+      bottom: auto
+      width: 100%
+      right: auto
+      background-image: none !important
+
+  &__right-block
+    background-color: $black-light
+    padding: 45px 30px
+    z-index: 1
+    position: relative
+    +lg
+      padding: 35px 20px  
+    +md
+      padding: 15px
+
+  &__right-title
+    margin-bottom: 15px
+    +lg
+      margin-bottom: 10px
+  &__right-word
+    position: absolute
+    bottom: 5%
+    left: 0
+    z-index: 0
+    +bold
+    +css-lock(80, 160, 576, 1199, font-size)
+    color: $red-lighten
+    +rotate(-90)
+    text-transform: uppercase
+    transform-origin: 10% 70%
+    +xs
+      display: none
+
+
+.principle
+  --principle-line-width: 130px
+  --principle-line-gap: 20px
+  position: relative
+  opacity: 0
+  +notlast
+    margin-bottom: var(--section-padding-lg, 100px)
+  +lg
+    --principle-line-width: 90px
+  +md
+    --principle-line-width: 5px
+    --principle-line-gap: 10px
+  +before
+    position: absolute
+    background-color: $white
+    height: 1px
+    width: var(--principle-line-width, 130px)
+    top: 30px
+    right: calc(100% + var(--principle-line-gap, 20px))
+  &:nth-child(1)
+    left: $left-5-1
+    max-width: 280px
+    +xll
+      left: $left-5-1
+    +lg
+      left: calc(var(--principle-line-width, 130px) + var(--principle-line-gap, 20px))
+  &:nth-child(2)
+    left: $left-5-2
+    max-width: 430px
+    +xll
+      left: $left-5-1
+    +lg
+      left: calc(var(--principle-line-width, 130px) + var(--principle-line-gap, 20px))
+      max-width: 380px
+  &:nth-child(3)
+    left: $left-5-3
+    max-width: 340px
+    +xll
+      left: $left-5-1
+    +lg
+      left: calc(var(--principle-line-width, 130px) + var(--principle-line-gap, 20px))
+  &__text
+    ul
+    li
+      position: relative
+      &:before
+        content: '-'
+        margin-right: 25px
+  &__letter
+    position: absolute
+    margin-top: -.4em
+    top: 0
+    left: 0
+    z-index: 0
+    overflow: hidden
+    +md
+      display: none
+    .text-stroke
+      position: relative
+      left: -.15em

@@ -1,0 +1,40 @@
+---
+title: article-page-pdf
+page: article-page-pdf
+outClass: 'article-pdf-page'
+header: {
+  mod: ''
+}
+hero: {
+  mod: 'hero--light',
+  title: 'Сертифікати якості',
+  titleMod: 'h2 h2--md h2--ttn h2--text',
+  titleH2: true,
+  bgImage: 'bg-hero-article-pdf.jpg',
+  breadcrumbs: {
+    isInTop: true,
+    list: [
+      { link: 'ABS' },
+      { item: '/' },
+      { link: 'Новини' },
+      { item: '/' },
+      { link: 'Сертифікати якості', modLink: 'is-active' }
+    ],
+    modifications: { wrap: 'breadcrumbs--dark' }
+  },
+  titleLine: {
+    mod: 'line-sm--red'
+  }
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero.html" %}
+
+
+  {% include "partials/_article-page-pdf.html" %}
+
+  {% include "partials/_footer.html" %}
+{% endblock %}

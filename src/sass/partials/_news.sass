@@ -1,0 +1,94 @@
+.news
+  +sm
+    margin-left: calc(0px - var(--main-padding, 35px))
+    margin-right: calc(0px - var(--main-padding, 35px))
+  &__items
+    margin-bottom: calc(var(--main-padding-md, 45px)/2)
+  &__btn
+    text-align: center
+
+
+.news-item
+  --news-item-margin: 20px
+  --news-item-padding-vertical: 125px
+  --news-item-padding-horizontal: 50px
+  $this: &
+  +flex()
+  background-color: $c-text
+  +hover
+    #{$this}__img-bg
+      +scale(1)
+  +xl
+    --news-item-margin: 15px
+    --news-item-padding-vertical: 100px
+    --news-item-padding-horizontal: 40px
+  +lg
+    --news-item-padding-vertical: 80px
+    --news-item-padding-horizontal: 30px
+  +sm
+    --news-item-padding-vertical: 30px
+    flex-direction: column
+  +xs
+    --news-item-padding-vertical: 20px
+    --news-item-padding-horizontal: 15px
+    --news-item-margin: 10px
+  &__img, 
+  &__content
+    width: 50%
+    +flex(center, normal, column)
+    +sm
+      width: auto
+  &__img
+    position: relative
+    overflow: hidden
+    background-color: $gray
+    +sm
+      padding-top: 30%
+      order: 0
+    +xs
+      padding-top: 50%
+  &__img-bg
+    +cover
+    +coverdiv
+    +scale(1.1)
+    +tr(transform .3s)
+  &__title
+    margin-bottom: var(--news-item-margin, 20px)
+  &__text
+    margin-bottom: var(--news-item-margin, 20px)
+    max-height: 70px
+  &__content
+    padding: var(--news-item-padding-vertical, 125px) var(--news-item-padding-horizontal, 50px)
+    +sm
+      order: 1
+
+  &--red
+    background-color: $red-accent
+
+.news-article-sm
+  $this: &
+  text-align: left
+  display: block
+  +hover
+    #{$this}__date
+      +before
+        border-color: $red
+  &__date
+    position: relative
+    display: block
+    +before
+      display: inline-block
+      margin-right: 10px
+      border-top: 1px solid currentColor
+      width: 40px
+      position: relative
+      top: -.3em
+      +tr(border-color .3s)
+  &__title
+    margin-bottom: 15px
+    display: block
+    position: relative
+    +md
+      margin-bottom: 10px
+  &__text
+    display: block

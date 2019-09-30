@@ -1,0 +1,101 @@
+<!-- begin section -->
+<section class="section section--white section--pt-sm">
+  <div class="section__breadcrumbs">   
+  
+    {{ mixins.list(
+      name = 'breadcrumbs',
+      modifications = { wrap: 'breadcrumbs--black '},
+      list = [
+        { link: 'ABS' },
+        { item: '/' },
+        { link: 'Кошик', modLink: 'is-active' }
+      ]
+    ) }}
+    </div>
+
+    <!-- begin cart -->
+    <div class="cart">
+      
+      <div class="cart__row">
+        <div class="container">
+          <div class="cart__title">
+            <h2 class="h2--ttn h2--md h2--text">Кошик</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart__items">
+
+        {% for i in range(0, 2) %}
+        <div class="cart__row">
+          <div class="container">
+            <!-- begin cart-item -->
+            <div class="cart-item">
+              <div class="cart-item__img">
+                <img data-src="img/accum/sm-1.png" alt="" class="js-lazy">
+              </div>
+
+              <div class="cart-item__meta">
+                <h5 class="h5 h5--ttn h5--blue"><a href="#">EFB series Start Stop</a></h5>
+                <!-- begin controls -->
+                <div class="controls controls--col">             
+
+                  <div class="controls__item">
+                    <div class="controls__title">АРТИКУЛ:</div>
+                    <div class="controls__text">N66L2X0_1</div>
+                  </div>
+
+                  <div class="controls__item">
+                    <div class="controls__title">Ємність, Ач:</div>
+                    <div class="controls__text controls__text-text">60</div>
+                  </div>
+
+                  <div class="controls__item">
+                    <div class="controls__title">ПОЛЯРНІСТЬ:</div>
+                    <div class="controls__text controls__text-text">0</div>
+                  </div>
+                </div>
+                <!-- end controls -->
+
+                <div class="price price--sm price--red">1240 uah</div>
+              </div>
+
+              <div class="cart-item__amount">
+                <div class="cart-item__counter">
+                  <!-- begin counter -->
+                  <div class="counter js-counter">
+                    <button class="js-counter-increase">-</button>
+                    <input type="text" value="1">
+                    <button class="js-counter-decrease">+</button>
+                  </div>
+                  <!-- end counter -->
+                </div>
+
+                <div class="cart-item__price">
+                  <div class="price price--sm price--red">3720 uah</div>
+                </div>
+
+                <a href="#" class="cart-item__icon">
+                  {{ mixins.icon('waste-bin') }}
+                </a>
+              </div>
+            </div>
+            <!-- end cart-item -->
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <div class="cart__row">
+        <div class="cart__all-price">
+          Разом: 
+          <div class="price">6200 uah</div>
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+
+    {% include "partials/_delivery-form.html" %}
+</section>
+<!-- end section -->

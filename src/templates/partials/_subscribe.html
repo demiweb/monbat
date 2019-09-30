@@ -1,0 +1,25 @@
+<!-- begin subscribe -->
+<div class="subscribe">
+  <div class="subscribe__inner">
+    <div class="subscribe__title">Бажаєте отримувати новини на електронну пошту?</div>
+
+    <div class="subscribe__form">
+      <form>
+        {{ mixins.input(
+          name = 'input',
+          mod = 'input--arrow input--placeholder',
+          type = 'email',
+          label = { last: 'Введіть ваш E-mail' },
+          fieldClass = 'js-input-placeholder'
+        ) }}
+
+        {{ mixins.btn(
+          title = 'ПІДТВЕРДИТИ ПІДПИСКУ',
+          mod = 'btn--sec btn--md',
+          href = false
+        ) }}
+      </form>
+    </div>
+  </div>
+</div>
+<!-- end subscribe -->

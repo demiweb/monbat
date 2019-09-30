@@ -1,0 +1,72 @@
+.thank-you
+  max-width: 690px
+  margin-right: auto
+  margin-left: auto
+  text-align: center
+  padding-left: 15px
+  padding-right: 15px
+  &__title
+    margin-bottom: 20px
+    +md
+      margin-bottom: 15px
+    +sm
+      margin-bottom: 10px
+  &__line
+    margin-bottom: 20px
+    +md
+      margin-bottom: 15px
+    +sm
+      margin-bottom: 10px
+    .line-sm
+      transform: translateY(0)
+  &__subttl
+    margin-bottom: 55px
+    text-align: center
+    max-width: 350px
+    margin-left: auto
+    margin-right: auto
+    +md
+      margin-bottom: 45px
+    +sm
+      margin-bottom: 35px
+    +xs
+      margin-bottom: 25px
+  &__meta
+    margin-bottom: 40px
+    +md
+      margin-bottom: 30px
+    +sm
+      margin-bottom: 20px
+    +xs
+      margin-bottom: 15px
+  &__btns
+    +flex(space-between, center)
+    max-width: 565px
+    margin-left: auto
+    margin-right: auto
+    +xs
+      flex-direction: column
+      .btn:first-child
+        margin-bottom: 10px
+
+.thank-you-meta
+  text-transform: uppercase
+  max-width: 565px
+  margin-left: auto
+  margin-right: auto
+  dl
+    +flex(flex-strt, normal, row, wrap)
+  dt, dd
+    text-align: left
+    border-bottom: 1px solid  $gray-light
+    padding-top: 10px
+    padding-bottom: 10px
+  dt
+    width: 60%
+    &:first-child
+      border-top: 1px solid  $gray-light
+  dd
+    color: $gray
+    width: 40%
+    &:nth-child(2)
+      border-top: 1px solid  $gray-light

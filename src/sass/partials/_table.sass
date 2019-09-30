@@ -1,0 +1,97 @@
+.table
+  $this: &
+  display: table
+  border-spacing: 0
+  width: 100%
+  border-collapse: collapse
+  // border: 1px solid  $c-border
+  background-color: $white
+  +semi
+  +xllopen
+    font-size: $fz-md
+  +lg
+    font-size: $fz-md
+  +md
+    font-size: $fz-sm
+    width: 992px
+  .bd-right
+    border-right: 1px solid  $c-border !important
+
+  a
+    color: $blue-light
+    text-decoration: underline
+  img
+    +xllopen
+      max-width: 70%
+    +sm
+      max-width: 70%
+
+  &__tr
+    display: table-row
+    text-align: center
+    vertical-align: middle
+    // border: 1px solid  $c-border
+    &.is-active
+      background-color: var(--secondary-color, #{$gray})
+      a
+        color: $c-text
+        text-decoration: none
+  &__th,
+  &__td
+    display: table-cell
+    vertical-align: middle
+    text-align: center
+    // padding: 8px
+    // padding-left: 8px
+    // padding-right: 8px
+    height: 50px
+    border: 1px solid  $c-border
+    +md
+      height: 40px
+    #{$this}__th,
+    #{$this}__td
+      border: 0
+  &__td-50
+    width: 50%
+  &__td-33
+    width: 33.33333%
+  &__th-colored
+    background-color: var(--main-color, #{$black})
+    color: $white
+  &__td-colored
+    background-color: var(--secondary-color, #{$gray})
+  &__th-caption
+    // position: relative
+    // left: 50%
+    // transform: translate(-50%, 0)
+    width: 100%
+  &__vertical
+    > div
+      +rotate(-90)
+  &__type
+    width: percentage(253/1440)
+  &__prod
+    width: percentage(292/1440)
+    padding: 0
+  &__body
+    width: percentage(85/1440)
+  &__sizes
+    width: percentage(305/1440)
+    padding: 0
+  &__char
+    width: percentage(505/1440)
+    padding: 0
+
+  &--inner
+    border: none
+    background-color: transparent
+    display: block
+    #{$this}__td,
+    #{$this}__th
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: center
+    #{$this}__tr
+      border: 0
+      display: flex

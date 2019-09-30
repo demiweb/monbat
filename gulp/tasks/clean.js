@@ -1,12 +1,12 @@
-import del from 'del';
-import util from 'gulp-util';
-import config from '../config';
+var gulp   = require('gulp');
+var del    = require('del');
+var util   = require('gulp-util');
+var config = require('../config');
 
-const build = () => function () {
-  return del([
-    config.dest.root,
-  ])
-    .then((paths) => util.log('Deleted:', util.colors.magenta(paths.join('\n'))));
-};
-
-module.exports.build = build;
+gulp.task('clean', function(cb) {
+    return del([
+        config.dest.root
+    ]).then(function(paths) {
+        util.log('Deleted:', util.colors.magenta(paths.join('\n')));
+    });
+});

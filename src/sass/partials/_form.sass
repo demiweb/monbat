@@ -1,0 +1,26 @@
+.form
+  $this: &
+  &--contacts
+    #{$this}__field
+      margin-bottom: 15px
+      +sm
+        margin-bottom: 5px
+    #{$this}__btn
+      text-align: center
+  &--subscribe-lg
+    #{$this}__field
+      margin-bottom: 35px
+      +md
+        margin-bottom: 25px
+      +sm
+        margin-bottom: 15px
+      &:first-child
+        +flex(flex-start, flex-end)
+        +xs
+          display: block
+          .input
+            padding-right: 0
+        .input
+          flex-grow: 1
+          padding-right: 25px
+

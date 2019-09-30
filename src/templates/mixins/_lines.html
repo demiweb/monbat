@@ -1,0 +1,7 @@
+{% macro lines(mod, nmb = 3) %}
+<div class="lines{% if mod %} {{ mod }}{% endif %}">
+  {% for i in range(0, nmb) %}
+  <div class="line line--{{ i + 1}}"></div>
+  {% endfor %}
+ </div>
+{% endmacro %}

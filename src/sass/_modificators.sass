@@ -1,2 +1,22 @@
-.overflow-hidden
-  overflow: hidden
+.is-center
+  text-align: center
+
+.is-col-6-sm
+  +smmin
+    max-width: 50%
+
+.is-col-5-sm
+  +smmin
+    max-width: percentage(5/12)
+
+.is-col-4
+  max-width: percentage(4/12)
+
+.is-col-3-lg
+  +lgmin
+    max-width: percentage(3/12)
+
+.is-col-6-5
+  max-width: percentage(6.5/12)
+  +md
+    max-width: none

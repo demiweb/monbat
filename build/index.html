@@ -2,9 +2,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>template</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>monbat</title>
   <style>
     @font-face {
         font-family: 'oswald_lightregular';
@@ -26,9 +24,6 @@
       --white: #fff;
       --reg: 'oswaldregular', sans-serif;
       --light: 'oswald_lightregular',sans-serif;
-      --fz: 20px;
-      --padding-vertical: 30px;
-      --padding-sides: 30px;
     }
 
     *{
@@ -47,14 +42,14 @@
     body {
       color: var(--black);
       margin: 0;
-      padding: 0;
-      font-size: var(--fz);
+      padding: 0 40px;
+      font-size: 20px;
       line-height: 1.6;
       font-family: var(--light);
     }    
 
     section{
-      padding: var(--padding-vertical) var(--padding-sides);
+      padding: 30px 0;
     }
     
     iframe{
@@ -68,10 +63,6 @@
       z-index: 1;
       top: 100%;
       left: 50%;
-    }
-
-    .pagelist {
-      padding-left: 20px;
     }
 
     .pagelist li:not(:last-child){
@@ -106,10 +97,11 @@
     }
 
     @media (max-width: 767px){
-      :root {
-        --padding-vertical: 15px;
-        --padding-sides: 10px;
-        --fz: 18px;
+      body{
+        padding: 0;
+      }
+      section{
+        padding: 0;
       }
     }
   </style>
@@ -120,9 +112,16 @@
       
       
           <li>
-            <a class="pagelist__title" target="_blank" href="page.html">
-              <em>page</em>
-              <iframe width="1600" height="1000" data-src="page.html"  frameborder="0"></iframe>
+            <a class="pagelist__title" target="_blank" href="home.html">
+              <em>home</em>
+              <iframe width="1600" height="1000" src="home.html"  frameborder="0"></iframe>
+            </a>            
+          </li>
+        
+          <li>
+            <a class="pagelist__title" target="_blank" href="catalog.html">
+              <em>catalog</em>
+              <iframe width="1600" height="1000" src="catalog.html"  frameborder="0"></iframe>
             </a>            
           </li>
           
@@ -134,38 +133,12 @@
       return 'ontouchstart' in window || navigator.maxTouchPoints;
     };
 
-    function setTouchClassName() {
+    function setTouchClassName() {      
       if(!isTouch()) {
         document.documentElement.classList.add('no-touch');
       };
     };
-
-    function loadIframe() {
-      var links = [].slice.call(document.querySelectorAll('.pagelist__title'));
-
-      if(!links.length) return;
-
-      links.forEach(function(link) {
-        var iframe = link.querySelector('iframe');
-        var src = iframe.dataset.src;
-        if(!src) return;
-
-
-
-        link.addEventListener('mouseenter', function (e) {
-         iframe.setAttribute('src', src);
-       });
-        link.addEventListener('mouseleave', function (e) {
-          setTimeout(function(){
-            iframe.removeAttribute('src');
-          }, 100);
-          
-        });
-      });
-    };
-
     setTouchClassName();
-    loadIframe();
   </script>
 </body>
 </html>

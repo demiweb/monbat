@@ -1,0 +1,32 @@
+.delivery-form
+  max-width: 1070px
+  padding-left: 15px
+  padding-right: 15px
+  margin-left: auto
+  margin-right: auto
+  &__title
+    text-align: center
+  &__form-inner
+    margin-left: -15px
+    margin-right: -15px
+    +flex(flex-start, normal, row, wrap)
+  &__col
+    padding-left: 15px
+    padding-right: 15px
+    width: 33.33333%
+    .select
+      padding-top: 17px
+    +sm
+      width: 50%
+      &:last-child
+        width: 100%
+    +xs
+      width: 100%
+  &__field
+    .btn
+      margin-bottom: 15px
+      margin-top: 20px
+    .text
+      text-align: center
+    a:not(.btn)
+      text-decoration: underline

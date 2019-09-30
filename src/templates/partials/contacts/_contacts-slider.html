@@ -1,0 +1,49 @@
+<!-- begin section -->
+<section class="section section--md">
+  <div class="section__title title-under is-center js-anim-el" data-anim-name="fadeInBottom">
+    <h2 class="title">наші офіси</h2>
+  </div>
+
+  <!-- begin contacts-slider -->
+  <div class="contacts-slider">
+    <!-- begin slider -->
+    <div class="slider__wrap slider--contacts__wrap">
+      <div class="swiper-container js-slider" data-slider="contacts">
+        <div class="slider slider--contacts swiper-wrapper">
+          {% for i in range(0, 5) %}
+          <div class="slide swiper-slide">
+            <div class="slide__img js-lazy" data-background-image="img/contacts-slider/office-1.jpg">
+              <div class="slide__title">
+                <h2 class="h2">ми є у києві</h2>
+              </div>
+            </div>
+
+            <div class="slide__bottom">
+              <div class="text text--gray">вул. Залізничне Шосе, 6, Київ, 01103</div>
+
+              <div class="slide__btn">
+                {{ mixins.btn(
+                  title = 'зв’язатися',
+                  mod = 'btn--sec btn--md'
+                ) }}
+              </div>
+
+              
+
+              <div class="text text--gray">+38 050 494 76 06</div>
+            </div>
+
+
+          </div>
+          {% endfor %}          
+        </div>
+
+        <button class="slider__prev js-prev"></button>
+        <button class="slider__next js-next"></button>
+      </div>
+    </div>
+    <!-- end slider -->
+  </div>
+  <!-- end contacts-slider -->
+</section>
+<!-- end section -->

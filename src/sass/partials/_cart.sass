@@ -1,0 +1,76 @@
+.cart
+  margin-bottom: 75px
+  +md
+    margin-bottom: 55px
+  +sm
+    margin-bottom: 45px
+  +xs
+    margin-bottom: 35px
+  &__row
+    border-bottom: 1px solid  $gray-light
+    padding-top: 40px
+    padding-bottom: 40px
+    +md
+      padding-top: 30px
+      padding-bottom: 30px
+    +sm
+      padding-top: 20px
+      padding-bottom: 20px
+    +xs
+      padding-top: 10px
+      padding-bottom: 10px
+  &__row-last
+    border-bottom: 0
+    .cart__all-price
+      margin-bottom: 15px
+  &__items
+    box-shadow: 0 5px 3px  rgba(#000, .1)
+  &__all-price
+    text-align: center
+    @extend .price
+    text-transform: none
+    color: $c-text
+    .price
+      display: inline-block
+  &__btns
+    text-align: center
+    padding-left: 15px
+    padding-right: 15px
+    .btn
+      margin-left: 10px
+      margin-right: 10px
+      +xs
+        width: 100%
+        margin-left: 0
+        margin-right: 0
+        &:first-child
+          margin-bottom: 10px
+
+
+.cart-item
+  +flex(space-between, center, row, wrap)
+  +xss
+    justify-content: center
+  &__img
+   
+  &__meta
+    flex-grow: 1
+
+  &__amount
+    +flex(space-between, center, row, wrap)
+    +sm
+      width: 100%
+    +xss
+      width: auto
+    
+
+  &__counter
+    margin-right: 15px
+  &__price
+    margin-right: 15px
+  &__icon
+    font-size: 0
+    display: block
+    .icon
+      fill: $gray
+      font-size: 21px

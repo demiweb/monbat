@@ -1,0 +1,260 @@
+.section
+  $this: &
+  position: relative
+  background-color: $white
+  padding-top: var(--section-padding-lg, 100px)
+  padding-bottom: var(--section-padding, 40px)
+  &__block
+    position: relative
+    left: $left-1-fucked-up
+    width: calc(100% - #{$left-1-fucked-up})
+    padding-right: var(--section-padding-md, 65px)
+    +lg
+      left: 0
+      width: auto
+      padding-left: var(--section-padding-md, 65px)
+  &__block-left-7-2
+    left: $left-7-2
+    width: calc(100% - #{$left-7-2})
+    +lg
+      left: 0
+      width: auto
+      padding-left: var(--section-padding-md, 65px)
+  &__block-left-7-4
+    left: $left-7-4
+    width: calc(100% - #{$left-7-4})
+  &__title
+    margin-bottom: 35px
+    +md
+      margin-bottom: 25px
+    +sm
+      margin-bottom: 15px
+  &__word
+    position: absolute
+    z-index: 0
+  &__breadcrumbs
+    padding-left: 40px
+    padding-right: 40px
+    +xll
+      padding-left: 15px
+      padding-right: 15px
+
+  &--white
+    +sm
+      .lines
+        display: none
+  &--gray
+    background-color: $gray-lightest
+  &--bg
+    +cover  
+  &--oil
+    padding-top: 20%
+    padding-bottom: var(--section-padding-lg, 100px)
+    #{$this}__block-left-7-2
+      margin-bottom: 85px
+      +md
+        margin-bottom: 65px
+      +sm
+        margin-bottom: 45px
+    #{$this}__block-left-7-4
+      max-width: 585px
+  &--red
+    background-color: $red-accent
+  &--principles
+    +sm
+      padding-bottom: 0
+      .lines
+        display: none
+    #{$this}__word
+      top: -.3em
+      left: 10%
+  &--lg
+    padding-bottom: var(--section-padding-lg, 100px)
+  &--md
+    padding-top: var(--section-padding-md, 65px)
+    padding-bottom: var(--section-padding-md, 65px)
+  &--black
+    background-color: $black
+  &--al-full
+    min-height: 75vh
+    +flex(center, center, column)
+  &--features
+    #{$this}__block
+      // &:first-child
+      margin-bottom: 20px
+      &:nth-child(2)
+        max-width: 470px
+      +sm
+        // mb
+    #{$this}__title
+      margin-bottom: 0
+      +sm
+        // margin-bottom: 30px
+        // margin-top: 15px
+  &--full
+    min-height: calc(100vh - #{$header-height} - #{$footer-height})
+    +xl
+      min-height: calc(100vh - #{$header-height-md} - #{$footer-height})
+    +lg
+      min-height: calc(100vh - #{$header-height-mob} - #{$footer-height})
+    +xs
+      min-height: calc(100vh - #{$header-height-mob} - #{$footer-height-mob})
+    +r(395)
+      min-height: calc(100vh - #{$header-height-mob} - #{$footer-height-xs})
+  &--center
+    +flex(center, center)
+    padding-top: 5%
+    padding-bottom: 5%
+  &--error
+    background-color: #eeeef0
+    +cover
+    background-size: auto
+    background-position: 100% 50%
+    +flex(center, flex-end, column)
+    padding-left: var(--section-padding-lg, 100px)
+    padding-right: var(--section-padding-lg, 100px)
+    position: relative
+    // +before
+    //   +coverdiv
+    //   background-color: rgba($white, .5)
+    //   z-index: 0
+    +md
+      align-items: center
+      padding-left: 15px
+      padding-right: 15px
+  &--pt-sm
+    padding-top: 15px
+  
+.section-block
+  position: relative
+  z-index: 1
+  padding-bottom: 25px
+  +sm
+    padding-bottom: 15px
+  +xs
+    padding-bottom: 10px
+  &__article
+    padding-left: 25px
+    margin-bottom: 80px
+    p
+      margin-bottom: 25px
+    +sm
+      margin-bottom: 50px
+      padding-left: 0
+      p
+        margin-bottom: 15px
+    +xs
+      margin-bottom: 30px
+      p
+        margin-bottom: 10px
+  &__img
+    padding-top: 35%
+    +cover
+  &__img-right
+    position: absolute
+    top: 2em
+    right: var(--section-padding-md, 65px)
+    bottom: 0
+    z-index: 2
+    width: 38%
+    +cover
+    +sm
+      display: none
+
+.three-cols-section  
+  background-color: $black
+  padding: 0  
+  height: calc(100vh - #{$header-height})
+  +xl
+    height: calc(100vh - #{$header-height-md})
+  +lg
+    height: calc(100vh - #{$header-height-mob})
+  +xs
+    height: auto
+  .section__title
+    position: absolute
+    top: var(--section-padding-lg, 100px)
+    left: calc(var(--section-padding-lg, 100px) * 1.5)
+    margin-bottom: 0
+    z-index: 2
+    +xs
+      top: calc(var(--section-padding-lg, 100px) - 15px)
+      left: var(--section-padding, 40px)
+  &__cols
+    +flex()
+    height: 100%
+    +xs
+      display: block
+
+.three-cols-section-col
+  --three-cols-section-col-padding-left: 40px
+  $this: &
+  // padding-top: calc(var(--section-padding-lg, 100px) * 2)
+  // padding-bottom: calc(var(--section-padding-lg, 100px) * 2)
+  // +flex(center, normal, column)
+  padding-top: calc(50vh - #{$header-height})
+  overflow: hidden
+  position: relative
+  +hover
+    +before
+      opacity: .6
+    #{$this}__bg
+      +scale(1.1)  
+  +before
+    +coverdiv
+    z-index: 1
+    background-color: #000
+    opacity: .8
+    +tr(opacity .3s)
+  +xl
+    padding-top: calc(50vh - #{$header-height-md})
+  +lg
+    --three-cols-section-col-padding-left: 20px
+    padding-top: calc(50vh - #{$header-height-mob})
+  +xs
+    padding-top: 10% !important
+    padding-bottom: 10% !important
+  &:nth-child(1)
+    width: $width-1-fucked-up-2
+    padding-left: calc(var(--section-padding-lg, 100px) * 1.5)   
+    +xs
+      width: 100%
+      padding-left: var(--section-padding, 40px)
+      padding-top: calc((var(--section-padding-lg, 100px) * 2) + 20px) !important
+  &:nth-child(2)
+    width: $width-2-fucked-up-2
+    padding-left: var(--three-cols-section-col-padding-left, 40px)
+    +xs
+      width: 100%
+      padding-left: var(--section-padding, 40px)
+  &:nth-child(3)
+    width: $width-3-fucked-up-2
+    padding-left: var(--three-cols-section-col-padding-left, 40px)
+    +xs
+      width: 100%
+      padding-left: var(--section-padding, 40px)
+  &__bg
+    +coverdiv
+    +cover
+    z-index: 0
+    +tr(transform .3s)
+  &__nmb
+    position: relative
+    margin-bottom: 20px
+    z-index: 3
+    .text-stroke
+      left: -.5em
+      position: relative
+      transform: translateX(-100%)     
+    +before
+      bottom: 0
+      left: 0
+      background-color: $red
+      height: 1px
+      width: 18px
+      position: absolute
+  &__text
+    max-width: 280px
+    position: relative
+    z-index: 3
+    opacity: 0

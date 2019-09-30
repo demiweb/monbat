@@ -1,0 +1,34 @@
+---
+title: article-page
+page: article-page
+outClass: 'article-page'
+header: {
+  mod: ''
+}
+hero: {
+  title: '<small>АКТУАЛЬНІ</small> НОВИНИ',
+  titleMod: 'title--white',
+  bgImage: 'bg-hero-article.jpg',
+  breadcrumbs: {
+    isInTop: true,
+    list: [
+      { link: 'ABS' },
+      { item: '/' },
+      { link: 'Новини' },
+      { item: '/' },
+      { link: 'Презентація нових моделей', modLink: 'is-active' }
+    ]
+  },
+  titleLine: true
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero.html" %}
+
+  {% include "partials/_article-page.html" %}  
+
+  {% include "partials/_footer.html" %}
+{% endblock %}

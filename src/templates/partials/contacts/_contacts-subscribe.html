@@ -1,0 +1,54 @@
+<!-- begin section -->
+<section class="section section--md section--al-full section--black">
+  <div class="container">
+    <!-- begin subscribe -->
+    <div class="subscribe subscribe--lg">
+      <div class="subscribe__inner">
+        <div class="subscribe__title js-anim-el" data-anim-name="fadeInBottom">
+          <h2 class="title title--white title--ttn">Бажаєте бути в курсі всіх останніх новин компанії ABS?</h2>
+        </div>
+
+        <div class="subscribe__subttl is-center text text--thin text--gray js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.2s">Залиште вашу електронну адресу і отримуйте останні новини першими.</div>
+
+        <div class="subscribe__form form form--subscribe-lg js-anim-el" data-anim-name="fadeInBottom" data-anim-delay="0.4s">
+          <form>
+            <div class="form__field">
+              {{ mixins.input(
+                name = 'input',
+                mod = 'input--md input--gray input--placeholder',
+                type = 'email',
+                label = { last: 'Введіть ваш E-mail' },
+                value = '',
+                fieldClass = 'js-input-placeholder'
+              ) }}
+
+              <div class="form__btn">
+                {{ mixins.btn(
+                  title = 'відправити',
+                  mod = 'btn--sec btn--md',
+                  href = false
+                ) }}
+              </div>
+              
+            </div>
+
+            <div class="form__field">
+              {{ mixins.input(
+                name = 'checkbox',
+                mod = 'checkbox--form',
+                type = 'checkbox',
+                label = { checkbox: 'Приймаючи умови цієї угоди, користувач дає свою згоду сайту «ABS.com» на збір, зберігання і обробку своїх персональних даних, зазначених шляхом заповнення веб-форм на сайті' },
+                placeholder = '',
+                value = '',
+                fieldClass = ''
+              ) }}
+            </div> 
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- end subscribe -->
+  </div>
+</section>
+<!-- end section -->

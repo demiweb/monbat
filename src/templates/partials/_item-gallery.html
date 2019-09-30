@@ -1,0 +1,56 @@
+{%set
+thumbs = [
+  { img: '', href: 'MONBAT EFB L3.png', active: true },
+  { img: '', href: 'MONBAT D Kamina L3.png' },
+  { img: '', href: 'MONBAT EFB L3.png' },
+  { img: '', href: 'MONBAT D Kamina L3.png' },
+  { img: '', href: 'MONBAT EFB L3.png' },
+  { img: '', href: 'MONBAT D Kamina L3.png' },
+  { img: '', href: 'MONBAT EFB L3.png' },
+  { img: '', href: 'MONBAT D Kamina L3.png' },
+  { img: '', href: 'MONBAT EFB L3.png' },
+  { img: '', href: 'MONBAT D Kamina L3.png' },
+  { img: '', href: 'MONBAT EFB L3.png' },
+  { img: '', href: 'MONBAT D Kamina L3.png' }
+]
+%}
+
+<!-- begin item-gallery -->
+<div class="item-gallery js-gallery">
+  <div class="item-gallery__preview js-gallery-lightgallery">
+
+    {% for i in thumbs %}
+    <a
+      href="img/accum/{{ i.href }}"
+      class="item-gallery__img js-gallery-img{% if i.active %} is-active{% endif %} js-lazy"
+      data-background-image="img/accum/{{ i.href }}"  
+      data-exthumbimage="img/accum/thumb.png"
+      data-zoom="img/accum/{{ i.href }}">
+        {# <img data-src="img/accum/{{ i.href }}" data-zoom="img/accum/{{ i.href }}" alt="" class="js-lazy"> #}
+      </a>
+    {% endfor %}
+
+    
+  </div>
+  
+
+  <div class="item-gallery__thumbs">
+    <!-- begin slider -->
+      <div class="swiper-container js-slider" data-slider="item_gallery_thumbs">
+        <div class="slider slider--thumbs swiper-wrapper">
+          {% for i in thumbs %}
+          <div class="slide swiper-slide">
+            <a href="img/accum/{{ i.href }}" class="item-gallery__thumb js-gallery-thumb{% if i.active %} is-active{% endif %}">
+              <img data-src="img/accum/thumb.png" alt="" class="js-lazy" width="84" height="65">
+            </a>            
+          </div>        
+          {% endfor %}
+        </div>
+      </div>
+    <!-- end slider -->
+
+
+  </div>
+  
+</div>
+<!-- end item-gallery -->

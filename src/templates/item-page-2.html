@@ -1,0 +1,36 @@
+---
+title: item-page-2
+page: item-page-2
+outClass: 'item-page'
+subNav: {
+  active: true
+}
+hero: {
+  title: 'Для легкових автомобілів',
+  breadcrumbs: [
+    { item: '', link: 'ABS', modItem: '', modLink: '' },
+    { item: '/', link: '', modItem: '', modLink: '' },
+    { item: '', link: 'Продукція', modItem: '', modLink: '' },
+    { item: '/', link: '', modItem: '', modLink: '' },
+    { item: '', link: 'Для легкових автомобілів', modItem: '', modLink: 'is-active' }
+  ]
+}
+main: {
+  mod: 'main--full',
+  modContent: 'content--full',
+  hero: true,
+  mainColor: '#b9282e',
+  secondaryColor: '#ffeceb',
+  img: 'MONBAT D Kamina L3.png',
+  logo: 'logo-2.png'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_item-page.html" %}
+  {% include "partials/_footer.html" %}
+{% endblock %}
+
+

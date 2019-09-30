@@ -1,0 +1,66 @@
+.popup
+  $this: &
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 20
+  background-color: rgba(#000, .85)
+  +vertical
+  visibility: hidden
+  opacity: 0
+  padding-left: 15px
+  padding-right: 15px
+  overflow: auto
+  +tr(opacity .3s, visibility .3s)
+  &.is-active
+    visibility: visible
+    opacity: 1
+    #{$this}__inner
+      transform: translate(0, 0)
+  &__inner
+    display: inline-block
+    vertical-align: middle
+    font-size: $fz
+    background-color: $white
+    position: relative
+    padding: 75px 45px 85px
+    min-width: 670px
+    transform: translate(0, -100px)
+    +tr(transform .3s)
+    +sm
+      min-width: 0
+      padding: 50px 25px
+    +xs
+      padding: 40px 15px 20px
+  &__close
+    +icon-close(15, 1, currentColor)
+    position: absolute
+    top: 20px
+    right: 20px
+    +tr(color .3s)
+    +hover
+      color: $red
+  &__title
+    margin-bottom: 20px
+    +sm
+      margin-bottom: 15px
+    +xs
+      margin-bottom: 10px
+  &__title-line
+    margin-bottom: 15px
+    font-size: 0
+    +sm
+      margin-bottom: 10px
+    +xs
+      display: none
+  &__subttl
+    margin-bottom: 20px
+    +sm
+      margin-bottom: 10px
+
+  &--cart
+    #{$this}__inner
+      padding: 50px 0px 0px
+      text-align: left

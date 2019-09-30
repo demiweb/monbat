@@ -1,4 +1,18 @@
-ProjectTitle: template
+ProjectTitle: monbat
 
 PageList:
-- file: page.html
+- file: home.html
+- file: catalog.html
+# - file: catalog-monoil.html
+# - file: item-page.html
+# - file: item-page-2.html
+# - file: item-page-monoil.html
+# - file: about.html
+# - file: news.html
+# - file: article-page.html
+# - file: contacts.html
+# - file: article-page-pdf.html
+# - file: 404.html
+# - file: thank-you.html
+# - file: cart.html
+# - file: letter.html

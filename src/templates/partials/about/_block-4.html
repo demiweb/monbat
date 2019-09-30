@@ -1,0 +1,59 @@
+{%set
+features = [
+  {
+    mod: 'cols__col-1 cols__col-md-100',
+    nmb: '01',
+    text: 'В команду нашей компании были приглашены лучшие топ-менеджеры, менеджеры из аккумуляторной, шинной, масляной, автозапчастной сфер. ',
+    delay: ''
+  },
+  {
+    mod: 'cols__col-2 cols__col-md-100',
+    nmb: '02',
+    text: 'В активе наших сотрудников есть успешный опыт создания компаний-лидеров рынка.',
+    delay: ''
+  },
+  {
+    mod: 'cols__col-3 cols__col-md-100',
+    nmb: '03',
+    text: 'А также опыт создания и вывода новых брендов на отраслевые рынки.',
+    delay: ''
+  }
+]
+
+%}
+
+<!-- begin section -->
+<section class="section section--white section--lg section--features">
+  
+ {{ mixins.lines('lines--section lines--fu') }}
+
+  <div class="section__block js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
+    <div class="text text--ttu text--left">Мы делаем все возможное для полного удовлетворения спроса и комфорта при сотрудничестве с нами</div>
+  </div>
+
+  <div class="section__block">
+    <div class="section__title js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
+     <h2 class="title"><strong>мы гордимся командой</strong> «АККУМУЛЯТОРНО-БАТАРЕЙНЫХ СИСТЕМ» </h2>
+   </div>
+
+ </div>
+  
+  <div class="cols__wrap">
+     <!-- begin features -->
+     <div class="features cols">
+       {% for i in features %}
+       <!-- begin feature -->
+       <div class="feature cols__col {{ i.mod }}">
+         <div class="feature__nmb"><span>{{ i.nmb | safe }}</span></div>
+
+         <div class="feature__text text text--gray">{{ i.text }}</div>
+       </div>
+       <!-- end feature -->
+       {% endfor %}
+     </div>
+     <!-- end features -->
+   </div>
+
+    
+</section>
+<!-- end section -->

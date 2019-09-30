@@ -1,0 +1,75 @@
+{%set
+principles = [
+  {
+    title: 'постоянное развитие',
+    text: 'Мы всегда ищем возможность для инноваций и улучшений нашей работы не останавливаемся в развитии',
+    letter: 'a'
+  },
+  {
+    title: 'следуем за инновациями',
+    text: 'Наша команда выстраиваем политику продаж основываясь на законах и правилах построения бизнеса, внедряет иновационные подходы для реализации наших продуктов',
+    letter: 'b'
+  },
+  {
+    title: 'забота о клиентах',
+    text: 'У нас есть четкие и понятные правила продаж для всех наших клиентов: 
+    <ul>
+      <li>отсрочки платежа;</li>
+      <li>кредитные лимиты;</li>
+      <li>группы скидок;</li>
+      <li>территориальное присутствие.</li>
+    </ul>',
+    letter: 's'
+  }
+]
+%}
+
+<!-- begin section -->
+<section class="section section--red section--principles">
+  {{ mixins.lines('lines--fu lines--5 lines--section lines--section-red', 5) }}
+
+  <!-- begin principles -->
+  <div class="principles">
+   <div class="section__block section-block">
+     <div class="section__title principles__title js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
+       <h2 class="title title--white title--bold">ПРИНЦИПЫ РАБОТЫ КОМПАНИИ «АБС»</h2>
+     </div>
+   </div>
+
+   <div class="principles__principles">
+    {% for i in principles %}
+    <!-- begin principle -->
+    <div class="principle">
+     <div class="principle__title">
+       <h5 class="h5 h5--white">{{ i.title }}</h5>
+     </div>
+
+     <div class="principle__text text text--thin text--left text--white">{{ i.text | safe }}</div>
+
+     <div class="principle__letter text-stroke">
+       <div class="text-stroke text-stroke--col-light">{{ i.letter }}</div>
+     </div>
+   </div>
+   <!-- end principle -->
+   {% endfor %}
+ </div>
+
+ <div class="principles__right js-lazy" data-background-image="img/about/alessio-lin-236486-unsplash.jpg">
+  <div class="principles__right-word js-parallax js-parallax-vertical-text">principle</div>
+   <div class="principles__right-block">
+     <div class="principles__right-title title-under title-under--sm title-under--left">
+       <h2 class="title title--bold title--white">миссия компании</h2>
+     </div>
+
+     <div class="text text--gray text--thin">Введение инновационных принципов работы во всех сферах деятельности компании – продуктах, персонале, обслуживании и продвижении товаров.</div>
+   </div>
+ </div>
+
+</div>
+<!-- end principles -->
+
+<div class="section__word section-word js-parallax">work</div>
+
+
+</section>
+<!-- end section -->

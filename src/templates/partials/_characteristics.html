@@ -1,0 +1,48 @@
+{%set
+items = [
+  {
+    title: 'РОЗРАХ. РЕСУРС',
+    icon: 'pulse',
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
+  },
+  {
+    title: 'система старт-стоп',
+    icon: 'power',
+    rating: 'не рекоменд.'
+  },
+  {
+    title: 'рівень оснащ.',
+    icon: 'energy',
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
+  },
+  {
+    title: 'хар-ка перезарядки',
+    icon: 'update',
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
+  },
+  {
+    title: 'холодний пуск',
+    icon: 'season',
+    rating: mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star') + mixins.icon('star')
+  },
+  {
+    title: 'витрата води',
+    icon: 'drop',
+    rating: 'вкрай низька'
+  }
+]
+%}
+
+<!-- begin characteristics -->
+<div class="characteristics">
+  {% for i in items %} 
+  <div class="characteristics__item">
+    <div class="characteristics__icon">{{ mixins.icon(i.icon) }}</div>
+
+    <div class="characteristics__item-title">{{ i.title }}</div>
+
+    <div class="characteristics__rating">{{ i.rating | safe }}</div>
+  </div>
+  {% endfor %}
+</div>
+<!-- end characteristics -->

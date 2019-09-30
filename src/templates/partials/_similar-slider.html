@@ -1,0 +1,72 @@
+{%set
+slider = [
+  { title: 'EFB series Start Stop' },
+  { title: 'DYNAMIC series' },
+  { title: 'EFB series Start Stop' },
+  { title: 'DYNAMIC series' },
+  { title: 'EFB series Start Stop' },
+  { title: 'DYNAMIC series' },
+  { title: 'EFB series Start Stop' },
+  { title: 'DYNAMIC series' },
+  { title: 'EFB series Start Stop' },
+  { title: 'DYNAMIC series' },
+  { title: 'EFB series Start Stop' },
+  { title: 'DYNAMIC series' }
+]
+%}
+
+<!-- begin slider --> 
+<div class="slider__wrap slider--similar__wrap">
+  <div class="swiper-container js-slider" data-slider="similar">
+
+    <div class="slider slider--similar swiper-wrapper" >
+      {% for i in slider %}
+      <!-- begin slide -->
+      <div class="slide swiper-slide">
+        <a href="#" class="item">
+          <span class="item__img js-lazy" data-background-image="img/accum/accum-1.png">
+            {# <img data-src="img/accum/accum-1.png" alt="" class="js-lazy"> #}
+          </span>
+
+          <span class="item__content">
+            <span class="item__title">
+              <h4 class="h4--lg h4--blue h4--ttn">{{ i.title }}</h4>
+            </span>
+
+            <span class="item__list">
+              <span class="item-list ">
+                <dl>
+                  <dt>Артикул:</dt>
+                  <dd><em>N66L2X0_1</em></dd>
+                  <dt>Ємність, Ач:</dt>
+                  <dd>60</dd>
+                  <dt>Полярність:</dt>
+                  <dd>0</dd>
+                </dl>
+              </span>
+            </span>
+          </span>
+
+          <span class="item__bottom">
+              <span class="price price--sm">1240 <small>uah</small></span>
+
+              {{ mixins.btn(
+                href = false,
+                title = 'замовити',
+                mod = 'btn--sec',
+                span = true
+              ) }}
+            </span>
+        </a>
+      </div>
+      
+      <!-- end slide -->
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <button class="slider__prev js-prev"></button>
+  <button class="slider__next js-next"></button>
+</div>
+<!-- end slider -->

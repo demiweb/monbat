@@ -1,0 +1,176 @@
+{%set
+table = [
+  {
+    cols: [
+      { text: '<a href="#">N66L2X0_1</a>' },
+      {
+        cols: [
+          { text: '60', mod: 'table__td-50 bd-right' },
+          { text: '600', mod: 'table__td-50' }
+        ]  
+      },
+      { text: 'L2' },
+      {
+        cols: [
+          { text: '242', mod: 'table__td-33 bd-right' },
+          { text: '172', mod: 'table__td-33 bd-right' },
+          { text: '190', mod: 'table__td-33' }
+        ]
+      },
+      {        
+        cols: [
+          {
+            mod: 'table__td-33 bd-right',
+            cols: [
+              { text: '0', mod: 'table__td-50 bd-right' },
+              { text: '<img class="js-lazy" data-src="img/accum-scheme.png" alt="">', mod: 'table__td-50' }
+            ]
+          },
+          { text: '1', mod: 'table__td-33 bd-right' },
+          { text: 'B13', mod: 'table__td-33' }
+        ]
+      }
+    ]
+  },
+  {
+    mod: 'is-active',
+    cols: [
+      { text: '<a href="#">N66L2X0_1</a>' },
+      {
+        cols: [
+          { text: '60', mod: 'table__td-50 bd-right' },
+          { text: '600', mod: 'table__td-50' }
+        ]  
+      },
+      { text: 'L2' },
+      {
+        cols: [
+          { text: '242', mod: 'table__td-33 bd-right' },
+          { text: '172', mod: 'table__td-33 bd-right' },
+          { text: '190', mod: 'table__td-33' }
+        ]
+      },
+      {        
+        cols: [
+          {
+            mod: 'table__td-33 bd-right',
+            cols: [
+              { text: '0', mod: 'table__td-50 bd-right' },
+              { text: '<img class="js-lazy" data-src="img/accum-scheme.png" alt="">', mod: 'table__td-50' }
+            ]
+          },
+          { text: '1', mod: 'table__td-33 bd-right' },
+          { text: 'B13', mod: 'table__td-33' }
+        ]
+      }
+    ]
+  },
+  {
+    cols: [
+      { text: '<a href="#">N66L2X0_1</a>' },
+      {
+        cols: [
+          { text: '60', mod: 'table__td-50 bd-right' },
+          { text: '600', mod: 'table__td-50' }
+        ]  
+      },
+      { text: 'L2' },
+      {
+        cols: [
+          { text: '242', mod: 'table__td-33 bd-right' },
+          { text: '172', mod: 'table__td-33 bd-right' },
+          { text: '190', mod: 'table__td-33' }
+        ]
+      },
+      {        
+        cols: [
+          {
+            mod: 'table__td-33 bd-right',
+            cols: [
+              { text: '0', mod: 'table__td-50 bd-right' },
+              { text: '<img class="js-lazy" data-src="img/accum-scheme.png" alt="">', mod: 'table__td-50' }
+            ]
+          },
+          { text: '1', mod: 'table__td-33 bd-right' },
+          { text: 'B13', mod: 'table__td-33' }
+        ]
+      }
+    ]
+  }
+]
+%}
+
+<!-- begin table -->
+<div class="table">
+  <div class="table__tr">
+    <div class="table__th table__th-colored table__type">Тип акумулятора</div>
+    <div class="table__th table__prod">
+      <div class="table--inner">
+        <div class="table__tr">
+          <div class="table__th table__th-colored table__th-caption">Продуктивність</div>
+          {# Продуктивність #}
+        </div>
+        <div class="table__tr">
+          <div class="table__td table__td-50 bd-right table__td-colored">Ємність, Ач</div>
+          <div class="table__td table__td-50 table__td-colored">Пуск. струм А (EN)</div>
+        </div>
+      </div>
+    </div>
+    <div class="table__th table__th-colored table__vertical table__body"><div>Корпус</div></div>
+    <div class="table__th table__sizes">
+      <div class="table--inner">
+        <div class="table__tr">
+          <div class="table__th table__th-colored table__th-caption">Розміри</div>
+        </div>
+        <div class="table__tr">
+          <div class="table__td table__td-33 table__td-colored">Д</div>
+          <div class="table__td table__td-33 table__td-colored">Ш</div>
+          <div class="table__td table__td-33 table__td-colored">В</div>
+        </div>
+      </div>
+    </div>
+    <div class="table__th table__char">
+      <div class="table--inner">
+        <div class="table__tr">
+          <div class="table__th table__th-colored table__th-caption">Технічні характеристики</div>
+        </div>
+        <div class="table__tr">
+          <div class="table__td table__td-33 bd-right table__td-colored">Розташування</div>
+          <div class="table__td table__td-33 bd-right table__td-colored">Клеми</div>
+          <div class="table__td table__td-33 table__td-colored">Ниж. кріпл</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% for i in table %}
+  <div class="table__tr{% if i.mod %} {{ i.mod }}{% endif %}">
+    {% for j in i.cols %}
+    <div class="table__td">
+      {% if j.cols %}
+      <div class="table--inner">
+        <div class="table__tr">
+          {% for k in j.cols %}
+          <div class="table__td {{ k.mod }}">
+            {% if k.cols %}
+            
+                {% for m in k.cols %}
+                <div class="table__td {{ m.mod }}">{{ m.text | safe }}</div>
+                {% endfor %}
+            
+            {% else %}
+            {{ k.text | safe }}
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% else %}
+      {{ j.text | safe}}
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+<!-- end table -->

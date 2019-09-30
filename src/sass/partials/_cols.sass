@@ -1,0 +1,27 @@
+.cols
+  +flex(flex-start, normal, row, wrap)
+  left: $left-1-fucked-up
+  position: relative
+  +md
+    left: 0
+    width: auto
+    padding-left: var(--section-padding-md, 65px)
+  &__wrap
+    overflow: hidden
+
+  &__col
+    position: relative
+    padding-right: 100px
+    +md
+      padding-right: 50px
+    +sm
+      padding-right: var(--section-padding-md, 65px)
+  &__col-1
+    width: $width-2-fucked-up
+  &__col-2
+    width: $width-3-fucked-up
+  &__col-3
+    width: $width-4-fucked-up
+  &__col-md-100
+    +md
+      width: 100%

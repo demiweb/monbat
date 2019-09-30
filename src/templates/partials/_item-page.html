@@ -1,0 +1,162 @@
+{%set
+  features = [
+    { item: 'Удосконалена технологія EFB' },
+    { item: 'Чудово підходить для стандартних систем START- STOP' },
+    { item: 'Підтримка частих запусків двигуна і тривалих періодів спокою двигуна' },
+    { item: 'Висока пускова потужність' },
+    { item: 'Максимальна циклічна продуктивність' },
+    { item: 'Швидке відновлення заряду' },
+    { item: 'Підвищена стійкість до вібрацій' },
+    { item: 'Довговічність і висока надійність' },
+    { item: 'Герметичні, не потребують догляду' }
+  ]
+%}
+
+{% extends "layouts/_main.html" %}
+
+{% block content %}
+  <div class="content__breadcrumbs">
+    {{ mixins.list(
+    name = 'breadcrumbs',
+    modifications = { wrap: '', item: '', link: '' },
+    list = [
+      { item: '', link: 'ABS', modItem: '', modLink: '' },
+      { item: '/', link: '', modItem: '', modLink: '' },
+      { item: '', link: 'Продукція', modItem: '', modLink: '' },
+      { item: '/', link: '', modItem: '', modLink: '' },
+      { item: '', link: 'Для легкових автомобілів' },
+      { item: '/', link: '', modItem: '', modLink: '' },
+      { item: '', link: 'EFB series Start Stop', modItem: '', modLink: 'is-active' }
+    ]
+  ) }}
+  </div>
+
+  <div class="content__row">
+    <div class="content__col content__col-justify-end">
+      <div class="content__img">
+        {% include "partials/_item-gallery.html" %}        
+      </div>
+
+        <div class="toggle-btn toggle-btn--md">
+          {{ mixins.btn(
+            title = 'ОСНОВНІ ПЕРЕВАГИ',
+            mod = 'btn--sec btn--full btn--arrow js-toggle-btn'
+          ) }}
+        </div>
+
+      <!-- begin content-block -->
+      <div class="content__block content-block toggle-block toggle-block--md js-toggle-block">
+        <div class="content-block__title">
+          <h3 class="h3 h3--sm">ОСНОВНІ ПЕРЕВАГИ</h3>
+        </div>
+
+        <div class="content-block__text text">
+          {{ mixins.list(
+            name = 'content-list',
+            list = features
+          ) }}
+        </div>
+      </div>
+      <!-- end content-block -->
+    </div>
+
+    <div class="content__col content__col-justify-end js-gallery-drift-zoom-container">
+      <!-- begin content-block -->
+      <div class="content-block content-block--full">
+        <div class="content-block__block content-block__block-flex">
+          <div class="content-block__img">
+            <img data-src="img/logos/{% if main.logo %}{{ main.logo }}{% else %}logo-1.png{% endif %}" alt="" class="js-lazy">
+          </div>
+
+          <div class="content-block__title">
+            <h3 class="h3 h3--blue">EFB series Start Stop</h3>
+            <div class="h3-subttl">ГЕРМЕТИЧНІ, НЕ ПОТРЕБУЮТЬ ДОГЛЯДУ</div>
+          </div>
+
+          <div class="content-block__price">
+            <div class="price">1240 uah</div>
+            {{ mixins.btn(
+              title = 'замовити',
+              mod = 'btn--sec'
+            ) }}
+          </div>
+        </div>
+
+        <div class="content-block__block">
+          <!-- begin controls -->
+          <div class="controls">
+            <div class="controls__item">
+              <div class="controls__title">АРТИКУЛ:</div>
+              <div class="controls__text">N66L2X0_1</div>
+            </div>
+
+            {% if not itemPageSm %}
+
+            <div class="controls__item">
+              {{ mixins.input(
+                name = 'select',
+                label = {
+                  simple: 'ЄМНІСТЬ, Ач'
+                },
+                type = 'default',
+                fieldClass = 'js-select',
+                options = [
+                  { value: 1, option: 20 },
+                  { value: 2, option: 40 },
+                  { value: 3, option: 60 }
+                ]
+              ) }}
+            </div>
+
+            <div class="controls__item">
+              {{ mixins.input(
+                name = 'select',
+                label = {
+                  simple: 'ПОЛЯРНІСТЬ'
+                },
+                type = 'default',
+                fieldClass = 'js-select',
+                options = [
+                  { value: 1, option: 0 },
+                  { value: 2, option: 1 }
+                ]
+              ) }}
+            </div>
+            {% endif %}
+          </div>
+          <!-- end controls -->
+        </div>
+
+        <div class="content-block__block">
+          {% if not itemPageSm %}
+          <div class="content-block__icons">
+            {% include "partials/_characteristics.html" %}
+          </div>
+          {% endif %}
+
+          <div class="content-block__text text">
+            Акумулятори MONBAT EFB series з інноваційною технологією Enhaced Flooded Battery (EFB) ідеально підходять для легкових автомобілів зі стандартними системами START-STOP, в яких споживання потужності вище середнього. Для виробництва акумуляторів MONBAT EFB розроблена спеціальна гібридна конструкція блоків елктродів на базі литих позитивних решіток з PbCa сплаву з активною масою підвищеної щільності і експандованих негативних решіток з підвищеними струмовідводними властивостями. В результаті підвищується стійкість до глибокого розряду при підвищенні прийому заряду, що збільшує термін служби акумуляторів.
+          </div>
+        </div>
+      </div>
+      <!-- end content-block -->
+    </div>
+  </div>
+
+  {% if not itemPageSm %}
+  <div class="content__table">
+    {% include "partials/_item-table.html" %}
+  </div>
+  {% endif %}
+
+  <div class="content__similar">
+    <div class="content__title title-under">
+      <h3 class="h3--light h3--md h3--ttu">схожі <strong>товари</strong></h3>
+    </div>
+
+    <div class="content__slider">
+      {% include "partials/_similar-slider.html" %}
+    </div>
+  </div>
+  
+{% endblock %}

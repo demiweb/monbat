@@ -1,0 +1,156 @@
+{%set
+  products = [
+    {
+      title: 'Для легкових автомобілів',
+      list: [
+        { item: 'Long life series' },
+        { item: 'V series' },
+        { item: 'AGM series' }
+      ]
+    },
+    {
+      title: 'Для вантажних автомобілів',
+      list: [
+        { item: 'Long life series' },
+        { item: 'V series' },
+        { item: 'AGM series' }
+      ]
+    },
+    {
+      title: 'ДЛЯ СІЛЬСЬКОГОСПОДАРСЬКОЇ ТЕХНІКИ',
+      list: [
+        { item: 'Long life series' },
+        { item: 'V series' },
+        { item: 'AGM series' }
+      ]
+    }
+  ]
+%}
+
+{%set
+ brands = [
+  {
+    list: [
+      { label: 'monbat batteries' },
+      { label: 'start batteries' },
+      { label: 'winmaxx batteries' }
+    ]
+  }
+ ]
+%}
+
+{%set
+ capacity = [
+  {
+    list: [
+      { label: '20' },
+      { label: '40' },
+      { label: '60' }
+    ]
+  }
+ ]
+%}
+
+{%set
+ polar = [
+  {
+    list: [
+      { label: 'зліва' },
+      { label: 'справа' }
+    ]
+  }
+ ]
+%}
+
+<!-- begin aside -->
+<aside class="aside">
+  <a href="#" class="aside__toggle js-aside-toggle is-active"></a>
+
+  <div class="aside__inner">
+      <form>
+
+        <div class="aside__block js-accordion">
+          <a href="#" class="aside__title aside__title-main h4">Тип продукції:</a>
+          <div class="aside__list">
+            {% for i in products %}
+            <a href="#" class="aside__list-title js-accordion-title">{{ i.title }}</a>
+            <div class="aside__list-items aside__list-items-accordion js-accordion-content">
+              {% for j in i.list %}
+
+              <div class="aside__list-title-item">
+                {{ mixins.input(
+                  name = 'checkbox',
+                  mod = 'checkbox--plain',
+                  label = { checkbox: j.item },
+                  type = 'checkbox'
+                ) }}
+              </div>     
+              {% endfor %}
+            </div>      
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="aside__block js-accordion">    
+          <a href="#" class="aside__title h4 js-accordion-title is-active">оберіть бренд:</a>
+          <div class="aside__list js-accordion-content">
+            {% for i in brands %}
+            <div class="aside__list-items">
+              {% for j in i.list %}
+              <div class="aside__list-title-checkbox">
+                {{ mixins.input(
+                  name = 'checkbox',
+                  label = { checkbox: j.label },
+                  type = 'checkbox'
+                ) }}
+              </div>
+              {% endfor %}
+            </div>      
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="aside__block js-accordion">
+          <a href="#" class="aside__title h4 js-accordion-title is-active">оберіть Ємність, Ач:</a>
+          <div class="aside__list js-accordion-content">
+            {% for i in capacity %}
+            <div class="aside__list-items">
+              {% for j in i.list %}
+              <div class="aside__list-title-checkbox">
+                {{ mixins.input(
+                  name = 'checkbox',
+                  label = { checkbox: j.label },
+                  type = 'checkbox'
+                ) }}
+              </div>
+              {% endfor %}
+            </div>      
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="aside__block js-accordion">
+          <a href="#" class="aside__title h4 js-accordion-title is-active">Оберіть полярність:</a>
+          <div class="aside__list js-accordion-content">
+            {% for i in polar %}
+            <div class="aside__list-items">
+              {% for j in i.list %}
+              <div class="aside__list-title-checkbox">
+                {{ mixins.input(
+                  name = 'checkbox',
+                  label = { checkbox: j.label },
+                  type = 'checkbox'
+                ) }}
+              </div>
+              {% endfor %}
+            </div>      
+            {% endfor %}
+          </div>
+        </div>
+
+      </form>
+  </div>
+
+  
+</aside>
+<!-- end aside -->

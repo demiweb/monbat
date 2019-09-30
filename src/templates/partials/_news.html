@@ -1,0 +1,76 @@
+{%set
+news = [
+  { odd: true, title: '', img: 'news_03.jpg' },
+  { title: '', img: 'news_06.jpg' },
+  { odd: true, title: '', img: 'news_08.jpg' },
+  { title: '', img: 'news_11.jpg' }
+]
+%}
+
+<!-- begin main -->
+<main class="main main--section">
+  <div class="title-lines"></div>
+
+  <!-- begin news -->
+  <div class="news">
+    <div class="news__items">
+      {% for i in news %}
+      <!-- begin news-item -->
+      <div class="news-item{% if i.odd %} news-item--red{% endif %} js-anim-el" data-anim-name="fadeInBottom">
+        {% if i.odd %}
+        <div class="news-item__img">
+          <div class="news-item__img-bg js-lazy" data-background-image="img/news/{{ i.img }}"></div>
+        </div>
+
+        <div class="news-item__content">
+          <div class="news-item__title">
+            <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
+          </div>
+
+          <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
+
+          <div class="news-item__btn">
+            {{ mixins.btn(
+              title = 'читати більше',
+              mod = 'btn--sec btn--black'
+            ) }}
+          </div>
+        </div>
+
+        {% else %}
+
+        <div class="news-item__content">
+          <div class="news-item__title">
+            <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
+          </div>
+
+          <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
+
+          <div class="news-item__btn">
+            {{ mixins.btn(
+              title = 'читати більше',
+              mod = 'btn--sec'
+            ) }}
+          </div>
+        </div>
+
+        <div class="news-item__img">
+          <div class="news-item__img-bg js-lazy" data-background-image="img/news/{{ i.img }}"></div>
+        </div>
+        {% endif %}
+      </div>
+      <!-- end news-item -->
+      {% endfor %}
+    </div>
+    
+
+    <div class="news__btn">
+      {{ mixins.btn(
+        title = 'завантажити більше',
+        mod = 'btn--sec'
+      ) }}
+    </div>
+  </div>
+  <!-- end news -->
+</main>
+<!-- end main -->

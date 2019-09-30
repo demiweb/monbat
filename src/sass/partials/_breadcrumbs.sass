@@ -1,0 +1,25 @@
+.breadcrumbs
+  color: $gray
+  .is-active
+    pointer-events: none
+    color: currentColor
+    text-decoration: none
+    +before
+      display: none
+  li
+    display: inline-block
+  a
+    font-size: $fz-sm
+    color: $white
+    position: relative
+    +before
+      width: 100%
+      position: absolute
+      left: 0
+      bottom: 0
+      border-bottom: 1px solid  currentColor
+  &--dark
+    color: $gray-dark
+  &--black
+    a
+      color: $black

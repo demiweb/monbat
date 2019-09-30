@@ -1,0 +1,41 @@
+.item-gallery
+  $this: &
+  padding-bottom: 10px
+  &__img
+    display: block
+    +coverdiv
+    +cover
+    background-size: contain
+    opacity: 0
+    visibility: hidden
+    +tr(opacity .3s, visibility .3s)
+    &.is-active
+      visibility: visible
+      opacity: 1
+  &__preview
+    position: relative
+    padding-top: 70%
+    
+  &__thumbs
+    padding: 10px
+    background-color: $white
+    // height: 40px
+    +flex(flex-start, center)
+    .swiper-container-initialized
+      #{$this}__thumb
+        img
+          height: auto
+  &__thumb
+    display: block
+    border: 1px solid  $c-border
+    text-align: center
+    +cover
+    &.is-active
+      border-color: var(--main-color, #{$black})
+
+.drift-zoom-pane
+  left: 10px
+  right: 10px
+  width: auto
+  +md
+    display: none

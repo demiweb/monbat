@@ -1,0 +1,89 @@
+.lines
+  position: absolute
+  top: $header-height
+  overflow: hidden
+  width: 100%
+  bottom: 0
+  left: 0
+  pointer-events: none
+  z-index: 0
+  +xl
+    top: $header-height-md
+  +lg
+    top: $header-height-mob
+  &--section
+    top: 0
+    +lg
+      top: 0
+    .line
+      border-right-color: $gray-lighten
+      +md
+        display: block
+  &--section-bg
+    .line
+      border-right-color: $black-light
+      transform: translateY(-150%)
+  &--section-red
+    .line
+      border-right-color: $red
+  &--fu
+    .line
+      transform: translateY(-150%)
+      +md
+        display: block
+      &--1
+        left: $left-1-fucked-up
+        +sm
+          left: $left-1-fucked-up-mob
+      &--2
+        left: $left-2-fucked-up
+        +sm
+          left: $left-2-fucked-up-mob
+      &--3
+        left: $left-3-fucked-up
+        +sm
+          left: $left-3-fucked-up-mob
+  &--7
+    .line
+      &--1
+        left: $left-7-1
+      &--2
+        left: $left-7-2
+      &--3
+        left: $left-7-3
+      &--4
+        left: $left-7-4
+      &--5
+        left: $left-7-5
+      &--6
+        left: $left-7-6
+      &--7
+        left: $left-7-7
+
+  &--5
+    .line
+      &--1
+        left: $left-5-1
+      &--2
+        left: $left-5-2
+      &--3
+        left: $left-5-3
+      &--4
+        left: $left-5-4
+      &--5
+        left: $left-5-5
+
+.line
+  position: absolute
+  border-right: 1px solid $white-transp
+  top: 0
+  bottom: 0
+  z-index: 10
+  +md
+    display: none
+  &--1
+    left: $left-1
+  &--2
+    left: $left-2
+  &--3
+    left: $left-3

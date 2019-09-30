@@ -1,5 +1,250 @@
+{% if page === 'home' or page === 'item-page' or page === 'item-page-2' or page === 'catalog' or page === '404' or page === 'thank-you' or page === 'cart' %}
+{% set productionLink = 'is-active' %}
+{% else %}
+{% set productionLink = '' %}
+{% endif %}
+
+{% if page === 'contacts' %}
+{% set contactsLink = 'is-active' %}
+{% else %}
+{% set contactsLink = '' %}
+{% endif %}
+
+{% if page === 'about' %}
+{% set aboutLink = 'is-active' %}
+{% else %}
+{% set aboutLink = '' %}
+{% endif %}
+
+{% if page === 'news' or page === 'article-page' or page === 'article-page-pdf' %}
+{% set newsLink = 'is-active' %}
+{% else %}
+{% set newsLink = '' %}
+{% endif %}
+
 <!-- begin header -->
-<header class="header">
-  hello from header
+<header class="header{% if header.mod %} {{ header.mod }}{% endif %}">
+  <div class="header__logo">
+    <a href="/" class="logo">
+      {% if page === 'home' %}
+      <img class="js-lazy" alt="" src="" data-src="./img/logo.png"/>
+      {% else %}
+      <img class="js-lazy" alt="" src="" data-src="./img/logo-color.png"/>
+      {% endif %}
+    </a>
+  </div>
+
+  <div class="header__nav js-menu">
+    {% if subNav.active %}
+    {{ mixins.list(
+      name = 'nav',
+      list = [
+        { link: 'Про нас', modLink: aboutLink },
+        {
+          link: 'продукція',
+          modLink: productionLink,
+          modItem: 'has-dropdown',
+          item: '<div class="header__subnav is-active">'+
+           mixins.list(
+              name = 'nav',
+              modifications = { wrap: 'nav--sub nav--sub-equal' },
+              list = [
+                { item: '', link: 'monbat batteries', modLink: 'is-active' },
+                { item: '<ul>
+                  <li><a href="#">Для легкових авто</a></li>
+                  <li><a href="#">Для вантажних авто</a></li>
+                  <li><a href="#">Для спец.техніки</a></li>
+                  <li><a href="#">Для стаціонарних АКБ</a></li>
+                </ul>
+                ', link: 'start batteries', modItem: 'has-dropdown' },
+                { item: '', link: 'winmaxx batteries' },
+                { item: '', link: 'PRISTA oil' }
+              ]
+            ) 
+        +'</div>'
+        },
+        
+        { link: 'клієнтам', modLink: newsLink },
+        { link: 'новини', modLink: newsLink },
+        {
+          link: 'контакти',
+          modLink: contactsLink,
+          item:  ''
+        }
+      ]
+    ) }}
+
+    {% else %}
+    {{ mixins.list(
+      name = 'nav',
+      list = [
+        { link: 'Про нас', modLink: aboutLink },   
+        {          
+          link: 'продукція',
+          modLink: productionLink + ' js-hover',
+          item: '<div class="header__subnav">'+
+           mixins.list(
+              name = 'nav',
+              modifications = { wrap: 'nav--sub' },
+              list = [
+                { item: '', link: 'monbat batteries' },
+                { item: '<ul>
+                  <li>Для легкових авто</li>
+                  <li>Для вантажних авто</li>
+                  <li>Для спец.техніки</li>
+                  <li>Для стаціонарних АКБ</li>
+                </ul>
+                ', link: 'start batteries', modItem: 'has-dropdown' },
+                { item: '', link: 'winmaxx batteries' },
+                { item: '', link: 'PRISTA oil' }
+              ]
+            ) 
+        +'</div>'
+        },        
+        { link: 'клієнтам', modLink: newsLink },
+        { link: 'новини', modLink: newsLink },
+        {
+          link: 'контакти',
+          modLink: contactsLink,
+          item:  ''
+        }
+      ]
+    ) }}
+    {% endif %}
+       
+  </div>
+
+  <div class="header__lang">
+      
+    {{ mixins.list(
+      name = 'lang',
+      
+      list = [
+        { item: '', link: 'UA', modItem: '', modLink: 'is-active' },
+        { item: '', link: 'RU' }
+      ]
+    ) }}
+  </div>
+
+  <div class="header__burger">
+    <a href="#" class="burger js-burger"><span></span></a>
+  </div>
+
 </header>
 <!-- end header -->
+
+{# <!-- begin header -->
+<header class="header{% if header.mod %} {{ header.mod }}{% endif %}">
+  <div class="header__logo">
+    <a href="/" class="logo">
+      <img src="img/logo.png" alt="">
+    </a>
+  </div>
+
+  <div class="header__nav js-menu">
+    {% if subNav.active %}
+    {{ mixins.list(
+      name = 'nav',
+      list = [        
+        {
+          link: 'продукція',
+          modLink: productionLink,
+          item: '<div class="header__subnav is-active">'+
+           mixins.list(
+              name = 'nav',
+              modifications = { wrap: 'nav--sub nav--sub-equal' },
+              list = [
+                { item: '', link: 'monbat batteries', modLink: 'is-active' },
+                { item: '', link: 'start batteries' },
+                { item: '', link: 'winmaxx' },
+                { item: '', link: 'MonOil' }
+              ]
+            ) 
+        +'</div>'
+        },
+        { link: 'Про нас', modLink: aboutLink },
+        { link: 'новини', modLink: newsLink },
+        {
+          link: 'контакти',
+          modLink: contactsLink,
+          item:  '<div class="header__social">'+
+            mixins.list(
+              name = 'social',
+              list = [
+                { item: '', link: mixins.icon('facebook') },
+                { item: '', link: mixins.icon('instagram') },
+                { item: '', link: mixins.icon('youtube') }
+              ]
+            )+
+          '</div> '
+        }
+      ]
+    ) }}
+
+    {% else %}
+    {{ mixins.list(
+      name = 'nav',
+      list = [        
+        {
+          link: 'продукція',
+          modLink: productionLink + ' js-hover',
+          item: '<div class="header__subnav">'+
+           mixins.list(
+              name = 'nav',
+              modifications = { wrap: 'nav--sub' },
+              list = [
+                { item: '', link: 'monbat batteries' },
+                { item: '', link: 'start batteries' },
+                { item: '', link: 'winmaxx' },
+                { item: '', link: 'MonOil' }
+              ]
+            ) 
+        +'</div>'
+        },
+        { link: 'Про нас', modLink: aboutLink },
+        { link: 'новини', modLink: newsLink },
+        {
+          link: 'контакти',
+          modLink: contactsLink,
+          item:  '<div class="header__social">'+
+            mixins.list(
+              name = 'social',
+              list = [
+                { item: '', link: mixins.icon('facebook') },
+                { item: '', link: mixins.icon('instagram') },
+                { item: '', link: mixins.icon('youtube') }
+              ]
+            )+
+          '</div> '
+        }
+      ]
+    ) }}
+    {% endif %}
+       
+  </div>
+
+  <div class="header__lang">
+      <a class="header__cart js-popup-open" href="#" data-popup-target="cart">
+        {{ mixins.icon('cart') }}
+        <sup class="header__cart-sup">3</sup>
+      </a>
+    <div class="header__contacts">
+      <a href="tel:+380504947606">+38 050 494 76 06</a>
+      <a href="#" class="btn-link js-popup-open" data-popup-target="call">замовити дзвінок</a>
+    </div>
+    {{ mixins.list(
+      name = 'lang',
+      
+      list = [
+        { item: '', link: 'UA', modItem: '', modLink: 'is-active' },
+        { item: '', link: 'RU' }
+      ]
+    ) }}
+  </div>
+
+  <div class="header__burger">
+    <a href="#" class="burger js-burger"><span></span></a>
+  </div>
+
+</header>
+<!-- end header --> #}

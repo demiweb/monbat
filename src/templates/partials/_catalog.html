@@ -1,0 +1,7 @@
+{% extends "layouts/_main.html" %}
+
+{% block content %}
+  {% for i in catalog %}
+      {% include "partials/_catalog-item.html" %}
+  {% endfor %}
+{% endblock %}

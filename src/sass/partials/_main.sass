@@ -1,0 +1,267 @@
+.main
+  --main-color:      #{$black}
+  --secondary-color: #{$gray}
+  $this: &
+  +image('bg.jpg')
+  background-repeat: repeat-y
+  background-size: auto
+  position: relative
+  z-index: 1
+  padding-bottom: var(--section-padding, 30px)
+  padding-top: var(--section-padding, 30px)
+  opacity: 0
+  &.has-aside-open
+    .aside
+      transform: translate(0, 0)
+      position: relative
+    #{$this}__aside
+      transform: translate(0, 0)
+      +lg
+        position: fixed
+        overflow: auto
+        z-index: 10
+        top: 0
+        padding-top: $header-height-mob
+        background-color: rgba($black, .5)
+        width: 100%
+        
+    #{$this}__content
+      transform: translate($aside-width, 0)
+      padding-right: $aside-width
+      +lg
+        transform: translate(0, 0)
+        padding-right: 0
+        // z-index: 0
+  &.has-aside-open-mob
+    #{$this}__content
+      +lg
+          z-index: 0
+    #{$this}__aside
+      z-index: 10
+  &__aside
+    position: absolute
+    z-index: 2
+    
+    top: 0
+    left: 0
+    height: 100%
+    background-color: $white
+    border-bottom: 1px solid  $c-border
+    transform: translate(-100%, 0)
+    +tr(transform .3s)
+
+    +lg
+      background-color: transparent
+      +tr(transform 0s, background-color .3s)
+      transform: translate(0, 0)
+      z-index: 0
+      .aside
+        transform: translate(-100%, 0)
+
+  &__content
+    position: relative
+    z-index: 1
+    +tr(transform .3s, padding .3s)
+    +lg
+      position: relative
+      z-index: 1
+  &__hero
+    +cover
+    padding-top: 25%
+    position: absolute
+    z-index: 0
+    top: 0
+    left: 0
+    width: 100%
+    +md
+      padding-top: 30%
+
+  &--full
+    padding-top: $subnav-height
+    margin-top: $header-height
+    +xl
+      margin-top: $header-height-md
+    +lg
+      margin-top: $header-height-mob
+      padding-top: 50px
+      .content
+        margin-top: -8px
+    #{$this}__aside
+      top: $subnav-height
+      height: calc(100% - #{$subnav-height})
+      +lg
+        top: 0
+        height: 100%
+    #{$this}__content
+      // padding-left: 50px
+
+  &--section
+    background-image: none
+    background-color: $white
+    padding-left: var(--main-padding, 35px)
+    padding-right: var(--main-padding, 35px)
+    padding-top: calc(var(--main-padding-md, 45px) / 2)
+    padding-bottom: calc(var(--main-padding-md, 45px) / 2)
+  &--no-pad
+    padding: 0
+    #{$this}__block
+      &:first-child
+        padding-top: calc(var(--main-padding-md, 45px) / 2)
+  &--color
+    #{$this}__block
+      padding-top: var(--main-padding, 35px)
+      padding-bottom: var(--main-padding, 35px)
+      &:nth-child(odd)
+        background-color: #f8f8f8
+      &:nth-child(even)
+        background-color: #f0f0f0
+    #{$this}__block-no-pad
+      padding-top: 0 !important
+      padding-bottom: 0 !important
+
+.content
+  --content-padding: 15px
+  max-width: 1080px
+  padding-left: var(--content-padding, 15px)
+  padding-right: var(--content-padding, 15px)
+  margin-left: auto
+  margin-right: auto
+  &__row
+    +flex(flex-start, normal, row, wrap)
+    margin-left: -10px
+    margin-right: -10px
+    margin-bottom: 20px
+  &__row-align-end
+    align-items: flex-end
+  &__col-justify-end
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+  &__col
+    width: 50%
+    padding-left: 10px
+    padding-right: 10px
+    position: relative
+    
+    +md
+      width: 100%
+      +notlast
+        margin-bottom: 15px
+  &__table
+    margin-bottom: 50px
+    +lg
+      margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+      overflow: auto
+  &__title
+    margin-bottom: 30px
+    text-align: center
+  &__breadcrumbs
+    position: relative
+    left: 50px
+    width: calc(100% - 50px)
+    +lg
+      position: relative
+      top: -35px
+  &__toggle-btn
+    margin-bottom: 15px
+    display: none
+    +md
+      display: block
+    
+
+  &--full
+    --content-padding: 30px
+    max-width: 1440px
+    +md
+      --content-padding: 15px
+
+.content-list
+  font-size: 0
+  text-align: left
+  li    
+    display: inline-block
+    vertical-align: top
+    width: 50%
+    font-size: $fz
+    padding-right: 10px
+    +notlast
+      // margin-bottom: 15px
+    +xllopen
+      width: 100%
+    +lg
+      width: 100%
+      +notlast
+        margin-bottom: 0px
+    +md
+      font-size: $fz-md
+    &::before
+      content: '+'
+      font-size: 1.8em
+      display: inline-block
+      position: relative
+      top: .2em
+      margin-right: .2em
+      color: var(--main-color, #{$black})
+    
+
+.content-block
+  --content-block-padding: 20px
+  position: relative
+  +xl
+    --content-block-padding: 15px
+  +sm
+    --content-block-padding: 10px
+  background-color: $white
+  padding: var(--content-block-padding, 20px)
+  &__title
+    margin-bottom: 15px
+    flex: 1
+    padding-right: 10px
+    +xllopen
+      margin-bottom: 0
+    +md
+      margin-bottom: 5px
+  &__block
+    margin-left: calc(0px - var(--content-block-padding, 20px))
+    margin-right: calc(0px - var(--content-block-padding, 20px))
+    padding: var(--content-block-padding, 20px)
+    +notlast
+      border-bottom: 1px solid  $c-border
+  &__block-flex
+    +flex(flex-start, center, row, wrap)
+    +xllopen
+      // display: block
+    +lg
+      // display: block
+  &__icons
+    background-color: var(--secondary-color, #{$gray})
+    padding: 40px 25px 25px
+    margin-bottom: 15px
+  &__img
+    width: 25%
+    +xllopen
+      // margin-bottom: 15px
+      margin-right: 10px
+    +xl
+      width: 15%
+      margin-right: 10px
+    +lg
+      // width: 25%
+      // margin-bottom: 15px
+    +md
+      // margin-bottom: 5px
+    
+  &__price
+    width: 30%
+    +xllopen
+      width: 100%
+      text-align: center
+    +lg
+      width: 100%
+      text-align: center
+
+  &--full
+    +xllopen
+      padding-top: 0

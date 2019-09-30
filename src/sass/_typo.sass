@@ -1,8 +1,233 @@
-small
-  font-size: inherit
-
 h1, h2, h3, h4, h5, h6
   font-weight: 400
 
 .title
-  +css-lock(21, 45, 320, 1399, font-size)
+  +css-lock(25, 36, 576, 1199, font-size)
+  color: $black
+  +reg
+  line-height: 1.2
+  text-transform: uppercase
+  strong
+    +bold
+    color: $red
+  &--white
+    color: $white
+  &--red
+    color: $red-accent
+  &--bold
+    +bold
+  &--ttn
+    text-transform: none
+  &--xl
+    +css-lock(36, 140, 576, 1199, font-size)
+    letter-spacing: .5em
+    color: $white
+
+.title-subttl
+  color: $white
+  +css-lock-upd(18, 72, 320, 1199, font-size)
+  text-transform: uppercase
+  +semi
+  letter-spacing: .5em
+
+
+.h1, h1
+  font-size: 36px
+  color: $white
+  +bold
+  line-height: 1.2
+  text-transform: uppercase  
+  small
+    +light
+  &--text
+    color: $c-text
+  &--ttn
+    text-transform: none
+
+.h2, h2
+  text-transform: uppercase
+  color: $white
+  +bold
+  font-size: 60px
+  line-height: 1
+  +css-lock(30, 80, 320, 1199, font-size)
+
+  &--fu
+    +css-lock(30, 60, 320, 1199, font-size)
+
+  &--md
+    +css-lock(28, 48, 576, 1199, font-size)
+  &--ttn
+    text-transform: none
+  &--text
+    color: $c-text
+  &--red
+    color: $red-accent
+    small
+      color: $c-text
+  &--small-ttn
+    small
+      text-transform: none
+
+.h2-subttl
+  font-size: 32px
+  text-transform: uppercase
+  +thin
+  color: $white
+  line-height: 1.2
+  +css-lock(18, 32, 320, 1199, font-size)
+
+.h3, h3
+  +bold
+  +css-lock(24, 28, 576, 1199, font-size)
+  line-height: 1
+  +xllopen
+    // font-size: 28px
+  &--blue
+    color: $blue
+  &--ttu
+    text-transform: uppercase
+  &--md
+    +css-lock(26, 36, 576, 1199, font-size)
+  &--light
+    +light
+  &--sm
+    +bold
+    text-transform: uppercase
+    +css-lock(18, 21, 576, 1199, font-size)
+  &--ttn
+    text-transform: none
+
+.h3-subttl
+  // font-size: 21px
+  color: $black
+  text-transform: uppercase
+  +light
+  font-size: 16px
+  // +css-lock(18, 16, 576, 1199, font-size)
+  line-height: 1
+  +xllopen
+    // font-size: 16px
+
+.h4, h4
+  text-transform: uppercase
+  +light
+  color: $white
+  font-size: 18px
+  line-height: 1.2
+
+  &--blue
+    color: $blue
+  &--ttn
+    text-transform: none
+  &--xl
+    +bold
+    +css-lock(21, 28, 576, 1199, font-size)
+  &--lg
+    +bold
+    +css-lock(21, 26, 576, 1199, font-size)
+  &--md
+    +reg
+    +css-lock(21, 24, 576, 1199, font-size)
+  &--black
+    color: $black
+  &--text
+    color: $c-text
+  &--semi
+    +semi
+
+.h5, h5
+  font-size: 16px
+  +bold
+  text-transform: uppercase
+  line-height: 1.2
+  &--white
+    color: $white
+  &--ttn
+    text-transform: none
+  &--blue
+    color: $blue
+
+.h6, h6
+  text-transform: uppercase
+  font-size: 12px
+  +bold
+
+.text
+  font-size: $fz
+  text-align: justify
+  +light
+  color: $c-text
+  +md
+    font-size: $fz-md
+  &--thin
+    +thin
+  &--gray
+    color: $gray
+    strong
+      color: $c-text
+  &--white
+    color: $white
+  &--left
+    text-align: left
+  &--ttu
+    text-transform: uppercase
+
+.title-under
+  position: relative
+  padding-bottom: 30px
+  +after
+    border-bottom: 1px solid  $red
+    width: 50px
+    left: 50%
+    transform: translate(-50%, 0)
+    bottom: 0
+    position: absolute
+  +before
+    border-bottom: 1px solid  $red
+    width: 100px
+    left: 50%
+    transform: translate(-50%, 0)
+    bottom: 8px
+    position: absolute
+
+  &--sm
+    padding-bottom: 15px
+    +before
+      display: none
+    +after
+      width: 80px
+  &--md
+    padding-bottom: 25px
+    +before
+      display: none
+    +after
+      left: 0
+      transform: translate(0, 0)
+      border-bottom-width: 5px
+      width: 80px
+      border-color: $red-accent
+  &--left
+    +after
+      transform: translate(0, 0)
+      left: 0
+  &--xs
+    padding-bottom: 10px
+    +before
+      display: none
+    +after
+      left: 0
+      transform: translate(0, 0)
+      width: 20px
+  &--white
+    +before
+      border-color: $white
+    +after
+      border-color: $white
+
+
+.title-lines
+  @extend .title-under
+  padding: 0
+  height: 9px
+  margin-bottom: calc(var(--main-padding-md, 25px) / 2)

@@ -1,0 +1,75 @@
+{%set
+slider = [
+  { title: 'Сертифікати якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.' },
+  { title: 'Сертифікати якостІ якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом' },
+  { title: 'Сертифікати якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.' },
+  { title: 'Сертифікати якостІ якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом' },
+  { title: 'Сертифікати якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.' }
+]
+%}
+
+<!-- begin section -->
+<section class="section section--white">
+  {{ mixins.lines('lines--fu lines--section') }}
+
+  <div class="section__title title-under is-center js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
+    <h2 class="title">Стандарти якості для <strong>наших клієнтів</strong></h2>
+  </div>
+
+ {# <div class="section__block section__block-no-pad-left"> #}
+   <!-- begin slider -->
+     <div class="slider__wrap slider--standart__wrap js-anim-el" data-anim-name="fadeIn" data-anim-delay="0.5s">
+      <div class="swiper-container js-animated-slider" data-slider="standart">
+
+
+        <div class="slider slider--standart swiper-wrapper">
+          {% for i in slider %}
+          <!-- begin slide -->
+          <div class="swiper-slide">
+            <div class="slide standart-slide">
+              <div class="standart-slide__img js-lazy" data-background-image="img/about/slider-bottom-1.jpg"></div>
+
+              <div class="standart-slide__block">
+                <div class="standart-slide__title">
+                  <h2 class="title title--white">{{ i.title }}</h2>
+                </div>
+
+                <div class="standart-slide__date">20 вересня, 2019</div>
+
+                <div class="standart-slide__text text text--left text--white">{{ i.text }}</div>
+
+                <div class="standart-slide__btn">
+                  {{ mixins.btn(
+                    title = 'читати більше',
+                    mod = 'btn--black btn--md'
+                  ) }}
+                </div>
+              </div>
+
+            </div>
+          </div>        
+          <!-- end slide -->
+          {% endfor %}        
+        </div>
+
+      </div>      
+      
+      <div class="slider--standart__counter-sm js-counter-sm">
+        <div class="slider-counter-sm slider-counter-sm--white">
+          <div class="slider-counter-sm__current">01</div>
+
+          <div class="slider-counter-sm__line js-progress"></div>
+
+          <div class="slider-counter-sm__all">04</div>
+        </div>
+      </div>
+
+      <div class="slider--standart__btns">
+        <button class="slider--standart__prev arrow arrow--white arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>
+        <button class="slider--standart__next arrow arrow--white arrow--next js-next">{{ mixins.icon('arrow') }}</button>
+      </div>      
+     </div>
+     <!-- end slider -->
+ {# </div> #}
+</section>
+<!-- end section -->

@@ -1,0 +1,44 @@
+<!-- begin section -->
+<section class="section section--full section--center section--bg js-lazy" data-background-image="img/bg-thank-you.jpg" >
+  <!-- begin thank-you -->
+  <div class="thank-you">
+    <div class="thank-you__title">
+      <h2 class="h2 h2--md h2--ttn h2--text">Дякуємо за замовлення!</h2>
+    </div>
+
+    <div class="thank-you__line">
+      <div class="line-sm line-sm--red"></div>
+    </div>
+
+    <div class="thank-you__subttl text text--thin text--gray">Ваше замовлення незабаром опиниться у вас.
+Ми зв’яжемося з вами у найближчий час</div>
+
+    <div class="thank-you__meta">
+      {{ mixins.list(
+        name = 'thank-you-meta',
+        descr = true,
+        modifications = { wrap: '', item: '', link: '' },
+        list = [
+          { dt: '№ замовлення: ', dd: '321' },
+          { dt: 'Статус: ', dd: 'На розгляданні' },
+          { dt: 'Кількість товарів:', dd: '5' },
+          { dt: 'СпосІб оплати:', dd: 'Готівкою' },
+          { dt: 'СпосІб доставки: ', dd: 'Самовивіз' }
+        ]
+      ) }}
+    </div>
+
+    <div class="thank-you__btns">
+      {{ mixins.btn(
+        title = 'продовжити покупки',
+        mod = 'btn--sec btn--lg'
+      ) }}
+      {{ mixins.btn(
+        title = 'На головну',
+        mod = 'btn--transp btn--black btn--lg'
+      ) }}
+    </div>
+  </div>
+  <!-- end thank-you -->
+</section>
+<!-- end section -->

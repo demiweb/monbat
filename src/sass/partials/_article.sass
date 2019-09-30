@@ -1,0 +1,111 @@
+.article
+  .h3, h3, .h1, h2
+    text-align: center
+    margin-bottom: 15px
+  p
+    @extend .text
+    @extend .text--gray
+    margin-bottom: 20px
+    +sm
+      margin-bottom: 10px
+  img
+    margin-bottom: 40px
+    width: 100%
+    +sm
+      margin-bottom: 20px
+  figure
+    position: relative
+    // margin-bottom: 40px
+    img
+      margin-bottom: 0
+    figcaption
+      position: absolute
+      z-index: 1
+      bottom: 15px
+      right: 15px
+      color: $white
+  blockquote
+    +thinit
+    background-color: $white
+    padding: 30px
+    border: 1px solid  $gray-light
+    border-left: 4px solid  $red-accent
+    position: relative
+    margin-bottom: 35px
+    +md
+      padding: 20px
+    +sm
+      margin-bottom: 15px
+    p
+      position: relative
+      z-index: 1
+      +thinit
+      color: $c-text
+      margin-bottom: 0
+    .icon
+      position: absolute
+      top: 10px
+      left: 10px
+      z-index: 0
+      fill: $gray-light
+      font-size: 50px
+
+
+.more-articles
+  --more-articles-col-gap: 15px
+  +flex(flex-start, normal, row, wrap)
+  margin-left: calc(0px - var(--more-articles-col-gap, 15px))
+  margin-right: calc(0px - var(--more-articles-col-gap, 15px))
+  +md
+    --more-articles-col-gap: 10px
+  .article-sm
+    margin-right: var(--more-articles-col-gap, 15px)
+    margin-left: var(--more-articles-col-gap, 15px)
+    width: calc(25% - (var(--more-articles-col-gap, 15px) * 2))
+    +sm
+      width: calc(50% - (var(--more-articles-col-gap, 15px) * 2))
+      margin-bottom: var(--more-articles-col-gap, 15px)
+    +xs
+      width: calc(100% - (var(--more-articles-col-gap, 15px) * 2))
+
+.article-sm
+  $this: &
+  display: block
+  +hover
+    #{$this}__img
+      +scale(1.1)
+      +before
+        visibility: visible
+        opacity: 1
+    #{$this}__content
+      transform: translate(0, 20px)
+  &__img
+    display: block
+    +cover
+    padding-top: 120%
+    margin-bottom: 15px
+    +tr(transform .3s) 
+    position: relative
+    +before
+      +coverdiv
+      background-color: rgba($red-accent, .75)
+      z-index: 1
+      visibility: hidden
+      opacity: 0
+      +tr(opacity .3s, visibility .3s)
+    +xs
+      padding-top: 60%
+  &__date
+    margin-bottom: 10px
+    color: $gray
+    display: block
+    font-size: $fz-sm
+  &__title
+    margin-bottom: 10px
+    display: block
+  &__text
+    max-height: 4.1em
+    display: block
+  &__content
+    display: block
+    +tr(transform .3s)

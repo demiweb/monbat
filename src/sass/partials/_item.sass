@@ -1,0 +1,50 @@
+.item
+  padding: 15px
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12)
+  background-color: $white
+  height: 100%
+  +flex(space-between, normal, column)  
+    
+  &__img,
+  &__content
+    border-bottom: 1px solid  $c-border
+    display: block
+    padding-top: 10px
+    padding-bottom: 10px
+  &__img
+    text-align: center
+    background-color: $white
+    +cover
+    background-size: 80%
+    display: block
+    padding-bottom: 0
+    padding-top: 60%
+    img
+      display: inline-block
+  &__content
+    flex-grow: 1
+  &__bottom
+    +flex(space-between, center)
+    padding-top: 10px
+    +xllopen
+      display: block
+      .btn
+        min-width: 0
+        width: 100%
+
+.item-list
+  dl
+    +clr
+  dt
+    +light
+    font-size: $fz-md
+    color: $gray
+    float: left
+    margin-right: 5px
+  dd
+    +reg
+    font-size: $fz-md
+  em
+    font-style: normal
+    color: $red
+

@@ -1,0 +1,62 @@
+---
+title: catalog
+page: catalog
+outClass: 'catalog-page'
+subNav: {
+  active: true
+}
+hero: {
+  title: 'Для легкових автомобілів',
+  breadcrumbs: {
+    isUnderTitle: true,
+    list: [
+      { item: '', link: 'ABS', modItem: '', modLink: '' },
+      { item: '/', link: '', modItem: '', modLink: '' },
+      { item: '', link: 'Продукція', modItem: '', modLink: '' },
+      { item: '/', link: '', modItem: '', modLink: '' },
+      { item: '', link: 'Для легкових автомобілів', modItem: '', modLink: 'is-active' }
+    ]
+  }
+}
+catalog: [
+  {
+    title: 'LONGLIFE series',
+    color: '#000'
+  },
+  {
+    title: 'V series',
+    color: '#939598'
+  },
+  {
+    title: 'AGM series',
+    color: '#1981c5'
+  },
+  {
+    title: 'EFB series',
+    color: '#36c0e2'
+  },
+  {
+    title: 'PEMIUM series',
+    color: '#7ac143'
+  },
+  {
+    title: 'FORMULA ASIA series',
+    color: '#f8991d'
+  },
+  {
+    title: 'DYNAMIC series',
+    color: '#b9282e'
+  }
+]
+catalogText: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_hero.html" %}
+  {% include "partials/_catalog.html" %}
+  {% include "partials/_footer.html" %}
+{% endblock %}
+
+

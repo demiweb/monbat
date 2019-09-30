@@ -1,0 +1,17 @@
+---
+title: 'cart'
+page: 'cart'
+outClass: 'out--no-hero'
+
+footer: {
+  mod: 'footer--gray'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+  {% include "partials/_header.html" %}
+  {% include "partials/_cart.html" %}
+
+  {% include "partials/_footer.html" %}
+{% endblock %}

@@ -1,0 +1,73 @@
+.contacts
+  +flex(space-between, top)
+  max-width: 1230px
+  margin-left: auto
+  margin-right: auto
+  +xs
+    display: block
+
+.contact
+  width: 33.33333%
+  text-align: center
+  color: $white
+  max-width: 270px
+  padding-left: 10px
+  padding-right: 10px
+  +xs
+    width: auto
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 15px
+  &__icon
+    margin-bottom: 15px
+    height: 90px
+    width: 90px
+    border: 12px solid  $gray-dark
+    border-radius: 50%
+    +flex(center, center)
+    margin-left: auto
+    margin-right: auto
+    .icon
+      fill: currentColor
+      font-size: 32px
+  &__text
+    text-align: center
+    a
+      +hover
+        text-decoration: underline
+
+.contacts-form
+  +flex(flex-end, normal, row, wrap)
+  &__left
+    width: percentage(7/12)
+    position: relative
+    padding-left: 7%
+    +flex(center, normal, column)
+    +md
+      width: 100%
+      margin-bottom: 15px
+      padding-left: 0
+  &__right
+    width: percentage(5/12)
+    +flex(center, normal, column)
+    +md
+      width: 100%
+  &__title
+    margin-bottom: 35px
+    max-width: 400px
+    +md
+      max-width: none
+      margin-bottom: 15px
+      text-align: center
+  &__form-title
+    margin-bottom: 25px
+  &__text
+    max-width: 315px
+    position: relative
+    left: 120px
+    width: calc(100% - 120px)
+    +md
+      max-width: none
+      left: auto
+      text-align: center
+      width: auto
