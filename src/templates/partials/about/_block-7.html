@@ -1,75 +1,54 @@
 {%set
-slider = [
-  { title: 'Сертифікати якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.' },
-  { title: 'Сертифікати якостІ якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом' },
-  { title: 'Сертифікати якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.' },
-  { title: 'Сертифікати якостІ якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом' },
-  { title: 'Сертифікати якостІ', text: 'По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен.' }
+social = [
+  {
+    nmb: '01',
+    text: 'ООО «МОНБАТ УКРАИНА» являлось генеральным спонсором трофи-рейдов
+ «АТЛ ТРОФИ»'
+  },
+  {
+    nmb: '02',
+    text: 'Поддерживает и спонсирует развитие спорта в Украине совместно 
+с Федерацией Баскетбола Украины'
+  },
+  {
+    nmb: '03',
+    text: 'С 2017 года проводятся ежегодные 
+соревнования «MONBAT CUP»
+по баскетболу 3х3'
+  },
+  {
+    nmb: '04',
+    text: 'В 2019 году основана баскетбольная 
+команда 3х3 
+«КИЕВ МОНБАТ»'
+  }
 ]
 %}
 
-<!-- begin section -->
-<section class="section section--white">
-  {{ mixins.lines('lines--fu lines--section') }}
+<!-- begin s-social -->
+<section class="section s-social">
+  <div class="word word--sm">social</div>
 
-  <div class="section__title title-under is-center js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
-    <h2 class="title">Стандарти якості для <strong>наших клієнтів</strong></h2>
-  </div>
+  <div class="container">
+    <div class="section__title">
+      <div class="title title--bold title--gray"><span class="underlined">социальная ответственность</span></div>
+    </div>
 
- {# <div class="section__block section__block-no-pad-left"> #}
-   <!-- begin slider -->
-     <div class="slider__wrap slider--standart__wrap js-anim-el" data-anim-name="fadeIn" data-anim-delay="0.5s">
-      <div class="swiper-container js-animated-slider" data-slider="standart">
+    <!-- begin social-items -->
+    <div class="social-items">
+      {% for i in social %}
+      <div class="social-items__item">
+        <!-- begin social-item -->
+        <div class="social-item">
+          <div class="social-item__nmb">{{ i.nmb | safe }}</div>
 
-
-        <div class="slider slider--standart swiper-wrapper">
-          {% for i in slider %}
-          <!-- begin slide -->
-          <div class="swiper-slide">
-            <div class="slide standart-slide">
-              <div class="standart-slide__img js-lazy" data-background-image="img/about/slider-bottom-1.jpg"></div>
-
-              <div class="standart-slide__block">
-                <div class="standart-slide__title">
-                  <h2 class="title title--white">{{ i.title }}</h2>
-                </div>
-
-                <div class="standart-slide__date">20 вересня, 2019</div>
-
-                <div class="standart-slide__text text text--left text--white">{{ i.text }}</div>
-
-                <div class="standart-slide__btn">
-                  {{ mixins.btn(
-                    title = 'читати більше',
-                    mod = 'btn--black btn--md'
-                  ) }}
-                </div>
-              </div>
-
-            </div>
-          </div>        
-          <!-- end slide -->
-          {% endfor %}        
+          <div class="social-item__text">{{ i.text | safe }}</div>
         </div>
-
-      </div>      
-      
-      <div class="slider--standart__counter-sm js-counter-sm">
-        <div class="slider-counter-sm slider-counter-sm--white">
-          <div class="slider-counter-sm__current">01</div>
-
-          <div class="slider-counter-sm__line js-progress"></div>
-
-          <div class="slider-counter-sm__all">04</div>
-        </div>
+        <!-- end social-item -->
       </div>
-
-      <div class="slider--standart__btns">
-        <button class="slider--standart__prev arrow arrow--white arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>
-        <button class="slider--standart__next arrow arrow--white arrow--next js-next">{{ mixins.icon('arrow') }}</button>
-      </div>      
-     </div>
-     <!-- end slider -->
- {# </div> #}
+      {% endfor %}
+    </div>
+    <!-- end social-items -->
+  </div>
 </section>
-<!-- end section -->
+<!-- end s-social -->

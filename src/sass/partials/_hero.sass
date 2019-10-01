@@ -51,3 +51,85 @@
   &--light
     +before
       display: none
+
+.hero-about
+  // min-height: 100vh
+  color: $white
+  display: block
+  padding-top: 0 !important
+  overflow: hidden
+  padding-left: 0
+  padding-right: 0
+  &__inner
+    +flex(flex-start, normal, row, wrap)
+    height: 100vh
+    padding-top: $header-height
+    +xl
+      padding-top: $header-height-md
+    +lg
+      padding-top: $header-height-mob
+    +sm
+      height: auto
+      padding-bottom: 30px
+      padding-top: $header-height-mob + 30px
+  &__left
+    +flex(center, normal, column)
+    width: percentage(7/12)
+    border-right: 1px solid  $gray
+    padding-right: 10px
+    +sm
+      width: 100%
+      border-right: 0
+      margin-bottom: 15px
+  &__right
+    width: percentage(5/12)
+    +sm
+      width: 100%
+  &__top, &__bottom
+    +flex(center, normal, column)
+    height: 50%
+    padding-left: percentage(1/5)
+    +lg
+      padding-left: 30px
+    +md
+      padding-left: 15px
+    +sm
+      padding-left: 0
+  &__top
+    position: relative
+    +before
+      border-top: 1px solid  $gray
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 50vw
+    +sm
+      margin-bottom: 15px
+      +before
+        display: none
+  &__scroll
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 1
+    padding-bottom: 30px
+    +sm
+      position: static
+
+.hero-about-block
+  position: relative
+  &__title-sm
+    text-transform: uppercase
+    margin-bottom: 10px
+  &__nmb
+    position: absolute
+    +css-lock(20, 408, 320, 1199, font-size)
+    opacity: .05
+    +bold
+    line-height: .7
+    top: 0
+    left: 0
+    transform: translate(-30%, -30%)
+
+

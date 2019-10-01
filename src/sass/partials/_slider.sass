@@ -40,8 +40,20 @@
     &__wrap
       padding-top: 45px
       position: relative
+      +before
+        +image('about/texture-01.png')
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: 50% 50%
+        height: 50%
+        width: 30px
+        bottom: -25px
+        left: calc(100% - 5px)
+        position: absolute
       +md
-        padding-top: 25px        
+        padding-top: 25px
+        +before
+          display: none
       +sm
         padding-top: 15px
       .swiper-slide        
@@ -59,13 +71,15 @@
       // bottom: 50px
       bottom: 10%
       display: inline-block
-      left: calc(30% - 50px)
+      // left: calc(30% - 50px)
+      left: 8%
       z-index: 1
       +xll
         bottom: 20px
       +md
         bottom: auto
-        top: 60%
+        // top: 60%
+        top: 48%
         left: var(--section-padding, 40px)
       +sm
         left: 0
@@ -84,6 +98,12 @@
       bottom: 100px
       +xll
         bottom: 0
+  &--assort-block
+    &__wrap
+      .slider--assort
+        &__btns
+          bottom: 30%
+
   &--standart
     &__wrap
       @extend .slider--assort__wrap
@@ -230,7 +250,7 @@
           
 
 .assort-slide
-  // display: flex !important
+  $this: &
   +flex(flex-start, center)
   // background-color: $white
   height: 100%
@@ -250,41 +270,81 @@
     +md
       margin-bottom: 15px
   &__content
-    width: 30%
-    padding-right: 5%
+    // width: percentage(7/12)
+    flex: 0 0 percentage(7/12)
+    position: relative
+    z-index: 1
+    p
+      +notlast
+        margin-bottom: 30px
+        +md
+          margin-bottom: 15px
+    a
+      color: $blue-light
     +md
       width: 100%
+      flex: 0 0 100%
       order: 1
     +sm
       padding-left: var(--section-padding-md, 65px)
       padding-right: var(--section-padding-md, 65px)
   &__img
-    width: 70%
+    // width: percentage(6/12)
+    flex: 0 0 percentage(6/12)
+    margin-left: -#{percentage(1/12)}
+    position: relative
+    z-index: 0
     +cover
-    padding-top: 40%
+    padding-top: 60%
     // height: 100%
     transform: translateX(100%)
+    
     +xll
       // height: calc(100% + 30px)
       margin-bottom: -30px
     +md
       width: 100%
+      flex: 0 0 100%
+      margin-left: 0
       order: 0
       margin-bottom: 20px
+      padding-top: 40%
       // height: auto
       // height: 60%
       // padding-top: 35%
     +sm
-      padding-top: 0
-      height: 270px
+      padding-top: 270px
+      // height: 270px
     +xs
       // padding-top: 0
-      height: 200px
+      padding-top: 200px
       margin-bottom: 30px
   &__text
     text-align: left
     opacity: 0
     // transform: translateY(100px)
+    padding-left: percentage(1/7)
+    +md
+      padding-left: 0
+
+  &--block
+    #{$this}__content
+      background-color: $gray-lightest
+      padding: 65px 45px 120px 80px
+      height: 350px
+      margin-left: 5%
+      +xl
+        padding: 50px 40px 120px
+      +lg
+        padding: 40px 40px 120px
+      +md
+        margin-left: 0
+        padding: 30px
+      +sm
+        padding: 15px
+    #{$this}__text
+      padding-left: 0
+
 
 .arrow
   --arrow-size: 100px

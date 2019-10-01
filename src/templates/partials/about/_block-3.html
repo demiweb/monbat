@@ -1,23 +1,53 @@
-<!-- begin section -->
-<section class="section section--bg section--oil js-lazy" data-background-image="img/about/Oil.jpg">
-  
- {{ mixins.lines('lines--section lines--section-bg lines--7', 7) }}
+{%set
+table = {
+  mod: 'history-table--gray',
+  list: [
+  {
+    date: '2000',
+    text: 'Відкриття заводу з виробництва акумуляторів
+у Монтані, Болгарія, в державній власності'
+  },
+  {
+    date: '2001',
+    text: 'Завод СТАРТ відкриття виробництва в Добричі. 
+Завод починає виробництво свинцево-кислотних 
+акумуляторів в основному для експорту
+на АвтоВАЗ в СРСР.'
+  }
+]
+}
+%}
 
- <div class="letters letters--7">
-   <div class="letter letter--1"><span>m</span></div>
-   <div class="letter letter--2"><span>o</span></div>
-   <div class="letter letter--3"><span>n</span></div>
-   <div class="letter letter--4"><span>o</span></div>
-   <div class="letter letter--5"><span>i</span></div>
-   <div class="letter letter--6"><span>l</span></div>
- </div>
+<!-- begin s-history -->
+<section class="section--white overflow-hidden">
+  <div class="container">
+    <!-- begin history -->
+    <div class="history history--center">
+      <div class="history__left">
+        <div class="history__block">
+          <!-- begin history-block -->
+          <div class="history-block history-block--simple history-block--blue">
 
- <div class="section__block section__block-left-7-2 js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
-   <h2 class="title title--white">также мы предлагаем:</h2>
- </div>
+            <div class="history-block__content">
+              <div class="history-block__content-title">
+                <div class="title title--inherit title--ttn title--bold"><span class="underlined">Развитие</span> интегрированного производства</div>
+              </div>
 
- <div class="section__block section__block-left-7-4 js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
-   <div class="text text--left text--white text--thin">Моторные масла «MONOIL» для легковых автомобилей и техники большой грузоподъёмности, моторные масла для газовых двигателей, 2Т/4Т масла и специальные жидкости, смазки и комплексные решения для промышленности. </div>
- </div> 
+              <div class="history-block__content-list">
+                <div class="history-block__list-item">Добавлена ​​возможность утилизации</div>
+                <div class="history-block__list-item">Диверсификация продукции</div>
+              </div>
+            </div>
+          </div>
+          <!-- end history-block -->
+        </div>
+      </div>
+
+      <div class="history__right">
+        {% include "partials/_history-table.html" %}
+      </div>
+    </div>
+    <!-- end history -->
+  </div>
 </section>
-<!-- end section -->
+<!-- end s-history -->

@@ -6,7 +6,15 @@ header: {
   mod: ''
 }
 hero: {
-  fullpage: true
+  bgImage: 'bg-hero-about.jpg',
+  breadcrumbs: {
+    isInTop: true,
+    list: [
+      { link: 'Головна' },
+      { item: '/' },
+      { link: 'Про нас', modLink: 'is-active' }
+    ]
+  }
 }
 footer: {
   mod: 'footer--gray'
@@ -24,6 +32,6 @@ footer: {
   {% include "partials/about/_block-5.html" %}
   {% include "partials/about/_block-6.html" %}
   {% include "partials/about/_block-7.html" %}
-
+  {% include "partials/about/_block-8.html" %}
   {% include "partials/_footer.html" %}
 {% endblock %}

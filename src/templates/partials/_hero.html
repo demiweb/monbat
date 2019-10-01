@@ -53,6 +53,76 @@
 </section>
 <!-- end hero -->
 
+{% elseif page === 'about' %}
+
+<!-- begin hero -->
+<section class="hero hero-about js-lazy" data-background-image="img/hero/{% if hero.bgImage %}{{ hero.bgImage }}{% else %}bg-hero.jpg{% endif %}">
+  {% if hero.breadcrumbs.isInTop %}
+  <div class="hero__breadcrumbs hero__breadcrumbs-top">
+    {{ mixins.list(
+      name = 'breadcrumbs',
+      modifications = hero.breadcrumbs.modifications,
+      list = hero.breadcrumbs.list
+    ) }}
+  </div>  
+  {% endif %}
+
+  <div class="container">
+    <div class="hero-about__inner">
+      <div class="hero-about__left">
+        <div class="hero-about-block">
+          <div class="hero-about-block__title-sm">ТОВ «МОНБАТ УКРАЇНА»</div>
+
+          <div class="hero-about-block__title">
+            <div class="title title--white title--ttn title--bold"><span class="underlined">Створена у 2016 році </span><br>
+з метою завоювання лідируючих <br>
+позицій на ринку України. </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-about__right">
+        <div class="hero-about__top">
+          <div class="hero-about-block">
+            <div class="hero-about-block__nmb">2</div>
+
+            <div class="hero-about-block__title">
+              <div class="title title--white title--ttn title--bold"><span class="underlined">«МОНБАТ УКРАЇНА»</span></div>
+            </div>
+
+            <div class="hero-about-block__subttl">Европейская компания, вобравшая в себя опыт работы MONBAT GROUP на рынках более чем 60-ти стран Мира</div>
+          </div>
+        </div>
+
+        <div class="hero-about__bottom">
+          <div class="hero-about-block">
+            <div class="hero-about-block__nmb">3</div>
+
+            <div class="hero-about-block__title">
+              <div class="title title--white title--ttn title--bold"><span class="underlined">«МОНБАТ УКРАЇНА»</span></div>
+            </div>
+
+            <div class="hero-about-block__subttl">Является официальным и эксклюзивным импортером и представителем продукции MONBAT GROUP в Украине</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-about__scroll">
+    <!-- begin scroll-down -->
+    <div class="scroll-down">
+      <a href="#" class="scroll-down__btn">
+        <span class="scroll-down__mouse"></span>
+        <span class="scroll-down__arr"></span>
+      </a>
+      <div class="scroll-down__title">дізнатися більше</div>
+    </div>
+    <!-- end scroll-down -->
+  </div>
+  
+</section>
+<!-- end hero -->
 
 {% else %}
 

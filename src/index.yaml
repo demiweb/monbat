@@ -7,7 +7,7 @@ PageList:
 # - file: item-page.html
 # - file: item-page-2.html
 # - file: item-page-monoil.html
-# - file: about.html
+- file: about.html
 # - file: news.html
 # - file: article-page.html
 # - file: contacts.html

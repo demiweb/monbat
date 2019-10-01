@@ -18,10 +18,16 @@ h1, h2, h3, h4, h5, h6
     +bold
   &--ttn
     text-transform: none
+  &--lg
+    +css-lock(32, 72, 576, 1199, font-size)
   &--xl
     +css-lock(36, 140, 576, 1199, font-size)
     letter-spacing: .5em
     color: $white
+  &--gray
+    color: $gray-dark
+  &--inherit
+    color: inherit
 
 .title-subttl
   color: $white
@@ -29,7 +35,6 @@ h1, h2, h3, h4, h5, h6
   text-transform: uppercase
   +semi
   letter-spacing: .5em
-
 
 .h1, h1
   font-size: 36px
@@ -135,6 +140,10 @@ h1, h2, h3, h4, h5, h6
     color: $c-text
   &--semi
     +semi
+  &--bold
+    +bold
+  &--gray
+    color: $gray
 
 .h5, h5
   font-size: 16px
@@ -231,3 +240,6 @@ h1, h2, h3, h4, h5, h6
   padding: 0
   height: 9px
   margin-bottom: calc(var(--main-padding-md, 25px) / 2)
+
+.underlined
+  border-bottom: 2px solid  $red

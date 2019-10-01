@@ -1,59 +1,94 @@
 {%set
-features = [
+table = [
   {
-    mod: 'cols__col-1 cols__col-md-100',
-    nmb: '01',
-    text: 'В команду нашей компании были приглашены лучшие топ-менеджеры, менеджеры из аккумуляторной, шинной, масляной, автозапчастной сфер. ',
-    delay: ''
+    date: '2004',
+    text: 'Укладення першого в Україні генерального контракту із ЗАТ «КИЇВСТАР GSM» на поставку стаціонарних акумуляторних батарей'
   },
   {
-    mod: 'cols__col-2 cols__col-md-100',
-    nmb: '02',
-    text: 'В активе наших сотрудников есть успешный опыт создания компаний-лидеров рынка.',
-    delay: ''
+    date: '2005',
+    text: 'Укладення контракту на поставку в Україну для будівництва мережі ТОВ «Астеліт» (tm «LIFE»), стаціонарних акумуляторних батарей'
   },
   {
-    mod: 'cols__col-3 cols__col-md-100',
-    nmb: '03',
-    text: 'А также опыт создания и вывода новых брендов на отраслевые рынки.',
-    delay: ''
+    date: '2006',
+    text: 'Monbat успішно проводить первинне публічне розміщення / IPO / 4 700 000 акцій, таким чином, компанія набуває статусу публічної компанії.  Monbat AD набуває 67% акцій «Старт», Добрич'
+  },
+  {
+    date: '2008',
+    text: 'Monbat AD збільшує капітал до 39,0 млн. Левів'
+  },
+  {
+    date: '2010',
+    text: 'Чиста виручка від продажів перевищує 82,31 млн євро. 
+У Сербії відкрито завод з переробки'
+  },
+  {
+    date: '2011',
+    text: 'У Румунії відкрито завод з переробки'
+  },
+  {
+    date: '2012',
+    text: "Витрати CAPEX на програму розширення потужностей 
+складають 3,9 млн євро, в тому числі 1,1 млн євро
+на об'єкти з переробки."
+  },
+  {
+    date: '2013',
+    text: 'Monbat AD завершує додаткові інвестиції в розмірі 3,2 млн. 
+Євро в рамках своєї програми розширення виробничих 
+потужностей.'
+  },
+  {
+    date: '2014',
+    text: 'Додаткові витрати в розмірі 3,3 млн євро в капітальних витратах на нову технологію штампування. В кінці 2014 року було розпочато програму «Придатність для майбутнього» для реалізації поступових покращень в широкому спектрі видів діяльності, таких як економічне виробництво, модернізація ІТ.'
+  },
+  {
+    date: '2015',
+    text: 'Полягає генеральний контракт на поставку стаціонарних акумуляторних батарей з ПАТ «Водафон Україна»'
+  },
+  {
+    date: '2016',
+    text: 'Створюється ТОВ «МОНБАТ УКРАЇНА» і стає частиною економічної групи. Monbat засновує енергетичні 
+акумулятори Nigeria Limited'
   }
 ]
-
 %}
 
-<!-- begin section -->
-<section class="section section--white section--lg section--features">
-  
- {{ mixins.lines('lines--section lines--fu') }}
+<!-- begin s-history -->
+<section class="section--blue overflow-hidden">
+  <div class="container">
+    <!-- begin history -->
+    <div class="history">
+      <div class="history__left">
+        <div class="history__block">
+          <!-- begin history-block -->
+          <div class="history-block history-block--img-diff">
+            <div class="history-block__content">
+              <div class="history-block__content-title">
+                <div class="title title--white title--ttn title--bold">Создание европейского <span class="underlined">присутствия</span></div>
+              </div>
 
-  <div class="section__block js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
-    <div class="text text--ttu text--left">Мы делаем все возможное для полного удовлетворения спроса и комфорта при сотрудничестве с нами</div>
+              <div class="history-block__content-list">
+                <div class="history-block__list-item-sm">IPO и консолидация компании</div>
+                <div class="history-block__list-item-sm">Стремительный рост</div>
+                <div class="history-block__list-item-sm">Диверсификация продукции</div>
+                <div class="history-block__list-item-sm">Программа расширения мощностей</div>
+                <div class="history-block__list-item-sm">Реализация программы модернизации</div>
+              </div>
+            </div>
+            
+            <div class="history-block__img">
+              <div class="history-block__img-img js-lazy" data-background-image="./img/about/history-02.jpg"></div>
+            </div>
+          </div>
+          <!-- end history-block -->
+        </div>
+      </div>
+
+      <div class="history__right">
+        {% include "partials/_history-table.html" %}
+      </div>
+    </div>
+    <!-- end history -->
   </div>
-
-  <div class="section__block">
-    <div class="section__title js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
-     <h2 class="title"><strong>мы гордимся командой</strong> «АККУМУЛЯТОРНО-БАТАРЕЙНЫХ СИСТЕМ» </h2>
-   </div>
-
- </div>
-  
-  <div class="cols__wrap">
-     <!-- begin features -->
-     <div class="features cols">
-       {% for i in features %}
-       <!-- begin feature -->
-       <div class="feature cols__col {{ i.mod }}">
-         <div class="feature__nmb"><span>{{ i.nmb | safe }}</span></div>
-
-         <div class="feature__text text text--gray">{{ i.text }}</div>
-       </div>
-       <!-- end feature -->
-       {% endfor %}
-     </div>
-     <!-- end features -->
-   </div>
-
-    
 </section>
-<!-- end section -->
+<!-- end s-history -->

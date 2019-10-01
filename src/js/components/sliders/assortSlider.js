@@ -18,17 +18,7 @@ export default function animateAssortSlider(slider) {
   mySlider.setAnimation = () => {
     const slides = [].slice.call(mySlider.swiper.$el[0].querySelectorAll('.swiper-slide'));
     const previousSlide = slides[mySlider.swiper.previousIndex];
-    const activeSlide = slides[mySlider.swiper.activeIndex];
-
-    // mySlider.setCounter({
-    //   activeSlide: mySlider.swiper.activeIndex,
-    //   htmlBlock: mySlider.GETTERS().counter
-    // });
-    mySlider.setCounterSm({
-      activeSlide: mySlider.swiper.activeIndex,
-      slidesAmount: mySlider.swiper.slides.length,
-      htmlBlock: mySlider.GETTERS().counterSm
-    });
+    const activeSlide = slides[mySlider.swiper.activeIndex];    
 
     function getelements(slide) {
       return {

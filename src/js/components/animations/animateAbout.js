@@ -15,7 +15,7 @@ export default function animateAbout() {
 
     elements.sections.forEach((section, i) => {
       section.setAttribute('data-index', i);
-      const sectionThreshold = section.getAttribute('data-threshold') ? section.getAttribute('data-threshold') : 0.1;
+      const sectionThreshold = section.getAttribute('data-threshold') || 0.1;
 
       const threshold = [sectionThreshold];
 

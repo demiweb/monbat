@@ -1,0 +1,10 @@
+<!-- begin history-table -->
+<div class="history-table{% if table.mod %} {{ table.mod }}{% endif %}">
+  {% for i in table.list or table %}
+  <div class="history-table__row">
+    <div class="history-table__date">{{ i.date | safe }}</div>
+    <div class="history-table__text">{{ i.text | safe }}</div>
+  </div>
+  {% endfor %}
+</div>
+<!-- end history-table -->

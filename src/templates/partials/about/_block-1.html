@@ -1,23 +1,76 @@
+{%set
+slider = [
+  {
+    img: 'slide-01.jpg',
+    text: '<p>Является одним из лидеров поставщиков свинца и свинцовых сплавов на мировые рынки. Перерабатывающие заводы Monbat Recycling - расположены в Болгарии, Сербии, Румынии и Италии, общая мощность которых составляет 158 000 тонн использованных свинцово-кислотных аккумуляторов в год, идет подготовка к строительству нового завода в Украине, соответствующего всем экологическим стандартам ЕВРО 6. </p>
+    <p>Является одним из лидеров поставщиков свинца и свинцовых сплавов на мировые рынки. Перерабатывающие заводы Monbat Recycling - расположены в Болгарии, Сербии, Румынии и Италии, общая мощность которых составляет 158 000 тонн использованных свинцово-кислотных аккумуляторов в год, идет подготовка к строительству нового завода в Украине, соответствующего всем экологическим стандартам ЕВРО 6. </p>
+    <p>Узнать подробнее: <a href="#">https://www.monbatgroup.com/en/our-strategy/lead-acid-business-segment</a></p>',
+    title: 'Monbat Recycling'
+  },
+  {
+    img: 'slide-01.jpg',
+    text: '<p>Является одним из лидеров поставщиков свинца и свинцовых сплавов на мировые рынки. Перерабатывающие заводы Monbat Recycling - расположены в Болгарии, Сербии, Румынии и Италии, общая мощность которых составляет 158 000 тонн использованных свинцово-кислотных аккумуляторов в год, идет подготовка к строительству нового завода в Украине, соответствующего всем экологическим стандартам ЕВРО 6. </p>
+    <p>Узнать подробнее: <a href="#">https://www.monbatgroup.com/en/our-strategy/lead-acid-business-segment</a></p>',
+    title: 'Monbat Recycling'
+  },
+  {
+    img: 'slide-01.jpg',
+    text: '<p>Является одним из лидеров поставщиков свинца и свинцовых сплавов на мировые рынки. Перерабатывающие заводы Monbat Recycling - расположены в Болгарии, Сербии, Румынии и Италии, общая мощность которых составляет 158 000 тонн использованных свинцово-кислотных аккумуляторов в год, идет подготовка к строительству нового завода в Украине, соответствующего всем экологическим стандартам ЕВРО 6. </p>
+    <p>Является одним из лидеров поставщиков свинца и свинцовых сплавов на мировые рынки. Перерабатывающие заводы Monbat Recycling - расположены в Болгарии, Сербии, Румынии и Италии, общая мощность которых составляет 158 000 тонн использованных свинцово-кислотных аккумуляторов в год, идет подготовка к строительству нового завода в Украине, соответствующего всем экологическим стандартам ЕВРО 6. </p>
+    <p>Узнать подробнее: <a href="#">https://www.monbatgroup.com/en/our-strategy/lead-acid-business-segment</a></p>',
+    title: 'Monbat Recycling'
+  },
+  {
+    img: 'slide-01.jpg',
+    text: '<p>Является одним из лидеров поставщиков свинца и свинцовых сплавов на мировые рынки. Перерабатывающие заводы Monbat Recycling - расположены в Болгарии, Сербии, Румынии и Италии, общая мощность которых составляет 158 000 тонн использованных свинцово-кислотных аккумуляторов в год, идет подготовка к строительству нового завода в Украине, соответствующего всем экологическим стандартам ЕВРО 6. </p>
+    <p>Узнать подробнее: <a href="#">https://www.monbatgroup.com/en/our-strategy/lead-acid-business-segment</a></p>',
+    title: 'Monbat Recycling'
+  }
+]
+%}
+
 <!-- begin section -->
-<section class="section section--white">
-  {{ mixins.lines('lines--fu lines--section') }}
+<section class="section s-about-01">
+  <div class="word">monbat</div>
 
- <div class="section__block section-block">
-   <div class="section__title is-col-6-sm js-anim-el" data-anim-name="fadeInLeft" data-anim-duration="0.5s">
-     <h1 class="title">Быстро развивающаяся компания, которая была <strong>создана в мае 2017г</strong></h1>
+  <div class="container">
+    <div class="section-block__slider js-anim-el" data-anim-name="fadeIn" data-anim-delay="0.5s">
+     <!-- begin slider -->
+     <div class="slider__wrap slider--assort__wrap">
+      <div class="swiper-container js-animated-slider" data-slider="assort">
+
+        <div class="slider slider--assort swiper-wrapper">
+          {% for i in slider %}
+          <!-- begin slide -->
+          <div class="swiper-slide">
+            <div class="slide assort-slide">
+              <div class="assort-slide__content">
+                <div class="assort-slide__title">
+                  <div class="title title--bold title--gray"><span class="underlined">{{ i.title | safe }}</span></div>
+                </div>
+
+                <div class="assort-slide__text text text--gray text--thin">
+                  {{ i.text | safe }}
+                
+                </div>
+              </div>
+
+              <div class="assort-slide__img js-lazy" data-background-image="img/about/{{ i.img }}"></div>
+            </div>
+          </div>        
+          <!-- end slide -->
+          {% endfor %}        
+        </div>
+
+      </div>
+
+      <div class="slider--assort__btns">
+        <button class="slider--assort__prev arrow arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>
+        <button class="slider--assort__next arrow arrow--next js-next">{{ mixins.icon('arrow') }}</button>
+      </div>      
+     </div>
+     <!-- end slider -->
    </div>
-
-   <div class="section-block__article is-col-5-sm text--thin text--gray js-anim-el" data-anim-name="fadeInBottomLg" data-anim-duration="0.5s">
-     <p>Основным видом деятельности является продажа аккумуляторных батарей и моторных масел ведущего европейского производителя Монбат Групп.</p>
-     <p>Компания <strong>«АККУМУЛЯТОРНО-БАТАРЕЙНЫЕ СИСТЕМЫ»</strong> является официальным дистрибьютором ООО «МОНБАТ УКРАИНА» - эксклюзивного представителя аккумуляторных батарей ТМ «MONBAT»; ТМ «START»; 
-ТМ «WINMAXX» и ТМ «MONOIL</p>
-   </div>
-
-   <div class="section-block__img js-lazy" data-background-image="img/about/img-2.jpg">
-     {# <img data-src="img/about/img-2.jpg" alt="" class="js-lazy"> #}
-   </div>
-
-   <div class="section-block__img-right js-lazy js-parallax" data-rellax-percentage="0.1" data-background-image="img/about/img-1.jpg"></div>
- </div>
+  </div>
 </section>
 <!-- end section -->

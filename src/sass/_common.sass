@@ -343,7 +343,6 @@ input, textarea
         +xs
           margin-bottom: 10px
 
-
 .counter
   font-size: 0
   input, button
@@ -362,7 +361,21 @@ input, textarea
     width: 40px
     font-size: 26px
 
-
+.word
+  +bold
+  // font-size: 250px
+  +css-lock(70, 250, 320, 1199, font-size)
+  opacity: .05
+  text-transform: uppercase
+  position: absolute
+  z-index: 0
+  line-height: .75
+  &--sm
+    +css-lock(70, 220, 320, 1199, font-size)
+    +black
+    line-height: .8
+  &--lg
+    +css-lock(70, 330, 320, 1199, font-size)
 
 // ============ animations ===============
 
