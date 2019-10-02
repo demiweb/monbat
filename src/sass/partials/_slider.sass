@@ -24,6 +24,18 @@
     display: inline-block
     transform: translate(0, -50%) rotate (45deg)
     right: var(--arrows-gap, 10px)
+  &__pagination
+    .swiper-pagination-bullet
+      display: inline-block
+      width: 30px
+      height: 2px
+      background-color: #dbdbdb
+      margin-left: 5px
+      margin-right: 5px
+      opacity: 1
+      border-radius: 0
+      &.swiper-pagination-bullet-active
+        background-color: $red
 
   &--similar
     .swiper-slide
@@ -76,177 +88,116 @@
       z-index: 1
       +xll
         bottom: 20px
-      +md
-        bottom: auto
-        // top: 60%
-        top: 48%
-        left: var(--section-padding, 40px)
       +sm
         left: 0
         top: 260px
       +xs
         top: 200px
-    &__counter
-      position: absolute
-      top: 0
-      left: -.5em
-      +md
-        display: none  
-    &__counter-sm
-      position: absolute
-      left: 0 
-      bottom: 100px
-      +xll
-        bottom: 0
+
   &--assort-block
     &__wrap
       .slider--assort
         &__btns
           bottom: 30%
+          +sm
+            bottom: auto
+            top: 50%
+          +xs
+            top: 270px
+          +xss
+            top: 200px
+
+
 
   &--standart
     &__wrap
-      @extend .slider--assort__wrap
-      padding-top: 0
-      +sm
-        .swiper-container
-          margin-left: 0
-          margin-right: 0
-          padding-left: 0
-          padding-right: 0
-      
-      .swiper-slide
-        // opacity: 0
-        z-index: 0
     &__btns
-      bottom: 170px
+      @extend .container
+      width: 100%
       position: absolute
       z-index: 2
-      left: 57%
+      top: calc(50% + 100px)
+      transform: translate(-50%, -50%)
+      left: 50%
       +md
-        bottom: 100px
-      +sm
-        bottom: auto
-        top: 200px
-        left: var(--section-padding, 40px)
-    &__counter-sm
-      position: absolute
-      bottom: 20px
-      left: 60%
-      z-index: 2
-      +lg
-        left: 58%
-      +md
-        left: 55%
-      +sm
-        left: auto
-        right: var(--section-padding, 40px)
+        top: auto
+        bottom: 350px
       +xs
-        right: auto
-        left: var(--section-padding-lg, 100px)
-  &--thumbs
-    // box-sizing: border-box
-    .slide
-  &--contacts
-    box-sizing: border-box
-    &__wrap
-      #{$this}__prev,
-      #{$this}__next
-        // height: 100%        
-        width: 30%
-        background-color: transparent
-        width: 400px
-        top: 30px
-        bottom: 85px
-        transform: translate(0, 0)
-        border: 0
-        height: auto
-        width: calc(#{percentage(510/1920) / 2} - 40px)
-        +md
-          width: calc(#{percentage(510/1920) / 2} - 20px)
-          top: 20px
-          bottom: 100px
-        +sm
-          width: calc(#{percentage(510/1920) / 2} - 10px)
-          bottom: 125px
-      #{$this}__prev
-        left: 0
-      #{$this}__next
-        right: 0
-    .slide
-      width: percentage(1410/1920)
-      // +vertical
-      height: auto
-      &.swiper-slide-active
-        &:before
-          display: none
-        .slide__title
-          display: block
-        .slide__bottom
-          visibility: visible
-          opacity: 1
-        .slide__img
-          transform: scaleY(1)
-          display: block
-          filter: grayscale(0)
-
-      &__img
-        +cover
-        padding-top: 55%
-        transform: scaleY(.9)
-        position: relative
-        width: 100%
-        filter: grayscale(100%)
-        +tr(transform .3s, filter .3s)
-        +sm
-          padding-top: 65%
-        +xs
-          padding-top: 75%
-      &__title
+        top: 270px
+        bottom: auto
+    &__btns-in
+      max-width: percentage(10/12)
+      text-align: right
+      position: relative
+      +xl
+        max-width: percentage(10.7/12)
+      +md
+        max-width: none
+      .arrow
         position: absolute
-        bottom: 5%
-        left: 5%
-        display: none
-      &__btn
-        text-align: center
-        +lg
-          .btn
-            min-width: 0
-            width: 100%
-      &__bottom
-        padding-top: 20px
-        +flex(space-between, center, row, wrap)
-        visibility: hidden
-        opacity: 0
-        +tr(visibility .3s, opacity .3s, transform .3s)
+        top: 0
+        right: 0
+        transform: translate(0, -50%)
         +md
-          // display: block
-        .text, .slide__btn
-          width: 33.33333%
-        .slide__btn
+          right: auto
+          left: 0
+        &--prev
+          transform: translate(calc(-100% - 10px), -50%)
           +md
-            order: 2
-            width: 100%
-        .text
-          padding-right: 10px
+            transform: translate(0, -50%)
+        &--next
           +md
-            margin-bottom: 10px
-          &:first-child
-            +md
-              order: 0
-              width: 50%
-            +sm
-              width: 100%
-              
-          &:last-child
-            text-align: right
-            padding-right: 0
-            +md
-              order: 1
-              width: 50%
-            +sm
-              width: 100%
-              text-align: left
+            transform: translate(calc(100% + 10px), -50%)
+    &__counter
+      @extend .container
+      width: 100%
+      position: absolute
+      z-index: 2
+      color: #e4e4e4
+      +css-lock(50, 235, 320, 1199, font-size)
+      +thin
+      top: calc(50% - 100px)
+      transform: translate(-50%, -50%)
+      left: 50%
+      pointer-events: none
+      height: 0
+      .slider-counter
+        text-align: right
+        max-width: percentage(9.5/12)
+        margin-top: -.7em
+      +md
+        .slider-counter
+          max-width: none
+        top: auto
+        bottom: 350px
+      +xs
+        top: 270px
+        bottom: auto
+    &__pagination
+      @extend .container
+      width: 100%
+      position: absolute
+      z-index: 2
+      top: calc(50% - 150px)
+      transform: translate(-50%, -50%)
+      left: 50%
+      height: 0
+      padding-left: 60px
+      +lg
+        top: calc(50% - 170px)
+        padding-left: 40px
+      +md
+        top: auto
+        padding-left: 20px
+        bottom: 330px
+        margin-left: -5px
+      +xs
+        top: calc(270px + 20px)
+        bottom: auto
+    &__prev, &__next
+      &.swiper-button-disabled
+        // opacity: 0
+        // visibility: hidden
           
 
 .assort-slide
@@ -258,9 +209,8 @@
   box-sizing: border-box
   +xll
     padding-bottom: 30px
-  +md
-   flex-direction: column
   +sm
+    flex-direction: column
     margin-left: calc(0px - var(--section-padding-md, 65px))
     margin-right: calc(0px - var(--section-padding-md, 65px))
   &__title
@@ -281,11 +231,11 @@
           margin-bottom: 15px
     a
       color: $blue-light
-    +md
+    +sm
       width: 100%
       flex: 0 0 100%
       order: 1
-    +sm
+    +xs
       padding-left: var(--section-padding-md, 65px)
       padding-right: var(--section-padding-md, 65px)
   &__img
@@ -302,7 +252,7 @@
     +xll
       // height: calc(100% + 30px)
       margin-bottom: -30px
-    +md
+    +sm
       width: 100%
       flex: 0 0 100%
       margin-left: 0
@@ -312,10 +262,10 @@
       // height: auto
       // height: 60%
       // padding-top: 35%
-    +sm
+    +xs
       padding-top: 270px
       // height: 270px
-    +xs
+    +xss
       // padding-top: 0
       padding-top: 200px
       margin-bottom: 30px
@@ -340,6 +290,7 @@
       +md
         margin-left: 0
         padding: 30px
+        height: 300px
       +sm
         padding: 15px
     #{$this}__text
@@ -367,97 +318,85 @@
       +rotate(180)
   &--white
     background-color: $white
-    color: $red
-
-.slider-counter-sm
-  $this: &
-  position: relative
-  +thin
-  color: $gray
-  .swiper-pagination-progressbar-fill
-    background-color: $red
-  &__current
-    display: inline-block
-    vertical-align: middle
-  &__all
-    display: inline-block
-    vertical-align: middle
-  &__line
-    display: inline-block
-    vertical-align: middle
-    width: 60px
-    background-color: currentColor
-    height: 1px
-    position: relative
-    overflow: hidden
-
-  &--white
-    .swiper-pagination-progressbar-fill
-      background-color: $white
-    #{$this}__current
-      color: $white
-    #{$this}__line
-      background-color: $red-light
-    #{$this}__all
-      color: $red-light
+    color: $red  
 
 .standart-slide
-  box-sizing: border-box
   position: relative
-  padding-top: 15%
-  +flex(flex-end, normal, column)
-  +sm
-    padding-top: 0
-  &__title
-    margin-bottom: 15px
-    +md
-      margin-bottom: 10px
-  &__block
-    background-color: $red-accent
-    padding-top: 75px
-    padding-bottom: 60px
-    padding-left: $left-1
-    padding-right: 12%
-    position: relative
-    z-index: 1
-    max-width: percentage(1310/1920)
-    // transform: translateY(100%)
+  *
+    box-sizing: border-box
+  &__content
     opacity: 0
+    max-width: percentage(9/12)
+    height: 400px
+    background-color: $gray-lightest
+    padding: 130px 90px 65px 50px
+    +xl
+      padding: 100px 40px 40px
     +lg
-      padding-left: 15%
+      padding: 80px 30px 30px
     +md
-      padding-left: var(--section-padding-lg, 100px)
-      padding-top: 40px
-      padding-bottom: 30px
-    +sm
       max-width: none
-      height: 60%
-      padding-top: 50px
-      padding-left: var(--section-padding, 40px)
-      padding-right: var(--section-padding, 40px)
+      padding: 50px 20px 20px
+      height: 350px
     +xs
-      padding-bottom: 50px
-  &__date
-    color: $red-light
-    font-size: $fz-md
-    margin-bottom: 20px
+      height: auto
+  &__content-wrap
+    @extend .container 
+    position: absolute
+    z-index: 1
+    top: 50%
+    transform: translate(-50%, -50%)
+    left: 50%
+    width: 100%
     +md
-      margin-bottom: 15px
-  &__text
+      position: relative
+      left: auto
+      top: auto
+      transform: translate(0, 0)
+      padding-left: 0
+      padding-right: 0
+  &__img
+    transform: translateX(100%)
+    +cover
+    padding-top: 40%
+    width: percentage(1300/1920)
+    margin-left: auto
+    position: relative
+    z-index: 0
+    +lg
+      padding-top: 50%
+    +md
+      width: 100%
+      padding-top: 40%
+    +xs
+      padding-top: 270px
+  &__title
     margin-bottom: 25px
     +md
-      margin-bottom: 20px
-  &__img
-    +cover
-    height: calc(100% - 60px)
-    width: calc(100% - #{$width-1-fucked-up})
-    position: absolute
-    z-index: 0
-    top: 0
-    right: 0
-    transform: translateX(100%)
-    +sm
+      margin-bottom: 10px
+  &__text
+    margin-bottom: 30px
+    max-width: 520px
+    +md
+      margin-bottom: 15px
+  &__content-bottom
+    +flex(flex-start, center, row, wrap)
+  &__contacts
+    flex-grow: 1
+    +flex(space-around, center, row, wrap)
+    +lg
+      width: calc(100% + 10px)
+      margin-left: -5px
+      margin-right: -5px
+      justify-content: space-between
+  &__btn
+    +lg
+      margin-bottom: 10px
+  &__contact
+    margin-left: 5px
+    margin-right: 5px
+    margin-bottom: 5px
+    .icon
       position: relative
-      width: 100%
-      height: 200px
-    
+      top: .2em
+      font-size: 1.1em

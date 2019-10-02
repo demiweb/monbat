@@ -23,7 +23,7 @@
   &__block-left-7-4
     left: $left-7-4
     width: calc(100% - #{$left-7-4})
-  &__title
+  &__title, &__subttl
     margin-bottom: 35px
     +md
       margin-bottom: 25px
@@ -63,6 +63,8 @@
     background-color: $red-accent
   &--blue
     background-color: #050a24
+  &--blue-accent-light
+    background-color: $blue-accent-light
   &--principles
     +sm
       padding-bottom: 0
@@ -127,6 +129,9 @@
       padding-right: 15px
   &--pt-sm
     padding-top: 15px
+  &--pb-lg
+    padding-bottom: 120px
+    padding-top: 0
   
 .section-block
   position: relative
@@ -354,7 +359,7 @@
     margin-bottom: -220px
     position: relative
     +xl
-    margin-bottom: 0  
+      margin-bottom: 0  
   &__word
     position: absolute
     top: 0

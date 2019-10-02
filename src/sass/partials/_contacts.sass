@@ -41,7 +41,6 @@
   &__left
     width: percentage(7/12)
     position: relative
-    padding-left: 7%
     +flex(center, normal, column)
     +md
       width: 100%
@@ -53,21 +52,27 @@
     +md
       width: 100%
   &__title
-    margin-bottom: 35px
-    max-width: 400px
+    margin-bottom: 25px
+    max-width: 590px
     +md
       max-width: none
       margin-bottom: 15px
       text-align: center
   &__form-title
-    margin-bottom: 25px
+    margin-bottom: 10px
+    .h4
+      margin-bottom: 10px
   &__text
-    max-width: 315px
+    max-width: 525px
     position: relative
-    left: 120px
-    width: calc(100% - 120px)
     +md
       max-width: none
-      left: auto
       text-align: center
       width: auto
+
+.map
+  position: relative
+  padding-top: 50%
+  iframe
+    +coverdiv
+    z-index: 1

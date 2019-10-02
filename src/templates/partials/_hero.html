@@ -145,6 +145,11 @@
       <h1 class="{% if not hero.titleH2 %}h1{% endif %}{% if hero.titleMod %} {{ hero.titleMod }}{% endif %}">{{ hero.title | safe }}</h1>
     </div>
     {% endif %}
+    {% if hero.titleLineUnderTitle %}
+    <div class="overflow-hidden">
+      <div class="line-sm{% if hero.titleLine.mod %} {{ hero.titleLine.mod }}{% endif %}"></div>
+    </div>
+    {% endif %}
     {% if hero.subttl %}
     <div class="hero__subttl">
       <div class="h2-subttl">{{ hero.subttl | safe }}</div>

@@ -11,6 +11,7 @@
     padding: 10px 12px
     resize: none
     overflow: hidden
+    background-color: transparent
     +tr(border-color .3s)
     &:focus
       border-color: $red-accent
@@ -20,14 +21,14 @@
       border: 0
       border-bottom: 1px solid  $gray
       padding: 5px 0
-      text-transform: uppercase
+      // text-transform: uppercase
       height: 35px
-    &--placeholder
+  &--placeholder
     padding-top: 15px
     label
       position: absolute
       font-size: $fz-md
-      text-transform: uppercase
+      // text-transform: uppercase
       top: 25px
       left: 0
       pointer-events: none
@@ -44,3 +45,7 @@
         // transform: translate(-.7em, 0) scale(.8)
         transform: translate(0, -25px)
         font-size: .75em
+  &--white
+    color: #919ede
+    textarea
+      border-color: $white

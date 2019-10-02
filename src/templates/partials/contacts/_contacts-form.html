@@ -1,28 +1,31 @@
 {%set
 form = [
-  { mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', name: 'input', type: 'text', placeholder: 'ІМ’Я' },
-  { mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', name: 'input', type: 'tel', placeholder: 'телефон' },
-  { mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', name: 'input', type: 'email', placeholder: 'E-MAIL' },
-  { mod: 'textarea--lg textarea--placeholder', fieldClass: 'js-textarea js-input-placeholder', name: 'textarea', type: '', placeholder: 'Повідомлення' }
+  { mod: 'input--lg input--white input--placeholder', fieldClass: 'js-input-placeholder', name: 'input', type: 'text', placeholder: 'Ім’я' },
+  { mod: 'input--lg input--white input--placeholder', fieldClass: 'js-input-placeholder', name: 'input', type: 'tel', placeholder: 'Телефон' },
+  { mod: 'input--lg input--white input--placeholder', fieldClass: 'js-input-placeholder', name: 'input', type: 'email', placeholder: 'E-mail' },
+  { mod: 'textarea--lg textarea--white textarea--placeholder', fieldClass: 'js-textarea js-input-placeholder', name: 'textarea', type: '', placeholder: 'Повідомлення' }
 ]
 %}
 
 <!-- begin section -->
-<section class="section section--md">
+<section class="section section--lg section--blue-accent-light">
   <div class="container">
     <!-- begin contacts-form -->
     <div class="contacts-form">
       <div class="contacts-form__left js-anim-el" data-anim-name="fadeIn">
         <div class="contacts-form__title">
-          <h2 class="title title--bold title--ttn">Ми раді допомогти вам у будь-якому питанні, яке вас турбує</h2>
+          <h2 class="title title--semi title--white">ми допоможемо вам з усіми питаннями та вислухаємо </h2>
         </div>
 
-        <div class="contacts-form__text text text--thin text--gray">Будь-ласка, заповніть форму праворуч та ми зв’яжемося з вами в найближчий час</div>
+        <div class="contacts-form__text text text--thin text--white">Якщо у вас з’явилися питання щодо продукції Monbat
+або цікава пропозиція, будь-ласка, заповніть контактну форму 
+праворуч та наш менеджер зв’яжеться з вами в найближчий час. Дякую!</div>
       </div>
 
       <div class="contacts-form__right js-anim-el" data-anim-name="fadeInLeft">
-        <div class="contacts-form__form-title title-under is-center">
-          <h2 class="title title--bold">КОНТАКТНА ФОРМА</h2>
+        <div class="contacts-form__form-title is-center">
+          <h4 class="h4 h4--md h4--light">КОНТАКТНА ФОРМА</h4>
+          <div class="line-sm line-sm--static"></div>
         </div>
 
         <div class="contacts-form__form form form--contacts">

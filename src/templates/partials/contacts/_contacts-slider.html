@@ -1,49 +1,85 @@
+{%set
+slider = [
+  { text: 'Філіал почав свою роботу у січні 1996 року, відтоді нас відвідали більше ніж 15000 клієнтів. Ви можете зателефонувати нам, написати на e-mail або завітати до нас у будь-який зручний час (Пн - Пт, 9:00 - 18:00)' },
+  { text: 'Філіал почав свою роботу у січні 1996 року, відтоді нас відвідали більше ніж 15000 клієнтів. Ви можете зателефонувати нам, написати на e-mail або завітати до нас у будь-який зручний час (Пн - Пт, 9:00 - 18:00) Філіал почав свою роботу у січні 1996 року, відтоді нас відвідали більше ніж 15000 клієнтів. Ви можете зателефонувати нам, написати на e-mail або завітати до нас у будь-який зручний час (Пн - Пт, 9:00 - 18:00)' },
+  { text: 'Філіал почав свою роботу у січні 1996 року, відтоді нас відвідали більше ніж 15000 клієнтів. Ви можете зателефонувати нам, написати на e-mail або завітати до нас у будь-який зручний час (Пн - Пт, 9:00 - 18:00)' },
+  { text: 'Філіал почав свою роботу у січні 1996 року, відтоді нас відвідали більше ніж 15000 клієнтів. Ви можете зателефонувати нам, написати на e-mail або завітати до нас у будь-який зручний час (Пн - Пт, 9:00 - 18:00) Філіал почав свою роботу у січні 1996 року, відтоді нас відвідали більше ніж 15000 клієнтів. Ви можете зателефонувати нам, написати на e-mail або завітати до нас у будь-який зручний час (Пн - Пт, 9:00 - 18:00)' }
+]
+%}
+
+
 <!-- begin section -->
-<section class="section section--md">
-  <div class="section__title title-under is-center js-anim-el" data-anim-name="fadeInBottom">
-    <h2 class="title">наші офіси</h2>
-  </div>
+<section class="section section--lg pt-0">
+  <!-- begin slider -->
+  <div class="slider__wrap slider--standart__wrap">
+    <div class="swiper-container js-animated-slider" data-slider="standart">
 
-  <!-- begin contacts-slider -->
-  <div class="contacts-slider">
-    <!-- begin slider -->
-    <div class="slider__wrap slider--contacts__wrap">
-      <div class="swiper-container js-slider" data-slider="contacts">
-        <div class="slider slider--contacts swiper-wrapper">
-          {% for i in range(0, 5) %}
-          <div class="slide swiper-slide">
-            <div class="slide__img js-lazy" data-background-image="img/contacts-slider/office-1.jpg">
-              <div class="slide__title">
-                <h2 class="h2">ми є у києві</h2>
+      <div class="slider slider--standart swiper-wrapper">
+        {% for i in slider %}
+        <!-- begin slide -->
+        <div class="swiper-slide">
+          <div class="slide standart-slide">
+            <div class="standart-slide__img js-lazy" data-background-image="img/contacts-slider/01.jpg"></div>
+            
+            <div class="standart-slide__content-wrap">
+              <div class="standart-slide__content">
+                <div class="standart-slide__title">
+                  <div class="title title--bold title--black">ми є у києві</div>
+                </div>
+
+                <div class="standart-slide__text text text--thin">
+                  {{ i.text | safe }}                
+                </div>
+
+                <div class="standart-slide__content-bottom">
+                  <div class="standart-slide__btn">
+                    {{ mixins.btn(
+                      title = 'зв’язатися',
+                      mod = 'btn--sec',
+                      href = false
+                    ) }}
+                  </div>
+
+                  <div class="standart-slide__contacts">
+                    <div class="standart-slide__contact">
+                      {{ mixins.icon('placeholder') }}
+                      вул. Залізничне Шосе, 6, Київ, 01103
+                    </div>
+                    <div class="standart-slide__contact">
+                      {{ mixins.icon('call') }}
+                      <a href="tel:+380504947606">+38 050 494 76 06</a>
+                    </div>
+                    <div class="standart-slide__contact">
+                      {{ mixins.icon('envelope') }}
+                      <a href="mailto:info@monbat.com.ua">info@monbat.com.ua</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="slide__bottom">
-              <div class="text text--gray">вул. Залізничне Шосе, 6, Київ, 01103</div>
-
-              <div class="slide__btn">
-                {{ mixins.btn(
-                  title = 'зв’язатися',
-                  mod = 'btn--sec btn--md'
-                ) }}
-              </div>
-
-              
-
-              <div class="text text--gray">+38 050 494 76 06</div>
-            </div>
-
-
+            
           </div>
-          {% endfor %}          
-        </div>
-
-        <button class="slider__prev js-prev"></button>
-        <button class="slider__next js-next"></button>
+        </div>        
+        <!-- end slide -->
+        {% endfor %}        
       </div>
+
     </div>
-    <!-- end slider -->
+
+    <div class="slider--standart__btns">
+      <div class="slider--standart__btns-in">
+        <button class="slider--standart__prev arrow arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>
+        <button class="slider--standart__next arrow arrow--next js-next">{{ mixins.icon('arrow') }}</button>
+      </div>
+    </div> 
+
+    <div class="slider--standart__pagination slider__pagination js-pagination"></div>
+
+    <div class="slider--standart__counter">
+      <div class="slider-counter js-counter">01</div>
+    </div>
   </div>
-  <!-- end contacts-slider -->
+  <!-- end slider -->
 </section>
 <!-- end section -->

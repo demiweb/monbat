@@ -1,4 +1,3 @@
-// import Slider from './Slider';
 import animateAssortSlider from './assortSlider';
 import animateStandartSlider from './standartSlider';
 

@@ -7,12 +7,21 @@ header: {
 }
 hero: {
   mod: 'hero--lg',
-  title: '<small>НАШІ</small> КОНТАКТИ',
-  titleMod: 'h2',
+  title: 'КОНТАКТИ',
+  titleMod: 'title-subttl',
   titleH2: true,
-  titleWrapMod: 'title-under title-under--white',
-  subttl: 'Якщо у вас з’явилися питання або цікаві пропозиції, зв’яжіться з нами будь-яким зручним для вас способом',
-  bgImage: 'bg-hero-contacts.jpg'
+  titleWrapMod: '',
+  titleLineUnderTitle: true,
+  subttl: 'завітайте до нашого офісу або зателефонуйте нам',
+  bgImage: 'bg-hero-contacts.jpg',
+  breadcrumbs: {
+    isInTop: true,
+    list: [
+      { link: 'Головна' },
+      { item: '/' },
+      { link: 'Контакти', modLink: 'is-active' }
+    ]
+  }
 }
 ---
 {% extends "layouts/_layout.html" %}
@@ -22,9 +31,8 @@ hero: {
   {% include "partials/_hero.html" %}
  
   {% include "partials/contacts/_contacts-slider.html" %} 
-  {% include "partials/contacts/_contacts.html" %} 
-  {% include "partials/contacts/_contacts-form.html" %} 
-  {% include "partials/contacts/_contacts-subscribe.html" %}
+  {% include "partials/contacts/_contacts-form.html" %}
+  {% include "partials/contacts/_contacts-map.html" %}
 
   {% include "partials/_footer.html" %}
 {% endblock %}

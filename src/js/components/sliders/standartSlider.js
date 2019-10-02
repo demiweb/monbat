@@ -9,8 +9,8 @@ export default function animateStandartSlider(slider) {
     return {
       prev: mySlider.wrap.querySelector('.js-prev'),
       next: mySlider.wrap.querySelector('.js-next'),
-      progres: mySlider.wrap.querySelector('.js-progress'),
-      counterSm: mySlider.wrap.querySelector('.js-counter-sm')
+      pagination: mySlider.wrap.querySelector('.js-pagination'),
+      counter: mySlider.wrap.querySelector('.js-counter')
     };
   };
 
@@ -20,16 +20,15 @@ export default function animateStandartSlider(slider) {
     const activeSlide = slides[mySlider.swiper.activeIndex];
 
     
-    mySlider.setCounterSm({
+    mySlider.setCounter({
       activeSlide: mySlider.swiper.activeIndex,
-      slidesAmount: mySlider.swiper.slides.length,
-      htmlBlock: mySlider.GETTERS().counterSm
+      htmlBlock: mySlider.GETTERS().counter
     });
 
     function getelements(slide) {
       return {
         img: slide.querySelector('.standart-slide__img'),
-        block: slide.querySelector('.standart-slide__block')
+        block: slide.querySelector('.standart-slide__content')
       };
     };
     
@@ -85,8 +84,8 @@ export default function animateStandartSlider(slider) {
       prevEl: mySlider.GETTERS().prev
     },
     pagination: {
-      el: mySlider.GETTERS().progres,
-      type: 'progressbar',
+      el: mySlider.GETTERS().pagination,
+      type: 'bullets',
     },
     touchRatio: 0,
     speed: 1000,
@@ -100,7 +99,7 @@ export default function animateStandartSlider(slider) {
         const slides = [].slice.call(swiper.$el[0].querySelectorAll('.swiper-slide'));
         const activeSlide = slides[swiper.activeIndex];
         const img = activeSlide.querySelector('.standart-slide__img');
-        const block = activeSlide.querySelector('.standart-slide__block');
+        const block = activeSlide.querySelector('.standart-slide__content');
 
         activeSlide.style.zIndex = 5;
 
@@ -117,7 +116,7 @@ export default function animateStandartSlider(slider) {
         
       slideChange: () => {
         if (mySlider.swiper.params.effect !== 'myCustomTransition') return;
-        mySlider.setAnimation();          
+        mySlider.setAnimation();
       }
     }
   };

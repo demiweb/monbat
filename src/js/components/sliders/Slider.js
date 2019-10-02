@@ -11,7 +11,7 @@ export default class Slider {
     
     const slides = [].slice.call(swiper.$el[0].querySelectorAll('.swiper-slide'));
 
-    slides.map((slide, index) => {
+    slides.forEach((slide, index) => {
       // to put the slides behind each other we have to set their CSS translate accordingly since by default they are arranged in line.
       const offset = slide.swiperSlideOffset;
       let x = -offset;
@@ -25,7 +25,7 @@ export default class Slider {
       anime.set(slide, {
         translateX: x,
         translateY: y
-      });      
+      });
     });
   };
 

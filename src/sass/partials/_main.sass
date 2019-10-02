@@ -40,11 +40,10 @@
       z-index: 10
   &__aside
     position: absolute
-    z-index: 2
-    
+    z-index: 2    
     top: 0
+    bottom: 0
     left: 0
-    height: 100%
     background-color: $white
     border-bottom: 1px solid  $c-border
     transform: translate(-100%, 0)
@@ -88,7 +87,8 @@
         margin-top: -8px
     #{$this}__aside
       top: $subnav-height
-      height: calc(100% - #{$subnav-height})
+      +xl
+        top: $subnav-height-xl
       +lg
         top: 0
         height: 100%
