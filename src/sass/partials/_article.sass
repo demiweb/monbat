@@ -1,111 +1,157 @@
 .article
-  .h3, h3, .h1, h2
-    text-align: center
-    margin-bottom: 15px
-  p
-    @extend .text
-    @extend .text--gray
-    margin-bottom: 20px
-    +sm
-      margin-bottom: 10px
-  img
-    margin-bottom: 40px
-    width: 100%
-    +sm
-      margin-bottom: 20px
-  figure
-    position: relative
-    // margin-bottom: 40px
-    img
-      margin-bottom: 0
-    figcaption
-      position: absolute
-      z-index: 1
-      bottom: 15px
-      right: 15px
-      color: $white
-  blockquote
-    +thinit
-    background-color: $white
-    padding: 30px
-    border: 1px solid  $gray-light
-    border-left: 4px solid  $red-accent
-    position: relative
-    margin-bottom: 35px
-    +md
-      padding: 20px
-    +sm
-      margin-bottom: 15px
-    p
-      position: relative
-      z-index: 1
-      +thinit
-      color: $c-text
-      margin-bottom: 0
-    .icon
-      position: absolute
-      top: 10px
-      left: 10px
-      z-index: 0
-      fill: $gray-light
-      font-size: 50px
-
-
-.more-articles
-  --more-articles-col-gap: 15px
+  color: $gray
   +flex(flex-start, normal, row, wrap)
-  margin-left: calc(0px - var(--more-articles-col-gap, 15px))
-  margin-right: calc(0px - var(--more-articles-col-gap, 15px))
-  +md
-    --more-articles-col-gap: 10px
-  .article-sm
-    margin-right: var(--more-articles-col-gap, 15px)
-    margin-left: var(--more-articles-col-gap, 15px)
-    width: calc(25% - (var(--more-articles-col-gap, 15px) * 2))
-    +sm
-      width: calc(50% - (var(--more-articles-col-gap, 15px) * 2))
-      margin-bottom: var(--more-articles-col-gap, 15px)
-    +xs
-      width: calc(100% - (var(--more-articles-col-gap, 15px) * 2))
+  margin-left: -15px
+  margin-right: -15px
+  &__content
+    padding-left: 15px
+    padding-right: 15px
+    width: percentage(8/12)
+    +md
+      width: 100%
+      margin-bottom: 15px
+    h2, h3, h4, p, img, ul, ol, blockquote
+      +notlast
+        margin-bottom: 25px
+        +md
+          margin-bottom: 10px
+
+    img
+      width: 100%
+    ol
+      list-style-type: decimal
+      margin-left: 1.1em
+    strong
+      font-weight: 400
+      +bold
+
+    h2, h3, h4
+      color: $c-text
+    h4
+      @extend .h4
+      @extend .h4--md
+      @extend .h4--text
+      @extend .h4--semi
+      @extend .h4--ttn
+      position: relative
+      +before
+        border-top: 2px solid  $red
+        width: 25px
+        top: 1.1em
+        left: 0
+        position: absolute
+    blockquote
+      background-color: $gray-lightest
+      padding: 25px 40px
+      border-left: 2px solid  $red
+    ul
+      li
+        &::before
+          content: "\2022"
+          display: inline-block
+          margin-right: 5px
+  
+  &__aside
+    padding-left: 15px
+    padding-right: 15px
+    width: percentage(4/12)
+    +md
+      width: 100%
 
 .article-sm
-  $this: &
-  display: block
-  +hover
-    #{$this}__img
-      +scale(1.1)
-      +before
-        visibility: visible
-        opacity: 1
-    #{$this}__content
-      transform: translate(0, 20px)
+  $this: &  
+  +flex()
+  +xs
+    display: block
   &__img
     display: block
+    flex: 0 0 145px
+    height: 145px
     +cover
-    padding-top: 120%
-    margin-bottom: 15px
     +tr(transform .3s) 
     position: relative
-    +before
-      +coverdiv
-      background-color: rgba($red-accent, .75)
-      z-index: 1
-      visibility: hidden
-      opacity: 0
-      +tr(opacity .3s, visibility .3s)
     +xs
-      padding-top: 60%
+      width: 145px
+      margin-bottom: 10px
   &__date
     margin-bottom: 10px
     color: $gray
     display: block
-    font-size: $fz-sm
+    font-size: $fz-md
+    .icon
+      fill: currentColor
+      position: relative
+      top: .15em
+      margin-right: 5px
   &__title
     margin-bottom: 10px
     display: block
+    position: relative
+    +before
+      position: absolute
+      border-top: 2px solid  $red
+      width: 25px
+      left: 0
+      bottom: 0
   &__text
-    max-height: 4.1em
     display: block
   &__content
     display: block
+    flex: 0 0 calc(100% - 145px)
+    padding-left: 30px
     +tr(transform .3s)
+    +lg
+      padding-left: 15px
+    +xs
+      padding-left: 0
+
+.article-aside
+  &__title
+    margin-bottom: 15px
+    +md
+      margin-bottom: 10px
+  &__block
+    margin-bottom: 30px
+    +md
+      margin-bottom: 15px
+  &__article
+    padding-top: 15px
+    padding-bottom: 15px
+    border-bottom: 1px solid  $c-border
+    &:first-child
+      border-top: 1px solid  $c-border
+
+.aside-nav
+  li
+    border-bottom: 1px solid  $c-border
+    padding-left: 25px
+    position: relative
+    +before
+      border-top: 1px solid  $c-border
+      width: 15px
+      top: 50%
+      transform: translate(0, -50%)
+      left: 0
+      position: absolute
+    +after
+      +icon-arrow(6, 6, 1, $c-border, 225)
+      position: absolute
+      top: 50%
+      left: 10px
+      transform: translate(0, -50%) rotate(225deg)
+    &:first-child
+      border-top: 1px solid  $c-border
+  a
+    display: block
+    padding: 15px 0
+    position: relative
+    +hover
+      +before
+        display: block
+    +before
+      border-top: 2px solid $red
+      width: 25px
+      bottom: 0
+      left: 0
+      position: absolute
+      display: none

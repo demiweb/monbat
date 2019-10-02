@@ -6,20 +6,24 @@ header: {
   mod: ''
 }
 hero: {
-  title: '<small>АКТУАЛЬНІ</small> НОВИНИ',
-  titleMod: 'title--white',
+  title: '<span class="underlined">МОНБАТСЬКІ</span> ДОСЛІДЖЕННЯ <br>
+ІНВЕСТИЦІЙНИХ МОЖЛИВОСТЕЙ',
+  mod: 'hero--full',
+  titleH2: true,
+  titleMod: 'title title--semi title--white',
   bgImage: 'bg-hero-article.jpg',
   breadcrumbs: {
     isInTop: true,
     list: [
-      { link: 'ABS' },
+      { link: 'Головна' },
       { item: '/' },
       { link: 'Новини' },
       { item: '/' },
-      { link: 'Презентація нових моделей', modLink: 'is-active' }
+      { link: 'Монбатські дослідження інвестиційних можливостей', modLink: 'is-active' }
     ]
   },
-  titleLine: true
+  date: true,
+  scroll: true
 }
 ---
 {% extends "layouts/_layout.html" %}

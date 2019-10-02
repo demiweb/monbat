@@ -19,29 +19,7 @@
 
     <div class="news__items">
       {% for i in range(0, 6) %}
-      <div class="news__item">
-        <!-- begin news-item -->
-        <a href="#" class="news-item">
-          <span class="news-item__img">
-            <span class="news-item__img-img js-lazy" data-background-image="./img/news/01.jpg"></span>
-          </span>
-
-          <span class="news-item__content">
-            <span class="news-item__upttl">blog</span>
-
-            <span class="news-item__title">
-              <h4 class="h4 h4--md h4--semi h4--red">AUTOMECHANIKA DUBAI</h4>
-            </span>
-
-            <span class="news-item__text text text--gray">У травні 2017 року продукція MONBAT була представлена ​​на міжнародній автомобільній виставці АВТОМЕХАНІКА, Дубаї. Представники виставки та глядачі були вражені кількістю нових...</span>
-
-            <span class="news-item__date">28.09.2017</span>
-          </span>
-
-          <span class="news-item__cover"></span>
-        </a>
-        <!-- end news-item -->
-      </div>
+      {% include "partials/_news-item.html" %}
       {% endfor %}
     </div>
     

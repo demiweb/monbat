@@ -24,8 +24,10 @@
     +hover
       @extend .news__tab.is-active
   &__items
-    margin-bottom: calc(var(--main-padding-md, 45px)/2)
     +flex(flex-start, normal, row, wrap)
+    +notlast
+      margin-bottom: calc(var(--main-padding-md, 45px)/2)
+    
   &__item
     width: 33.33333%
     border-bottom: 1px solid  $gray-lightest

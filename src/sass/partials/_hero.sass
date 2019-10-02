@@ -47,6 +47,18 @@
   &__slider
     width: 100%
     text-align: left
+  &__scroll
+    @extend .hero-about__scroll
+    +sm
+      position: absolute !important
+  &__date
+    color: $gray-light
+    margin-bottom: 15px
+    .icon
+      fill: currentColor
+      position: relative
+      top: .1em
+      right: 5px
 
   &--lg
     min-height: 75vh
