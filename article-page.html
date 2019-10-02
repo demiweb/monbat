@@ -97,10 +97,10 @@
         <div class="hero__scroll">
           <!-- begin scroll-down -->
           <div class="scroll-down">
-            <a href="#" class="scroll-down__btn">
+            <button class="scroll-down__btn js-scroll-to-next">
               <span class="scroll-down__mouse"></span>
               <span class="scroll-down__arr"></span>
-            </a>
+            </button>
             <div class="scroll-down__title">дізнатися більше</div>
           </div>
           <!-- end scroll-down -->
@@ -412,166 +412,49 @@
       <div class="popup__inner">
         <a href="#" class="popup__close js-popup-close"></a>
         <div class="popup__title">
-          <h2 class="title title--bold">замовити дзвінок</h2>
+          <h4 class="h4 h4--md h4--gray">замовити дзвінок</h4>
         </div>
         <div class="popup__title-line">
-          <div class="line-sm line-sm--text"></div>
+          <div class="line-sm line-sm--gray line-sm--static"></div>
         </div>
-        <div class="popup__subttl text text--thin is-center">Заповніть форму нижче та ми зв’яжемося з вами в найближчий час</div>
         <div class="popup__form form form--contacts">
           <form>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg input--placeholder">
+              <div class="input input--lg input--gray input--placeholder">
                 <input class="js-input-placeholder" type="text">
-                <label>ІМ’Я</label>
+                <label>Ім’я</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin input -->
-              <div class="input input--lg input--placeholder">
+              <div class="input input--lg  input--gray input--placeholder">
                 <input class="js-input-placeholder" type="tel">
-                <label>телефон</label>
+                <label>Телефон</label>
               </div>
               <!-- end input -->
             </div>
             <div class="form__field">
               <!-- begin textarea -->
-              <div class="textarea textarea--lg textarea--lg">
+              <div class="textarea textarea--lg textarea--gray textarea--placeholder">
                 <textarea class="js-textarea js-input-placeholder" placeholder="" value=""></textarea>
-                <label>повідомлення</label>
+                <label>Повідомлення</label>
               </div>
               <!-- end textarea -->
             </div>
             <div class="form__btn">
-              <button class="btn btn--sec btn--md btn--full">відправити</button>
+              <button class="btn btn--sec btn--lg-height btn--md-width">зв’язатися</button>
             </div>
+            <div class="form__info">
+              <!-- begin icon-locked -->
+              <svg viewBox="0 0 54 54" class="icon icon-locked" width="1.000em" height="1em">
+                <path d="M43 20.113V14.5C43 6.505 35.822 0 27 0S11 6.505 11 14.5v5.613c-3.401.586-6 3.55-6 7.117v19.542C5 50.757 8.243 54 12.229 54h29.542C45.757 54 49 50.757 49 46.771V27.229c0-3.566-2.599-6.53-6-7.116zM13 14.5C13 7.607 19.28 2 27 2s14 5.607 14 12.5V20H13v-5.5zm34 32.271A5.235 5.235 0 0 1 41.771 52H12.229A5.235 5.235 0 0 1 7 46.771V27.229A5.235 5.235 0 0 1 12.229 22h29.542A5.235 5.235 0 0 1 47 27.229v19.542z" />
+                <path d="M27 28c-2.206 0-4 1.794-4 4v6c0 2.206 1.794 4 4 4s4-1.794 4-4v-6c0-2.206-1.794-4-4-4zm2 10c0 1.103-.897 2-2 2s-2-.897-2-2v-6c0-1.103.897-2 2-2s2 .897 2 2v6z" />
+              </svg>
+              <!-- end icon-locked --> Ваші контактні дані не будуть передані стороннім особам </div>
           </form>
         </div>
-      </div>
-    </div>
-    <!-- end popup -->
-    <!-- begin popup -->
-    <div class="popup popup--cart js-popup" data-popup="cart">
-      <div class="popup__inner">
-        <a href="#" class="popup__close js-popup-close"></a>
-        <!-- begin cart -->
-        <div class="cart">
-          <div class="cart__row">
-            <div class="container">
-              <!-- begin cart-item -->
-              <div class="cart-item">
-                <div class="cart-item__img">
-                  <img data-src="img/accum/sm-1.png" alt="" class="js-lazy">
-                </div>
-                <div class="cart-item__meta">
-                  <h5 class="h5 h5--ttn h5--blue"><a href="#">EFB series Start Stop</a></h5>
-                  <!-- begin controls -->
-                  <div class="controls controls--col">
-                    <div class="controls__item">
-                      <div class="controls__title">АРТИКУЛ:</div>
-                      <div class="controls__text">N66L2X0_1</div>
-                    </div>
-                    <div class="controls__item">
-                      <div class="controls__title">Ємність, Ач:</div>
-                      <div class="controls__text controls__text-text">60</div>
-                    </div>
-                    <div class="controls__item">
-                      <div class="controls__title">ПОЛЯРНІСТЬ:</div>
-                      <div class="controls__text controls__text-text">0</div>
-                    </div>
-                  </div>
-                  <!-- end controls -->
-                  <div class="price price--sm price--red">1240 uah</div>
-                </div>
-                <div class="cart-item__amount">
-                  <div class="cart-item__counter">
-                    <!-- begin counter -->
-                    <div class="counter js-counter">
-                      <button class="js-counter-increase">-</button>
-                      <input type="text" value="1">
-                      <button class="js-counter-decrease">+</button>
-                    </div>
-                    <!-- end counter -->
-                  </div>
-                  <div class="cart-item__price">
-                    <div class="price price--sm price--red">3720 uah</div>
-                  </div>
-                  <a href="#" class="cart-item__icon">
-                    <!-- begin icon-waste-bin -->
-                    <svg viewBox="0 0 268.476 268.476" class="icon icon-waste-bin" width="1.000em" height="1em">
-                      <path style="fill-rule:evenodd;clip-rule:evenodd" d="M63.119 250.254s3.999 18.222 24.583 18.222h93.072c20.583 0 24.582-18.222 24.582-18.222l18.374-178.66H44.746l18.373 178.66zM170.035 98.442a8.948 8.948 0 0 1 8.949-8.949 8.95 8.95 0 0 1 8.95 8.949l-8.95 134.238a8.949 8.949 0 1 1-17.898 0l8.949-134.238zm-44.746 0a8.949 8.949 0 0 1 8.949-8.949 8.948 8.948 0 0 1 8.949 8.949V232.68a8.948 8.948 0 0 1-8.949 8.949 8.949 8.949 0 0 1-8.949-8.949V98.442zm-35.797-8.95a8.948 8.948 0 0 1 8.949 8.949l8.95 134.238a8.95 8.95 0 0 1-17.899 0L80.543 98.442a8.95 8.95 0 0 1 8.949-8.95zM218.36 35.811h-39.376V17.899C178.984 4.322 174.593 0 161.086 0H107.39C95.001 0 89.492 6.001 89.492 17.899v17.913H50.116c-7.914 0-14.319 6.007-14.319 13.43 0 7.424 6.405 13.431 14.319 13.431H218.36c7.914 0 14.319-6.007 14.319-13.431 0-7.423-6.405-13.431-14.319-13.431zm-57.274 0h-53.695l.001-17.913h53.695v17.913z" />
-                    </svg>
-                    <!-- end icon-waste-bin -->
-                  </a>
-                </div>
-              </div>
-              <!-- end cart-item -->
-            </div>
-          </div>
-          <div class="cart__row">
-            <div class="container">
-              <!-- begin cart-item -->
-              <div class="cart-item">
-                <div class="cart-item__img">
-                  <img data-src="img/accum/sm-1.png" alt="" class="js-lazy">
-                </div>
-                <div class="cart-item__meta">
-                  <h5 class="h5 h5--ttn h5--blue"><a href="#">EFB series Start Stop</a></h5>
-                  <!-- begin controls -->
-                  <div class="controls controls--col">
-                    <div class="controls__item">
-                      <div class="controls__title">АРТИКУЛ:</div>
-                      <div class="controls__text">N66L2X0_1</div>
-                    </div>
-                    <div class="controls__item">
-                      <div class="controls__title">Ємність, Ач:</div>
-                      <div class="controls__text controls__text-text">60</div>
-                    </div>
-                    <div class="controls__item">
-                      <div class="controls__title">ПОЛЯРНІСТЬ:</div>
-                      <div class="controls__text controls__text-text">0</div>
-                    </div>
-                  </div>
-                  <!-- end controls -->
-                  <div class="price price--sm price--red">1240 uah</div>
-                </div>
-                <div class="cart-item__amount">
-                  <div class="cart-item__counter">
-                    <!-- begin counter -->
-                    <div class="counter js-counter">
-                      <button class="js-counter-increase">-</button>
-                      <input type="text" value="1">
-                      <button class="js-counter-decrease">+</button>
-                    </div>
-                    <!-- end counter -->
-                  </div>
-                  <div class="cart-item__price">
-                    <div class="price price--sm price--red">3720 uah</div>
-                  </div>
-                  <a href="#" class="cart-item__icon">
-                    <!-- begin icon-waste-bin -->
-                    <svg viewBox="0 0 268.476 268.476" class="icon icon-waste-bin" width="1.000em" height="1em">
-                      <path style="fill-rule:evenodd;clip-rule:evenodd" d="M63.119 250.254s3.999 18.222 24.583 18.222h93.072c20.583 0 24.582-18.222 24.582-18.222l18.374-178.66H44.746l18.373 178.66zM170.035 98.442a8.948 8.948 0 0 1 8.949-8.949 8.95 8.95 0 0 1 8.95 8.949l-8.95 134.238a8.949 8.949 0 1 1-17.898 0l8.949-134.238zm-44.746 0a8.949 8.949 0 0 1 8.949-8.949 8.948 8.948 0 0 1 8.949 8.949V232.68a8.948 8.948 0 0 1-8.949 8.949 8.949 8.949 0 0 1-8.949-8.949V98.442zm-35.797-8.95a8.948 8.948 0 0 1 8.949 8.949l8.95 134.238a8.95 8.95 0 0 1-17.899 0L80.543 98.442a8.95 8.95 0 0 1 8.949-8.95zM218.36 35.811h-39.376V17.899C178.984 4.322 174.593 0 161.086 0H107.39C95.001 0 89.492 6.001 89.492 17.899v17.913H50.116c-7.914 0-14.319 6.007-14.319 13.43 0 7.424 6.405 13.431 14.319 13.431H218.36c7.914 0 14.319-6.007 14.319-13.431 0-7.423-6.405-13.431-14.319-13.431zm-57.274 0h-53.695l.001-17.913h53.695v17.913z" />
-                    </svg>
-                    <!-- end icon-waste-bin -->
-                  </a>
-                </div>
-              </div>
-              <!-- end cart-item -->
-            </div>
-          </div>
-          <div class="cart__row cart__row-last">
-            <div class="cart__all-price"> Разом: <div class="price">6200 uah</div>
-            </div>
-            <div class="cart__btns">
-              <a href="#" class="btn btn--sec">замовити</a>
-              <a href="#" class="btn btn--sec btn--transp-red">Продовжити покупки</a>
-            </div>
-          </div>
-        </div>
-        <!-- end cart -->
       </div>
     </div>
     <!-- end popup -->
