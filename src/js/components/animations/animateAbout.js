@@ -6,11 +6,13 @@ export default function animateAbout() {
   if (!page) return;
 
   const elements = {
-    sections: [].slice.call(page.querySelectorAll('section'))
+    sections: [].slice.call(page.querySelectorAll('section')),    
   };
 
   const pageAnimator = new PageAnimator(elements);
   pageAnimator.animate = (elements) => {
+
+    // animate sections
     const aboutAnimator = new AboutAnimator(elements.sections);
 
     elements.sections.forEach((section, i) => {

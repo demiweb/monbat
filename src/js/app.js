@@ -1,6 +1,6 @@
-import 'promise-polyfill/src/polyfill';
-import 'intersection-observer';
-import cssVars from 'css-vars-ponyfill';
+// import 'promise-polyfill/src/polyfill';
+// import 'intersection-observer';
+// import cssVars from 'css-vars-ponyfill';
 
 import setTouchClassName from './components/setTouchClassName';
 import setLazy from './components/setLazy';
@@ -19,14 +19,15 @@ import setAnimatedSliders from './components/sliders/setAnimatedSliders';
 import setParallax from './components/setParallax';
 import setGallery from './components/setGallery';
 import toggleBlock from './components/toggleBlock';
-import truncateText from './components/truncateText';
+// import truncateText from './components/truncateText';
 import setPopups from './components/setPopups';
 import toggleInputFocus from './components/toggleInputFocus';
 import setTextareaHeight from './components/setTextareaHeight';
-import setCounter from './components/setCounter';
+// import setCounter from './components/setCounter';
+import scrollToNext from './components/scrollToNext';
 
 $(function() {
-  cssVars();
+  // cssVars();
   setTouchClassName();
   setLazy();
   toggleMenu();
@@ -44,9 +45,12 @@ $(function() {
   setParallax();
   setGallery();
   toggleBlock();
-  truncateText();
+  // truncateText();
   setPopups();
   toggleInputFocus();
   setTextareaHeight();
-  setCounter();
+  // setCounter();
+  scrollToNext();
 });
+
+window.setLazy = setLazy;

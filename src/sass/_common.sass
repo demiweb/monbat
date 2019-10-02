@@ -119,6 +119,7 @@ input, textarea
     +thin
   &__btn
     display: inline-block
+    background-color: transparent
   &__mouse
     display: block
     position: relative
@@ -208,6 +209,11 @@ input, textarea
       padding-top: 5px
       padding-bottom: 5px
       font-size: $fz-md
+  &--lg-height
+    padding-top: 12px
+    padding-bottom: 12px
+  &--md-width
+    min-width: 180px
   &--full
     width: 100%
   &--arrow
@@ -264,6 +270,8 @@ input, textarea
     background-color: $red-accent
   &--static
     transform: translateY(0)
+  &--gray
+    background-color: $gray
 
 .btn-link
   font-size: $fz-sm

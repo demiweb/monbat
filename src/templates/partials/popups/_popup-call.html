@@ -1,8 +1,8 @@
 {% set 
 form = [
-  { name: 'input', mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', type: 'text', placeholder: 'ІМ’Я' },
-  { name: 'input', mod: 'input--lg input--placeholder', fieldClass: 'js-input-placeholder', type: 'tel', placeholder: 'телефон' },
-  { name: 'textarea', mod: 'textarea--lg textarea--lg', fieldClass: 'js-textarea js-input-placeholder', type: '', placeholder: 'повідомлення' }
+  { name: 'input', mod: 'input--lg input--gray input--placeholder', fieldClass: 'js-input-placeholder', type: 'text', placeholder: 'Ім’я' },
+  { name: 'input', mod: 'input--lg  input--gray input--placeholder', fieldClass: 'js-input-placeholder', type: 'tel', placeholder: 'Телефон' },
+  { name: 'textarea', mod: 'textarea--lg textarea--gray textarea--placeholder', fieldClass: 'js-textarea js-input-placeholder', type: '', placeholder: 'Повідомлення' }
 ]
 %}
 
@@ -12,14 +12,12 @@ form = [
 
 {% block content %}
   <div class="popup__title">
-    <h2 class="title title--bold">замовити дзвінок</h2>
+    <h4 class="h4 h4--md h4--gray">замовити дзвінок</h4>
   </div>
 
   <div class="popup__title-line">
-    <div class="line-sm line-sm--text"></div>
+    <div class="line-sm line-sm--gray line-sm--static"></div>
   </div>
-
-  <div class="popup__subttl text text--thin is-center">Заповніть форму нижче та ми зв’яжемося з вами в найближчий час</div>
 
   <div class="popup__form form form--contacts">
     <form>
@@ -37,10 +35,15 @@ form = [
 
       <div class="form__btn">
         {{ mixins.btn(
-          title = 'відправити',
-          mod = 'btn--sec btn--md btn--full',
+          title = 'зв’язатися',
+          mod = 'btn--sec btn--lg-height btn--md-width',
           href = false
         ) }}
+      </div>
+
+      <div class="form__info">
+        {{ mixins.icon('locked') }}
+        Ваші контактні дані не будуть передані стороннім особам
       </div>
     </form>
   </div>

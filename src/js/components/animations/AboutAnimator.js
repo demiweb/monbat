@@ -16,7 +16,7 @@ export default class AboutAnimator {
             this._animateHero(section, entry, observer);
             break;
           case 1:
-            this._animateSectionWithImgs(section, entry, observer);
+            this._animateSectionWithSlider(section, entry, observer);
             break;
           case 2:
             this._animateSliderSection(section, entry, observer);
@@ -58,6 +58,18 @@ export default class AboutAnimator {
     const heroLetters = [].slice.call(section.querySelectorAll('.letter span'));
     const heroWords = [].slice.call(section.querySelectorAll('.word span'));
 
+    const {
+      breadcrumbs,
+      heroBlocks,
+      heroLeft,
+      heroTop
+    } = {
+      breadcrumbs: section.querySelector('.hero__breadcrumbs'),
+      heroBlocks: section.querySelectorAll('.hero-about-block'),
+      heroLeft: section.querySelector('.hero-about__left'),
+      heroTop: section.querySelector('.hero-about__top')
+    };
+
     const tl = anime.timeline({ easing: 'linear' });
 
     tl
@@ -67,20 +79,24 @@ export default class AboutAnimator {
         duration: 500
       })
       .add({
-        targets: heroLines,
-        duration: 700,
-        translateY: ['-150%', '0%'],
-        delay: anime.stagger(300)
-      })
-      .add({
-        targets: heroLetters,
-        translateX: ['-100%', '-35%'],
-        opacity: [0, 1],
+        targets: heroLeft,
+        translateY: ['-100%', '0%'],
         duration: 500
       })
       .add({
-        targets: heroWords,
-        translateX: ['-100%', '0%'],
+        targets: heroTop,
+        translateX: ['130%', '0%'],
+        duration: 500
+      })
+      .add({
+        targets: heroBlocks,
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 500,
+        delay: anime.stagger(100)
+      })
+      .add({
+        targets: breadcrumbs,
         opacity: [0, 1],
         duration: 500
       });
@@ -88,10 +104,21 @@ export default class AboutAnimator {
     observer.unobserve(section);
   };
 
-  _animateSectionWithImgs(section, entry, observer) {
-    const lines = [].slice.call(section.querySelectorAll('.line'));
+  _animateSectionWithSlider(section, entry, observer) {
+    const {
+      word
+    } = {
+      word: section.querySelector('.word'),
+    };
 
-    this.animateLines(lines, entry);
+    const tl = anime.timeline({ easing: 'linear' });
+
+    tl
+      .add({
+        targets: word,
+        translateX: ['100%', '0%'],
+        duration: 500
+      });
 
     observer.unobserve(section);
   };

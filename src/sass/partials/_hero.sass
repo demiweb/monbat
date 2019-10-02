@@ -95,12 +95,13 @@
     width: percentage(7/12)
     border-right: 1px solid  $gray
     padding-right: 10px
+    transform: translateY(-100%)
     +sm
       width: 100%
       border-right: 0
       margin-bottom: 15px
   &__right
-    width: percentage(5/12)
+    width: percentage(5/12)    
     +sm
       width: 100%
   &__top, &__bottom
@@ -115,6 +116,7 @@
       padding-left: 0
   &__top
     position: relative
+    transform: translateX(130%)
     +before
       border-top: 1px solid  $gray
       position: absolute
@@ -137,6 +139,7 @@
 
 .hero-about-block
   position: relative
+  opacity: 0
   &__title-sm
     text-transform: uppercase
     margin-bottom: 10px
