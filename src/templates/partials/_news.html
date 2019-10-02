@@ -1,76 +1,59 @@
-{%set
-news = [
-  { odd: true, title: '', img: 'news_03.jpg' },
-  { title: '', img: 'news_06.jpg' },
-  { odd: true, title: '', img: 'news_08.jpg' },
-  { title: '', img: 'news_11.jpg' }
-]
-%}
-
-<!-- begin main -->
-<main class="main main--section">
-  <div class="title-lines"></div>
-
+<!-- begin section -->
+<main class="main main--plain section section--lg">
+  <div class="container">
+    <div class="section__title">
+      <h2 class="title title--gray title--semi">Новини за категоріями</h2>
+    </div>
+  </div>
   <!-- begin news -->
   <div class="news">
-    <div class="news__items">
-      {% for i in news %}
-      <!-- begin news-item -->
-      <div class="news-item{% if i.odd %} news-item--red{% endif %} js-anim-el" data-anim-name="fadeInBottom">
-        {% if i.odd %}
-        <div class="news-item__img">
-          <div class="news-item__img-bg js-lazy" data-background-image="img/news/{{ i.img }}"></div>
-        </div>
-
-        <div class="news-item__content">
-          <div class="news-item__title">
-            <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
-          </div>
-
-          <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
-
-          <div class="news-item__btn">
-            {{ mixins.btn(
-              title = 'читати більше',
-              mod = 'btn--sec btn--black'
-            ) }}
-          </div>
-        </div>
-
-        {% else %}
-
-        <div class="news-item__content">
-          <div class="news-item__title">
-            <h2 class="h2 h2--md h2--ttn">Презентація нових моделей: </h2>
-          </div>
-
-          <div class="news-item__text text text--white js-truncate-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами</div>
-
-          <div class="news-item__btn">
-            {{ mixins.btn(
-              title = 'читати більше',
-              mod = 'btn--sec'
-            ) }}
-          </div>
-        </div>
-
-        <div class="news-item__img">
-          <div class="news-item__img-bg js-lazy" data-background-image="img/news/{{ i.img }}"></div>
-        </div>
-        {% endif %}
+    
+    <div class="container">
+      <div class="news__tabs">
+        <button class="news__tab is-active">Усі категорії</button>
+        <button class="news__tab">Блог</button>
+        <button class="news__tab">Новини</button>
+        <button class="news__tab">Події</button>
       </div>
-      <!-- end news-item -->
+    </div>
+
+    <div class="news__items">
+      {% for i in range(0, 6) %}
+      <div class="news__item">
+        <!-- begin news-item -->
+        <a href="#" class="news-item">
+          <span class="news-item__img">
+            <span class="news-item__img-img js-lazy" data-background-image="./img/news/01.jpg"></span>
+          </span>
+
+          <span class="news-item__content">
+            <span class="news-item__upttl">blog</span>
+
+            <span class="news-item__title">
+              <h4 class="h4 h4--md h4--semi h4--red">AUTOMECHANIKA DUBAI</h4>
+            </span>
+
+            <span class="news-item__text text text--gray">У травні 2017 року продукція MONBAT була представлена ​​на міжнародній автомобільній виставці АВТОМЕХАНІКА, Дубаї. Представники виставки та глядачі були вражені кількістю нових...</span>
+
+            <span class="news-item__date">28.09.2017</span>
+          </span>
+
+          <span class="news-item__cover"></span>
+        </a>
+        <!-- end news-item -->
+      </div>
       {% endfor %}
     </div>
     
 
     <div class="news__btn">
       {{ mixins.btn(
-        title = 'завантажити більше',
-        mod = 'btn--sec'
+        title = 'читати більше',
+        mod = 'btn--transp-blue-accent',
+        href = false
       ) }}
     </div>
   </div>
   <!-- end news -->
 </main>
-<!-- end main -->
+<!-- end section -->

@@ -21,6 +21,7 @@
     z-index: 1
     margin-top: 90px
     margin-bottom: 90px
+    width: 100%
   &__title
     margin-bottom: 10px
     opacity: 0
@@ -43,6 +44,9 @@
       top: calc(#{$header-height-md} + #{$subnav-height} + 10px)
     +lg
       top: calc(#{$header-height-mob} + 10px)
+  &__slider
+    width: 100%
+    text-align: left
 
   &--lg
     min-height: 75vh
@@ -51,6 +55,8 @@
   &--light
     +before
       display: none
+  &--full
+    min-height: 100vh
 
 .hero-about
   // min-height: 100vh

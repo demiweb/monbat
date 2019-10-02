@@ -170,7 +170,13 @@
         ) }}
       </div>
     </div>
-    {% endif %}   
+    {% endif %}
+
+    {% if hero.slider %}
+    <div class="hero__slider">
+      {% include "partials/_hero-slider.html" %}
+    </div>
+    {% endif %}
   </div>
 </section>
 <!-- end hero -->

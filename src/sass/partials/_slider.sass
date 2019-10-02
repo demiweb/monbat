@@ -198,7 +198,28 @@
       &.swiper-button-disabled
         // opacity: 0
         // visibility: hidden
-          
+  &--standart-blue-accent-light
+    &__wrap
+      .slider--standart
+        &__counter
+          color: #99c2f5
+  &--standart-no-img
+    &__wrap
+      .slider--standart
+        &__pagination
+          +lg
+            top: calc(50% - 140px)
+          +md
+            top: 70px
+            bottom: auto
+        &__btns
+          +md
+            bottom: auto
+            top: 50px
+        &__counter
+          +md
+            bottom: auto
+            top: 70px
 
 .assort-slide
   $this: &
@@ -321,6 +342,7 @@
     color: $red  
 
 .standart-slide
+  $this: &
   position: relative
   *
     box-sizing: border-box
@@ -400,3 +422,18 @@
       position: relative
       top: .2em
       font-size: 1.1em
+
+  &--blue-accent-light
+    #{$this}__content
+      background-color: $blue-accent-light
+  &--no-img
+    margin-top: 50px
+    margin-bottom: 50px
+    #{$this}__content-wrap
+      position: relative
+      transform: translate(0, 0)
+      left: auto
+      top: auto
+    #{$this}__content
+      height: auto !important
+

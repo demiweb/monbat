@@ -1,0 +1,71 @@
+{%set
+slider = [
+  { text: 'У травні 2017 року продукція monbat була представлена
+на міжнародній автомобільній виставці автомеханіка, Дубаї. 
+Представники виставки та глядачі були вражені кількістю нових...' },
+{ text: 'У травні 2017 року продукція monbat була представлена
+на міжнародній автомобільній виставці автомеханіка, Дубаї. 
+Представники виставки та глядачі були вражені кількістю нових...' },
+{ text: 'У травні 2017 року продукція monbat була представлена
+на міжнародній автомобільній виставці автомеханіка, Дубаї. 
+Представники виставки та глядачі були вражені кількістю нових...' },
+{ text: 'У травні 2017 року продукція monbat була представлена
+на міжнародній автомобільній виставці автомеханіка, Дубаї. 
+Представники виставки та глядачі були вражені кількістю нових...' }
+]
+%}
+
+<!-- begin slider -->
+  <div class="slider__wrap slider--standart__wrap slider--standart-blue-accent-light__wrap slider--standart-no-img__wrap">
+    <div class="swiper-container js-animated-slider" data-slider="standart">
+
+      <div class="slider slider--standart slider--standart-blue-accent-light slider--standart-no-img swiper-wrapper">
+        {% for i in slider %}
+        <!-- begin slide -->
+        <div class="swiper-slide">
+          <div class="slide standart-slide standart-slide--no-img standart-slide--blue-accent-light">
+            
+            <div class="standart-slide__content-wrap">
+              <div class="standart-slide__content">
+                <div class="standart-slide__title">
+                  <div class="title title--bold title--white">automechanica  dubai</div>
+                </div>
+
+                <div class="standart-slide__text text text--thin text--white">
+                  {{ i.text | safe }}                
+                </div>
+
+                <div class="standart-slide__content-bottom">
+                  <div class="standart-slide__btn">
+                    {{ mixins.btn(
+                      title = 'Читати більше',
+                      mod = ''
+                    ) }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>        
+        <!-- end slide -->
+        {% endfor %}        
+      </div>
+
+    </div>
+
+    <div class="slider--standart__btns">
+      <div class="slider--standart__btns-in">
+        <button class="slider--standart__prev arrow arrow--prev js-prev">{{ mixins.icon('arrow') }}</button>
+        <button class="slider--standart__next arrow arrow--next js-next">{{ mixins.icon('arrow') }}</button>
+      </div>
+    </div> 
+
+    <div class="slider--standart__pagination slider__pagination js-pagination"></div>
+
+    <div class="slider--standart__counter">
+      <div class="slider-counter js-counter">01</div>
+    </div>
+  </div>
+  <!-- end slider -->

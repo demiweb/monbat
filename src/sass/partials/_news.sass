@@ -1,69 +1,113 @@
 .news
-  +sm
-    margin-left: calc(0px - var(--main-padding, 35px))
-    margin-right: calc(0px - var(--main-padding, 35px))
+  &__tabs
+    margin-bottom: 20px
+  &__tab
+    display: inline-block
+    padding: 15px 0
+    border-bottom: 4px solid transparent
+    background-color: transparent
+    color: $gray
+    font-size: inherit
+    +tr(color .3s, border-color .3s)
+    +notlast
+      margin-right: 60px
+      +lg
+        margin-right: 30px
+      +xs
+        margin-right: 5px
+    +lg
+      padding: 7px 0
+    &.is-active
+      color: $red
+      +semi
+      border-color: $red
+    +hover
+      @extend .news__tab.is-active
   &__items
     margin-bottom: calc(var(--main-padding-md, 45px)/2)
+    +flex(flex-start, normal, row, wrap)
+  &__item
+    width: 33.33333%
+    border-bottom: 1px solid  $gray-lightest
+    border-right: 1px solid  $gray-lightest
+    +sm
+      width: 50%
+    +xs
+      width: 100%
   &__btn
     text-align: center
 
 
 .news-item
-  --news-item-margin: 20px
-  --news-item-padding-vertical: 125px
-  --news-item-padding-horizontal: 50px
   $this: &
-  +flex()
-  background-color: $c-text
+  position: relative
+  +flex(flex-start, normal, column)
+  height: 100%
   +hover
-    #{$this}__img-bg
-      +scale(1)
-  +xl
-    --news-item-margin: 15px
-    --news-item-padding-vertical: 100px
-    --news-item-padding-horizontal: 40px
-  +lg
-    --news-item-padding-vertical: 80px
-    --news-item-padding-horizontal: 30px
-  +sm
-    --news-item-padding-vertical: 30px
-    flex-direction: column
-  +xs
-    --news-item-padding-vertical: 20px
-    --news-item-padding-horizontal: 15px
-    --news-item-margin: 10px
-  &__img, 
+    #{$this}__cover
+      visibility: visible
+      opacity: 1
   &__content
-    width: 50%
-    +flex(center, normal, column)
-    +sm
-      width: auto
-  &__img
+    background-color: $white
+    flex-grow: 1
+    padding: 30px
+    +flex(flex-start, normal, column)
+    +lg
+      padding: 20px
+    +md
+      padding: 15px
+  &__img    
+    padding-top: 50%
+    display: block
     position: relative
     overflow: hidden
-    background-color: $gray
-    +sm
-      padding-top: 30%
-      order: 0
-    +xs
-      padding-top: 50%
-  &__img-bg
+    +lg
+      padding-top: 60%
+  &__img-img
     +cover
     +coverdiv
-    +scale(1.1)
-    +tr(transform .3s)
+    display: block
+  &__upttl
+    text-transform: uppercase
+    font-size: 14px
+    display: block
+    +semi
+    color: $gray
+    margin-bottom: 20px
+    +md
+      margin-bottom: 10px
   &__title
-    margin-bottom: var(--news-item-margin, 20px)
+    margin-bottom: 15px
+    display: block
+    +md
+      margin-bottom: 5px
   &__text
-    margin-bottom: var(--news-item-margin, 20px)
-    max-height: 70px
-  &__content
-    padding: var(--news-item-padding-vertical, 125px) var(--news-item-padding-horizontal, 50px)
-    +sm
-      order: 1
+    flex-grow: 1
+    display: block
+    margin-bottom: 15px
+    +md
+      margin-bottom: 5px
+  &__date
+    color: $gray
+    +before
+      display: inline-block
+      border-top: 1px solid  currentColor
+      width: 35px
+      margin-right: 5px
+      position: relative
+      top: -.25em
+  &__cover
+    +coverdiv
+    background-color: rgba($black, .9)
+    +flex(center, center)
+    visibility: hidden
+    opacity: 0
+    +tr(visibility .3s, opacity .3s)
+    +before
+      +icon-arrow(30, 30, 3, $white, 225)
+      display: block
 
-  &--red
-    background-color: $red-accent
+  
 
 .news-article-sm
   $this: &

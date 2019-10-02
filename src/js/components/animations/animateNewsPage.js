@@ -7,8 +7,7 @@ export default function animateNewsPage() {
   const elements = {
     main: document.querySelector('.main'),
     hero: document.querySelector('.hero'),
-    breadcrumbs: document.querySelector('.hero__breadcrumbs'),
-    title: document.querySelector('.hero__title')
+    breadcrumbs: document.querySelector('.hero__breadcrumbs')
   };
 
   const pageAnimator = new PageAnimator(elements);
@@ -18,12 +17,6 @@ export default function animateNewsPage() {
     tl
       .add({
         targets: elements.hero,
-        opacity: [0, 1],
-        duration: 500
-      })
-      .add({
-        targets: elements.title,
-        translateY: ['-100%', '0%'],
         opacity: [0, 1],
         duration: 500
       })

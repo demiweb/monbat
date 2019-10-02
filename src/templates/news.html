@@ -6,20 +6,17 @@ header: {
   mod: ''
 }
 hero: {
-  title: '<small>АКТУАЛЬНІ</small> НОВИНИ',
-  titleMod: 'title--white',
   bgImage: 'bg-hero-news.jpg',
+  mod: 'hero--full',
   breadcrumbs: {
     isInTop: true,
     list: [
-      { link: 'ABS' },
+      { link: 'Головна' },
       { item: '/' },
       { link: 'Новини', modLink: 'is-active' }
     ]
-  }
-}
-footer: {
-  mod: 'footer--gray'
+  },
+  slider: true
 }
 ---
 {% extends "layouts/_layout.html" %}

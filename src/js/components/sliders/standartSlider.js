@@ -105,8 +105,8 @@ export default function animateStandartSlider(slider) {
 
 
         // block.style.transform = 'translateY(0)';
-        block.style.opacity = '1';
-        img.style.transform = 'translateY(0)';      
+        if (block) block.style.opacity = '1';
+        if (img) img.style.transform = 'translateY(0)';      
       },
       setTranslate(translate) {
         const swiper = this;
