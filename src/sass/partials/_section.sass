@@ -286,7 +286,9 @@
   +cover
   position: relative
   color: $white
+  overflow: hidden
   &__right
+    transform: translateY(-100%)
     position: absolute
     right: 0
     top: 0
@@ -302,7 +304,7 @@
     +md
       margin-bottom: 10px
   &__left
-
+    opacity: 0
 
   &__content
     +flex(center, normal, column)
@@ -317,6 +319,7 @@
   &__links
     +flex(flex-start, normal, row, wrap)
   &__link
+    opacity: 0
     +flex(center, center)
     width: 50%
     padding: 10px

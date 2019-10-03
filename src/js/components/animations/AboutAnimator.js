@@ -19,38 +19,28 @@ export default class AboutAnimator {
             this._animateSectionWithSlider(section, entry, observer);
             break;
           case 2:
-            this._animateSliderSection(section, entry, observer);
+            this._animateHistorySection(section, entry, observer);
             break;
           case 3:
-            this._animateSectionWithLetters(section, entry, observer);
+            this._animateHistorySection(section, entry, observer);
             break;
           case 4:
-            this._animateFeatures(section, entry, observer);
+            this._animateHistorySection(section, entry, observer);
             break;
           case 5:
-            this._animatePrinciples(section, entry, observer);
+            this._animateHistorySection(section, entry, observer);
             break;
           case 6:
-            this._animateThreeCols(section, entry, observer);
+            this._animateLeaderSection(section, entry, observer);
             break;
           case 7:
-            this._animateSliderBottomSection(section, entry, observer);
+            this._animateSocialSection(section, entry, observer);
             break;
+          case 8:
+            this._animateSectionWithSlider(section, entry, observer);
         }
       };
     });
-  };
-
-  animateLines(lines, entry) {
-    const tl = anime.timeline({ easing: 'linear' });
-
-    tl.
-      add({
-        targets: lines,
-        duration: 700,
-        translateY: ['-150%', '0%'],
-        delay: anime.stagger(300)
-      });    
   };
 
   _animateHero(section, entry, observer) {
@@ -106,16 +96,22 @@ export default class AboutAnimator {
 
   _animateSectionWithSlider(section, entry, observer) {
     const {
-      word
+      word,
+      titleBlock
     } = {
       word: section.querySelector('.word'),
+      titleBlock: section.querySelector('.s-tasks__title')
     };
 
     const tl = anime.timeline({ easing: 'linear' });
 
+    const animatedTopBlock = titleBlock || word;
+
+    if (!animatedTopBlock) return;
+
     tl
       .add({
-        targets: word,
+        targets: animatedTopBlock,
         translateX: ['100%', '0%'],
         duration: 500
       });
@@ -123,107 +119,100 @@ export default class AboutAnimator {
     observer.unobserve(section);
   };
 
-  _animateSliderSection(section, entry, observer) {
-    const lines = [].slice.call(section.querySelectorAll('.line'));
+  _animateHistorySection(section, entry, observer) {
+    const {
+      block,
+      tableRows
+    } = {
+      block: section.querySelector('.history__block'),
+      tableRows: section.querySelectorAll('.history-table__row')
+    };
 
-    this.animateLines(lines, entry);
+    const tl = anime.timeline({ easing: 'linear' });
+
+    tl
+      .add({
+        targets: block,
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 500
+      })
+      .add({
+        targets: tableRows,
+        duration: 700,
+        translateX: ['100vw', '0vw'],
+        delay: anime.stagger(100)
+      });
 
     observer.unobserve(section);
   };
 
-
-  _animateSectionWithLetters(section, entry, observer) {
-    const lines = [].slice.call(section.querySelectorAll('.line'));
-    const letters = [].slice.call(section.querySelectorAll('.letter span'));
-
+  _animateLeaderSection(section, entry, observer) {
+    const {
+      left,
+      right,
+      links
+    } = {
+      left: section.querySelector('.s-leader__left'),
+      right: section.querySelector('.s-leader__right'),
+      links: section.querySelectorAll('.s-leader__link')
+    };
     const tl = anime.timeline({ easing: 'linear' });
 
-    tl      
+    tl
       .add({
-        targets: lines,
+        targets: right,
         duration: 700,
-        translateY: ['-150%', '0%'],
-        delay: anime.stagger(50)
+        translateY: ['-100%', '0%']
       })
       .add({
-        targets: letters,
-        translateX: ['-100%', '-40%'],
+        targets: left,
         opacity: [0, 1],
         duration: 500
-      }, '-=500');
-
-    observer.unobserve(section);
-  };
-
-  _animateFeatures(section, entry, observer) {
-    const blocks = [].slice.call(section.querySelectorAll('.feature'));
-    const lines = [].slice.call(section.querySelectorAll('.line'));
-
-    const tl = anime.timeline({ easing: 'linear' });
-
-    this.animateLines(lines, entry);
-
-    tl      
-      .add({
-        targets: blocks,
-        duration: 500,
-        translateY: [100, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(300)
-      });
-
-    observer.unobserve(section);
-  };
-
-  _animatePrinciples(section, entry, observer) {
-    const blocks = [].slice.call(document.querySelectorAll('.principle'));
-    const lines = [].slice.call(section.querySelectorAll('.line'));
-    const tl = anime.timeline({ easing: 'linear' });
-
-    this.animateLines(lines, entry);
-
-    tl
-      .add({
-        targets: blocks,
-        duration: 500,
-        translateX: [100, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(300)
-      });
-
-    observer.unobserve(section);
-  };
-
-  _animateThreeCols(section, entry, observer) {
-    const numbers = [].slice.call(document.querySelectorAll('.text-stroke'));
-    const textBlocks = [].slice.call(document.querySelectorAll('.three-cols-section-col__text'));
-    const lines = [].slice.call(section.querySelectorAll('.line'));
-    const tl = anime.timeline({ easing: 'linear' });
-
-    this.animateLines(lines, entry);
-
-    tl
-      .add({
-        targets: numbers,
-        duration: 500,
-        translateX: ['-100%', '0%'],
-        opacity: [0, 1]
       })
       .add({
-        targets: textBlocks,
-        duration: 500,
-        translateY: [30, 0],
+        targets: links,
         opacity: [0, 1],
-        delay: anime.stagger(300)
-      });
+        translateY: [30, 0],
+        delay: anime.stagger(100),
+        duration: 500
+      }, '-=100');    
 
     observer.unobserve(section);
   };
 
-  _animateSliderBottomSection(section, entry, observer) {
-    const lines = [].slice.call(section.querySelectorAll('.line'));
+  _animateSocialSection(section, entry, observer) {
+    const {
+      word,
+      title,
+      socials
+    } = {
+      word: section.querySelector('.word'),
+      title: section.querySelector('.section__title'),
+      socials: section.querySelectorAll('.social-items__item')
+    };
 
-    this.animateLines(lines, entry);
+    const tl = anime.timeline({ easing: 'linear' });
+
+    tl
+      .add({
+        targets: word,
+        translateX: ['-100vw', '0vw'],
+        duration: 500
+      })
+      .add({
+        targets: title,
+        opacity: [0, 1],
+        translateY: [0, 30],
+        duration: 500
+      })
+      .add({
+        targets: socials,
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 600,
+        delay: anime.stagger(100)
+      });
 
     observer.unobserve(section);
   };
