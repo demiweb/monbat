@@ -47,6 +47,7 @@
   &__slider
     width: 100%
     text-align: left
+    opacity: 0
   &__scroll
     @extend .hero-about__scroll
     +sm
@@ -54,6 +55,7 @@
   &__date
     color: $gray-light
     margin-bottom: 15px
+    transform: translateY(-100%)
     .icon
       fill: currentColor
       position: relative
@@ -116,7 +118,7 @@
       padding-left: 0
   &__top
     position: relative
-    transform: translateX(130%)
+    transform: translateX(100vw)
     +before
       border-top: 1px solid  $gray
       position: absolute

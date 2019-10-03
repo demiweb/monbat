@@ -111,6 +111,10 @@
 
   &--standart
     &__wrap
+      .swiper-slide
+        height: auto
+        .slide
+          height: 100%
     &__btns
       @extend .container
       width: 100%
@@ -317,7 +321,6 @@
     #{$this}__text
       padding-left: 0
 
-
 .arrow
   --arrow-size: 100px
   --arrow-font-size: 40px
@@ -344,6 +347,8 @@
 .standart-slide
   $this: &
   position: relative
+  +md
+    +flex(flex-start, normal, column)
   *
     box-sizing: border-box
   &__content
@@ -361,7 +366,7 @@
       padding: 50px 20px 20px
       height: 350px
     +xs
-      height: auto
+      height: 100%
   &__content-wrap
     @extend .container 
     position: absolute
@@ -377,6 +382,7 @@
       transform: translate(0, 0)
       padding-left: 0
       padding-right: 0
+      flex-grow: 1
   &__img
     transform: translateX(100%)
     +cover
@@ -411,6 +417,9 @@
       margin-left: -5px
       margin-right: -5px
       justify-content: space-between
+      padding-right: 50px
+    +md
+      padding-right: 0
   &__btn
     +lg
       margin-bottom: 10px

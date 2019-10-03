@@ -5,9 +5,10 @@ export default function animateNewsPage() {
   const page = document.querySelector('.news-page');
   if (!page) return;
   const elements = {
-    main: document.querySelector('.main'),
-    hero: document.querySelector('.hero'),
-    breadcrumbs: document.querySelector('.hero__breadcrumbs')
+    main: page.querySelector('.main'),
+    hero: page.querySelector('.hero'),
+    breadcrumbs: page.querySelector('.hero__breadcrumbs'),
+    slider: page.querySelector('.hero__slider')
   };
 
   const pageAnimator = new PageAnimator(elements);
@@ -23,6 +24,12 @@ export default function animateNewsPage() {
       .add({
         targets: elements.breadcrumbs,
         opacity: [0, 1],
+        duration: 500
+      })
+      .add({
+        targets: elements.slider,
+        opacity: [0, 1],
+        translateY: [30, 0],
         duration: 500
       })
       .add({

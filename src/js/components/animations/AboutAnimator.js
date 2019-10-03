@@ -75,7 +75,7 @@ export default class AboutAnimator {
       })
       .add({
         targets: heroTop,
-        translateX: ['130%', '0%'],
+        translateX: ['100vw', '0vw'],
         duration: 500
       })
       .add({

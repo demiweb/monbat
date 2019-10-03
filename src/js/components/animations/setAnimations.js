@@ -5,7 +5,7 @@ import animateAbout from './animateAbout';
 import animateNewsPage from './animateNewsPage';
 import animateArticlePage from './animateArticlePage';
 import animateContactsPage from './animateContactsPage';
-import animateArticlePdfPage from './animateArticlePdfPage';
+// import animateArticlePdfPage from './animateArticlePdfPage';
 
 function setAnimation(func) {
   if (window.matchMedia('(max-width: 1199px)').matches) {
@@ -22,7 +22,7 @@ export default function setAnimations() {
   setAnimation(animateNewsPage);
   setAnimation(animateArticlePage);
   setAnimation(animateContactsPage);
-  setAnimation(animateArticlePdfPage);
+  // setAnimation(animateArticlePdfPage);
 };
 
 

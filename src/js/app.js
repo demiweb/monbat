@@ -16,7 +16,7 @@ import setMainColor from './components/setMainColor';
 import setSliders from './components/setSliders';
 import setSelects from './components/setSelects';
 import setAnimatedSliders from './components/sliders/setAnimatedSliders';
-import setParallax from './components/setParallax';
+// import setParallax from './components/setParallax';
 import setGallery from './components/setGallery';
 import toggleBlock from './components/toggleBlock';
 // import truncateText from './components/truncateText';
@@ -42,7 +42,7 @@ $(function() {
   setSliders();
   setSelects();
   setAnimatedSliders();
-  setParallax();
+  // setParallax();
   setGallery();
   toggleBlock();
   // truncateText();

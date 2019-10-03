@@ -141,15 +141,19 @@
   {% endif %}
   <div class="hero__block overflow-hidden">
     {% if hero.date %}
-    <div class="hero__date">
-      {{ mixins.icon('time') }}
-      28.09.2017
+    <div class="overflow-hidden">
+      <div class="hero__date">
+        {{ mixins.icon('time') }}
+        28.09.2017
+      </div>
     </div>
     {% endif %}
 
     {% if hero.title %}
-    <div class="hero__title{% if hero.titleWrapMod %} {{ hero.titleWrapMod }}{% endif %}">
-      <h1 class="{% if not hero.titleH2 %}h1{% endif %}{% if hero.titleMod %} {{ hero.titleMod }}{% endif %}">{{ hero.title | safe }}</h1>
+    <div class="overflow-hidden">
+      <div class="hero__title{% if hero.titleWrapMod %} {{ hero.titleWrapMod }}{% endif %}">
+        <h1 class="{% if not hero.titleH2 %}h1{% endif %}{% if hero.titleMod %} {{ hero.titleMod }}{% endif %}">{{ hero.title | safe }}</h1>
+      </div>
     </div>
     {% endif %}
     {% if hero.titleLineUnderTitle %}
