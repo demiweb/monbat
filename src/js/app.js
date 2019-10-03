@@ -1,6 +1,7 @@
 // import 'promise-polyfill/src/polyfill';
 // import 'intersection-observer';
 // import cssVars from 'css-vars-ponyfill';
+import { $HTML } from './constants';
 
 import setTouchClassName from './components/setTouchClassName';
 import setLazy from './components/setLazy';
@@ -28,6 +29,8 @@ import scrollToNext from './components/scrollToNext';
 
 $(function() {
   // cssVars();
+  $HTML.addClass('is-ready');
+
   setTouchClassName();
   setLazy();
   toggleMenu();

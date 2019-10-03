@@ -13,8 +13,10 @@
   padding-left: 15px
   padding-right: 15px
   overflow: auto
-  +tr(opacity .3s, visibility .3s)
   color: $gray
+  +ready
+    +tr(opacity .3s, visibility .3s)
+  
   &.is-active
     visibility: visible
     opacity: 1
