@@ -9,7 +9,7 @@ class Menu {
     this.$subnav = this.$menu.find('.header__subnav');
     this.$header = this.$menu.closest('.header');
     this.menuItems = [].slice.call(this.$menu[0].querySelectorAll('li'));
-    this.IS_BLACK = 'is-black';
+    this.IS_BLACK = 'is-white';
   };
 
   init() {
