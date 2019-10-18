@@ -93,6 +93,12 @@ input, textarea
   +flex(center, center)
   width: 182px
   height: $header-height
+  position: relative
+  img
+    &.is-color
+      +vcenter
+      visibility: hidden
+      opacity: 0
   +xl
     height: $header-height-md
     padding-top: 10px
@@ -104,6 +110,7 @@ input, textarea
     height: auto
   &.is-red
     background-color: #b80a00
+
 
 .copy
   font-size: $fz-md

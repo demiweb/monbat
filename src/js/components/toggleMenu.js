@@ -9,7 +9,7 @@ class Menu {
     this.$subnav = this.$menu.find('.header__subnav');
     this.$header = this.$menu.closest('.header');
     this.menuItems = [].slice.call(this.$menu[0].querySelectorAll('li'));
-    this.IS_BLACK = 'is-white';
+    this.IS_WHITE = 'is-white';
   };
 
   init() {
@@ -19,7 +19,7 @@ class Menu {
 
   refresh() {
     if (window.matchMedia('(min-width: 1200px)').matches) {
-      this.$header.removeClass(this.IS_BLACK);
+      this.$header.removeClass(this.IS_WHITE);
       this.$menu.removeClass(ACTIVE);
       this.$burger.removeClass(ACTIVE);
 
@@ -44,7 +44,7 @@ class Menu {
     if (!$(e.currentTarget).hasClass(ACTIVE)) {
       $(e.currentTarget).addClass(ACTIVE);
       this.$menu.addClass(ACTIVE);
-      this.$header.addClass(this.IS_BLACK);
+      this.$header.addClass(this.IS_WHITE);
       $BODY.addClass(NOSCROLL);
 
       this.showLinks();
@@ -54,7 +54,7 @@ class Menu {
       this.animate.finished.then(() => {
         $(e.currentTarget).removeClass(ACTIVE);
         this.$menu.removeClass(ACTIVE);
-        this.$header.removeClass(this.IS_BLACK);
+        this.$header.removeClass(this.IS_WHITE);
         $BODY.removeClass(NOSCROLL);
       });      
     };

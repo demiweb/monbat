@@ -27,6 +27,14 @@
 
   &.is-white
     background-color: $white
+    color: $blue-accent
+    .logo
+      img
+        visibility: hidden
+        opacity: 0
+        &.is-color
+          visibility: visible
+          opacity: 1
   &__logo
     position: relative
     width: 250px
@@ -172,8 +180,11 @@
   &--transp
     background-color: transparent
     color: $white
-    .nav
-      
+    +lg
+      // color: $blue-accent
+      // .header__nav
+      //   color: $blue-accent
+    .nav      
       a.is-active
         // background-color: rgba($white, .3)
     
