@@ -49,7 +49,8 @@
       margin-bottom: 15px
   &__content
     // flex-grow: 1
-    display: block
+    // display: block
+    +flex(center, normal, column)
     width: 60%
     +md
       width: 100%
@@ -100,7 +101,7 @@
   &__item-title
     text-transform: uppercase
     +light
-    font-size: $fz-sm
+    font-size: 11px
     max-width: 82px
     margin-left: auto
     margin-right: auto
@@ -112,9 +113,9 @@
     background-color: var(--main-color, #{$black})
     padding: 4px 4px 3px
     +light
-    font-size: $fz-sm
+    font-size: 11px
     .icon
       fill: $white
-      font-size: $fz-sm
+      font-size: 11px
       position: relative
       top: .2em
